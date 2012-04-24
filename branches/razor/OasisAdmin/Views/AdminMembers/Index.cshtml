@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = false;
+}
+
+<h1>Members Management</h1>
+<p>
+Here you can manage all aspects of the website members, including:
+    <ul>
+        <li><a href="/members/list/">Managing Members</a></li>
+        <li><a href="/members/create/">Add Member</a></li>
+    </ul>
+</p>
+
+
+@section otheroptions {
+    <li><a href="/members/list/">Manage Members</a></li>
+    <li><a href="/members/create/">Add Member</a></li>
+}
+
+@section search {
+    <form action="/members/search/" method="get">
+        <input type="text" name="q" /><br />
+        <input type="submit" value="Search Members" />
+    </form>
+}
+

@@ -1,0 +1,21 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Services
+@{
+    ContentService service = new ContentService();
+    Content content = service.GetPage(null, "tennis-staff");
+
+    ViewBag.Title = content.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(new HtmlString(content.Content1))
+
+@section right {
+   <br />
+   <div id="ChrisHill" style="position:relative; margin-bottom: 100px;">
+        <img src="/Content/photos/chris1_resized.jpg" alt="Chris Hill" />
+   </div>
+   <div id="RaulMorant">
+        <img src="/Content/photos/raul1_resized.jpg" alt="Raul Morant" />
+    </div>
+}

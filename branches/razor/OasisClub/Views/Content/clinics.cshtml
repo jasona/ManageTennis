@@ -1,0 +1,23 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Services
+@{
+    ContentService service = new ContentService();
+    Content content = service.GetPage("adults", "clinics");
+
+    ViewBag.Title = content.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(new HtmlString(content.Content1))
+
+@section right {
+    <h3>Men's Calendar</h3>
+    <iframe style="width: 335px; height: 269px; border:thin; overflow: hidden;" frameborder="0" scrolling="auto" id="ids-miniecal" name="ids-miniecal" src="http://tennis.oasisbeachandtennisclub.com/components/miniecalendar/index.cfm?clubid=120630&showone=4498&pid=47E6647D-F4EA-9DD7-FFEE960C486B51AD"></iframe>
+	<br />
+    <br />
+    <br />
+    <h3>Ladies' Calendar</h3>
+    <iframe style="width: 335px; height: 269px; border:thin; overflow: hidden;" frameborder="0" scrolling="auto" id="ids-miniecal" name="ids-miniecal" src="http://tennis.oasisbeachandtennisclub.com/components/miniecalendar/index.cfm?clubid=120630&showone=4499&pid=47E6647D-F4EA-9DD7-FFEE960C486B51AD"></iframe>
+    <br />
+    <br />
+}

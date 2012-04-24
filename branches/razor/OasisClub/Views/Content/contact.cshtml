@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "Contact Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    IEnumerable<SelectListItem> list = new[] {   
+            new SelectListItem { Text = "What can we help you with?"},
+            new SelectListItem { Text = "Adult Programs"},
+            new SelectListItem { Text = "Junior Programs"},
+            new SelectListItem { Text = "Oasis Membership"}
+        };
+}
+<script type="text/javascript">
+
+    function ContactSubmitted() {
+        var submitForm = true;
+        var errorMessage = "";
+
+
+        if ($("#Name").val() == "") {
+            errorMessage = "<li>You must enter your name above, please.</li>";
+            submitForm = false;
+        }
+
+        if ($("#Email").val() == "") {
+            errorMessage += "<li>You must enter your email address above, please.</li>";
+            submitForm = false;
+        }
+
+        if ($("#Reason").val() == "What can we help you with?") {
+            errorMessage += "<li>You must choose a reason for contacting us above, please.</li>";
+            submitForm = false;
+        }
+
+        if (!submitForm) {
+            $("#ModalSubmitNotify").html("We were unable to submit your email. Please check the following issues and try again:<br/><br/><ul>" + errorMessage + "</ul>");
+        }
+        else {
+            $("#ModalSubmitNotify").text("Your email has been submitted! We will be in touch with you soon!");
+        }
+
+        return submitForm;
+    }
+
+    function AjaxFailure() {
+        $("#ModalSubmitNotify").text("There was an error submitting your information.\nPlease contact us via phone.");
+    }
+
+    $(function () { $.overLabels($('form:first')); });
+
+</script>
+
+<h1>Contact Us</h1>
+<p>
+    <h3>Physical Address</h3>
+    <a href="http://maps.google.com/maps?q=5757+State+Hwy+205+Rockwall,+TX+75032&ie=UTF8&hl=en&hq=&hnear=5757+Texas+205,+Rockwall,+Texas+75032&ll=32.831063,-96.362629&spn=0.038801,0.087376&z=14" target="_blank">
+    5757 State Hwy 205<br />
+    Rockwall, TX 75032
+    </a>
+</p>
+<p>
+    <span>972.772.7768 office</span><br />
+    <span>214.279.4555 fax</span><br />
+    <span><a href="#" rel="zrzorefuvc/bnfvfgraavf.pbz" class="email">contact</a><br /></span>
+    <span><a href="#" rel="npnqrzl/bnfvfgraavf.pbz" class="email">contact</a></span>
+</p>
+<p>
+    <h3>Mailing Address</h3>
+    <span>
+    519 Interstate 30, Suite 146<br />
+    Rockwall, Texas 75087
+    </span>
+</p>    
+<p>
+<h3>Contact</h3>
+
+@using (Ajax.BeginForm("SubmitContact", "Content", null, new AjaxOptions()
+    {
+        OnBegin = "ContactSubmitted",
+        OnFailure = "AjaxFailure",        
+        Url = "/api/SubmitContact"
+    }, new { @class="contact" }))
+{
+    <div class="field-compact">
+        @Html.Label("Name", "Your name goes here, please!")
+        @Html.TextBox("Name")
+    </div>
+    <div class="field-compact">
+        @Html.Label("Email", "Now, your email address?")
+        @Html.TextBox("Email")
+    </div>
+    <div>
+        @Html.DropDownList("Reason", list)
+    </div>
+    <div class="field-compact">
+        @Html.Label("Message", "Enter your message here you would like to include!")
+        @Html.TextArea("Message")
+    </div>
+    <div class="field-compact">
+        @Html.CheckBox("NewsletterSubscribe", true, new { Class = "checkbox" })<span>Subscribe to Newsletter</span>
+    </div>
+    <div class="field-compact">
+        <input class="sendButton" type="submit" value="Send" />
+    </div>
+}
+</p>
+
+<div id="ModalSubmitNotify" class="modal">
+</div><!-- END SubmitNotify -->
+
+@section head {
+    <script src="@Url.Content("~/Scripts/FTWLabs.CompactForm.js")" type="text/javascript"></script>
+}
+
+@section right {
+    <iframe width="324" 
+            height="500" 
+            frameborder="0" 
+            scrolling="no" 
+            marginheight="0" 
+            marginwidth="0" 
+            src="http://maps.google.com/maps?q=5757+State+Hwy+205+Rockwall,+TX+75032&amp;ie=UTF8&amp;hl=en&amp;hq=&amp;hnear=5757+Texas+205,+Rockwall,+Texas+75032&amp;ll=32.831063,-96.362629&amp;spn=0.708718,1.454315&amp;z=10&amp;output=embed">
+    </iframe>
+}

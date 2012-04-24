@@ -1,0 +1,117 @@
+﻿@using Oasis.Lib
+@model Oasis.Lib.Models.AdminEventsCreateModel
+@{
+    ViewBag.Title = "Add Event";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = true;    
+}
+
+<h1>Add Event</h1>
+<form action="/events/create/" method="post">
+<font color="red">@Request.QueryString["error"]</font><br />
+<table border="0" width="100%" cellpadding="20">
+    <tr>
+        <td width="50%" valign="top">            
+            Name:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("eventTitle", null, new { size="40", maxlength="150" })<br />
+            <br />
+            Description:&nbsp;&nbsp;<font color="red">*</font><br />
+            <textarea name="eventDescription" cols="32" rows="10" class="wymeditor"></textarea><br />
+            <br />
+            Member Cost:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("memberCost", null, new { size="40", maxlength="6" })<br />
+            <br />
+            Non-Member Cost:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("nonMemberCost", null, new { size="40", maxlength="6" })<br />
+            <br />
+
+            <input type="submit" value="Add Event" class="wymupdate" />
+
+        </td>
+        <td width="50%" valign="top">
+            Event Date:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("eventDate", null, new { id="datepicker", size="30", maxlength="150" })
+            <select name="eventTime">
+                @for (int i = 5; i <= 12; i++)
+                {
+                <option value="@i:00@(i == 12 ? "pm" : "am")">@i:00@(i == 12 ? "pm" : "am")</option>
+                }
+                @for (int i = 1; i <= 10; i++)
+                {
+                <option value="@i:00pm">@i:00pm</option>
+                }
+            </select><br />
+            <br />
+            For Ranks:&nbsp;&nbsp;<font color="red">*</font><br />
+            
+            <input type="checkbox" name="rank" value="1" />&nbsp;&nbsp;1.5<br />
+            <input type="checkbox" name="rank" value="2" />&nbsp;&nbsp;2.0<br />
+            <input type="checkbox" name="rank" value="4" />&nbsp;&nbsp;2.5<br />
+            <input type="checkbox" name="rank" value="8" />&nbsp;&nbsp;3.0<br />
+            <input type="checkbox" name="rank" value="16" />&nbsp;&nbsp;3.5<br />
+            <input type="checkbox" name="rank" value="32" />&nbsp;&nbsp;4.0<br />
+            <input type="checkbox" name="rank" value="64" />&nbsp;&nbsp;4.5<br />
+            <input type="checkbox" name="rank" value="128" />&nbsp;&nbsp;5.0<br />
+            <input type="checkbox" name="rank" value="256" />&nbsp;&nbsp;5.5<br />
+            <input type="checkbox" name="rank" value="512" />&nbsp;&nbsp;6.0<br />
+            <input type="checkbox" name="rank" value="1024" />&nbsp;&nbsp;6.5<br />
+            <input type="checkbox" name="rank" value="2048" />&nbsp;&nbsp;7.0<br />
+            <br />
+            For Demographics:&nbsp;&nbsp;<font color="red">*</font><br />
+            <input type="checkbox" name="demographic" value="1" />&nbsp;&nbsp;Adults, Men<br />
+            <input type="checkbox" name="demographic" value="2" />&nbsp;&nbsp;Adults, Women<br />
+            <input type="checkbox" name="demographic" value="4" />&nbsp;&nbsp;Juniors, Boys<br />
+            <input type="checkbox" name="demographic" value="8" />&nbsp;&nbsp;Juniors, Girls<br />
+            <br />
+            Event Type:&nbsp;&nbsp;<font color="red">*</font><br />
+            <select name="eventType">
+                <option value="0">Clinic</option>
+                <option value="1">Mixer</option>
+                <option value="2">3-and-Me</option>
+                <option value="3">Private</option>
+                <option value="4">Singles Tournament</option>
+                <option value="5">Doubles Tournament</option>
+                <option value="6">Club Dinner</option>
+            </select><br />
+            <br />
+            @Html.CheckBox("ustaSanctioned", false)&nbsp;&nbsp;USTA Sanctioned?<br />
+            <br />
+            @Html.CheckBox("privateEvent", false)&nbsp;&nbsp;Private Event?<br />
+            <br />
+            Available Pros:<br />
+            <select name="proUserId">
+                <option value="0">No Pro Needed</option>
+            @foreach (User user in Model.AvailablePros)
+            {
+                <option value="@user.UserId">@user.FirstName @user.LastName</option>
+            }
+            </select>
+        </td>
+    </tr>
+</table>
+</form>
+
+@section head {
+<script type="text/javascript">
+
+    /* Here we replace each element with class 'wymeditor'
+    * (typically textareas) by a WYMeditor instance.
+    * 
+    * We could use the 'html' option, to initialize the editor's content.
+    * If this option isn't set, the content is retrieved from
+    * the element being replaced.
+    */
+
+    jQuery(function () {
+        jQuery('.wymeditor').wymeditor({
+            dialogFeatures: "resizable=yes",
+            skin: "compact"
+        });
+
+        $( "#datepicker" ).datepicker();
+    });
+
+
+ 
+</script> 
+}

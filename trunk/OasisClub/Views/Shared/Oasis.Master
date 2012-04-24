@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Oasis Beach and Tennis Club in Rockwall County</title>
+
+    <script src="../../Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+    <script src="../../Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    
+    <link href="../../Content/Oasis.css" rel="stylesheet" type="text/css" />
+
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="Wrapper">
+        <div id="Header">
+            <% Html.RenderPartial("Header"); %>
+        </div><!-- END Header -->
+
+        <div id="Content">
+            
+            <div id="Sidebar">
+                <% Html.RenderPartial("Sidebar"); %>
+            </div><!-- END Navigation -->
+
+            <div id="SubContent">
+                
+                <div class="bodyWrapper">
+                    <div id="Body">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div class="bodyTopLeftRounder">&nbsp;</div>
+                    <div class="bodyBottomLeftRounder">&nbsp;</div>
+                    <div class="bodyBottomRightRounder">&nbsp;</div>
+                </div><!-- END Body -->
+
+                <div id="Footer">
+                    <% Html.RenderPartial("Footer"); %>
+                </div><!-- END Footer -->
+
+            </div><!-- END SubContent -->
+        </div><!-- END Content -->
+    </div><!-- END Wrapper -->
+</body>
+</html>

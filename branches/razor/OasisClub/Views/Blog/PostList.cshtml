@@ -1,0 +1,33 @@
+﻿@using Oasis.Lib.Util
+@model Oasis.Lib.Models.PostListModel
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Blog Posts @( Model.FilteredByCategory != null ? " - " + Model.FilteredByCategory : "" )</h1>
+
+@foreach (var item in Model.Posts)
+{
+<h3>@item.Title</h3>       
+<div class="postdate">Posted on @String.Format("{0:g}", item.PostDate) in <a href="/blog/categories/@item.Category.ToLower()">@item.Category</a></div>
+<p>
+@{
+        var body = OasisUtility.StripHTML(item.Body);
+        body = (item.Body.Length > 100 ? item.Body.Substring(0, 100) + "..." : item.Body);
+ }
+    @Html.Raw(body)
+    <a class="ir readmore" href="/blog/@item.TitleEncoded"><em></em>Read More</a>
+</p>
+}            
+
+@section right {
+    <h3>Posts by Category</h3>
+    <ul class="verbose">
+        <li><a href="/blog/">All Posts</a></li>
+    @foreach (var cat in Model.CategorySummaries)
+    {
+        <li><a href="/blog/categories/@cat.Category.ToLower()">@cat.Category (@cat.PostCount)</a></li>
+    }
+    </ul>
+}

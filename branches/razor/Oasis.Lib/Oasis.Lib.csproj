@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C867AA48-EB4E-4B6F-9E9F-63CA254D113F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Oasis.Lib</RootNamespace>
+    <AssemblyName>Oasis.Lib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AuthorizeNet">
+      <HintPath>..\AuthorizeNet.dll</HintPath>
+    </Reference>
+    <Reference Include="AuthorizeNet.Helpers">
+      <HintPath>..\AuthorizeNet.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="FlickrNet">
+      <HintPath>..\..\..\Flickrnet\FlickrNet.dll</HintPath>
+    </Reference>
+    <Reference Include="FTW.Web.Caching">
+      <HintPath>..\..\..\refs\FTW.Web.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcTurbine, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0e426322531bc5b0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\refs\MvcTurbineFor3\MvcTurbine.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcTurbine.Ninject, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0e426322531bc5b0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\refs\MvcTurbineFor3\MvcTurbine.Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcTurbine.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0e426322531bc5b0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\refs\MvcTurbineFor3\MvcTurbine.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\refs\MvcTurbineFor3\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommunityActivity.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Demographics.cs" />
+    <Compile Include="Components\EventStatuses.cs" />
+    <Compile Include="Components\EventTypes.cs" />
+    <Compile Include="Components\RankList.cs" />
+    <Compile Include="Components\Ranks.cs" />
+    <Compile Include="Components\UserPriviledges.cs" />
+    <Compile Include="Components\UserStatuses.cs" />
+    <Compile Include="Components\UserTypes.cs" />
+    <Compile Include="Content.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContentSidebarContent.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AdminContentController.cs" />
+    <Compile Include="Controllers\AdminEventsController.cs" />
+    <Compile Include="Controllers\AdminGeneralController.cs" />
+    <Compile Include="Controllers\AdminLoginController.cs" />
+    <Compile Include="Controllers\AdminMembersController.cs" />
+    <Compile Include="Controllers\AdminMessagingController.cs" />
+    <Compile Include="Controllers\BaseAdminController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\InvoicePaymentController.cs" />
+    <Compile Include="Controllers\OasisController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Demographic.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Event.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventRegistration.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventStatu.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventType.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Group.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Messaging\SMS.cs" />
+    <Compile Include="Messaging\TwilioRest.cs" />
+    <Compile Include="Models\AdminContentEditModel.cs" />
+    <Compile Include="Models\AdminContentListModel.cs" />
+    <Compile Include="Models\AdminEventsCreateModel.cs" />
+    <Compile Include="Models\AdminEventsEditModel.cs" />
+    <Compile Include="Models\AdminEventsListModel.cs" />
+    <Compile Include="Models\AdminEventsRSVPListModel.cs" />
+    <Compile Include="Models\AdminGroupsCreateModel.cs" />
+    <Compile Include="Models\AdminGroupsEditMembersModel.cs" />
+    <Compile Include="Models\AdminGroupsEditModel.cs" />
+    <Compile Include="Models\AdminGroupsListModel.cs" />
+    <Compile Include="Models\AdminMembersEditModel.cs" />
+    <Compile Include="Models\AdminMembersListModel.cs" />
+    <Compile Include="Models\AdminMembersSearchModel.cs" />
+    <Compile Include="Models\AdminMessagingSendEmailModel.cs" />
+    <Compile Include="Models\AdminMessagingSendTextModel.cs" />
+    <Compile Include="Models\ContentModel.cs" />
+    <Compile Include="Models\AdminContentSearchModel.cs" />
+    <Compile Include="Models\EventsListModel.cs" />
+    <Compile Include="Models\EventsViewModel.cs" />
+    <Compile Include="Models\PaymentModel.cs" />
+    <Compile Include="Models\RegisterConfirmModel.cs" />
+    <Compile Include="OasisSession.cs" />
+    <Compile Include="Payment.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProBillRate.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rank.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Services\EventService.cs" />
+    <Compile Include="Services\IEventService.cs" />
+    <Compile Include="Services\IInvoiceService.cs" />
+    <Compile Include="Services\IMessageService.cs" />
+    <Compile Include="Services\InvoiceService.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\MessageService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="SidebarContent.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccess.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserBilling.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserGroup.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserStatu.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserType.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Util\CsvParser.cs" />
+    <Compile Include="Billing\PaymentException.cs" />
+    <Compile Include="Billing\PaymentProvider.cs" />
+    <Compile Include="Billing\PaymentRequest.cs" />
+    <Compile Include="Billing\PaymentResponse.cs" />
+    <Compile Include="Billing\ResponseCode.cs" />
+    <Compile Include="Billing\TransactionException.cs" />
+    <Compile Include="Billing\TransactionType.cs" />
+    <Compile Include="Components\CacheOptions.cs" />
+    <Compile Include="Components\OCache.cs" />
+    <Compile Include="Controllers\AdminPageController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\AboutUsModel.cs" />
+    <Compile Include="Models\AdultsModel.cs" />
+    <Compile Include="Models\BlogListModel.cs" />
+    <Compile Include="Models\ConstructionModel.cs" />
+    <Compile Include="Models\GalleryModel.cs" />
+    <Compile Include="Models\IndexModel.cs" />
+    <Compile Include="Models\JuniorsModel.cs" />
+    <Compile Include="Models\PhotosModel.cs" />
+    <Compile Include="Models\PostCategorySummaryModel.cs" />
+    <Compile Include="Models\PostListModel.cs" />
+    <Compile Include="OasisApplication.cs" />
+    <Compile Include="OasisEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OasisEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OasisEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OasisModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OasisModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Page.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Post.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Routing\DefaultRouteRegistrator.cs" />
+    <Compile Include="Services\BlogService.cs" />
+    <Compile Include="Services\ContentService.cs" />
+    <Compile Include="Services\GalleryService.cs" />
+    <Compile Include="Services\IBlogService.cs" />
+    <Compile Include="Services\IContentService.cs" />
+    <Compile Include="Services\IGalleryService.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>OasisEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Util\ExtensionMethods.cs" />
+    <Compile Include="Util\OasisUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OasisModel.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="OasisModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OasisModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="OasisEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>OasisEntities.Context.cs</LastGenOutput>
+    </None>
+    <None Include="OasisEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>OasisEntities.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

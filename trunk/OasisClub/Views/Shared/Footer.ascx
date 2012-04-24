@@ -1,0 +1,9 @@
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<dynamic>" %>
+
+<div id="Footer_Copy">
+    <span>&copy; OASIS Beach & Tennis Club. All Rights Reserved.</span>
+</div>
+
+<div id="Footer_Call">
+    Call Us <span>972.772.7768</span>
+</div>

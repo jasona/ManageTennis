@@ -1,0 +1,201 @@
+﻿/**************************************
+    =CSS RESET
+**************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.ir { position: relative; overflow: hidden; display: block;}
+	.ir em { position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; display: block; background-repeat: no-repeat;}
+	
+	a em { cursor: pointer; }
+
+/**************************************
+    =Beautify
+**************************************/
+* { font-family: Bookman Old Style; } 
+body { background: #2E2C44 url(/content/images/bg_header.png) no-repeat center top; }
+
+.outerWrapper { width: 1200px; margin: 0 auto; }
+.innerWrapper { width: 950px; margin: 0 auto; }
+
+#Header { padding: 30px 0 40px; height: 88px; }
+    #Header .ir { width: 230px; float: left; }
+        #Header .ir h1 { width: 220px; height: 88px; }
+            #Header .ir h1 a {  }
+                #Header .ir h1 a em { background: transparent url(/content/images/oasisLogo.jpg) no-repeat left top; }
+    
+    #Header .navigation { margin: 30px 0 0 230px; position: relative; z-index: 110;}
+        #Header .navigation ul { float: right; }
+            #Header .navigation ul li { float: left; padding: 8px 13px; position: relative; }
+                #Header .navigation ul li a { color: White; text-decoration: none; font-size: 16px; font-variant:small-caps;  }
+                #Header .navigation ul li div { display: none; background: url(/content/images/bg_navigationItems.jpg) repeat-y left top; position: absolute; top: 28px; left: 0; width: 142px; z-index: 105;}
+                    #Header .navigation ul li div ul { float: none; }
+                        #Header .navigation ul li div ul li { float: none; border-bottom: solid 1px #2E2C44; }
+                
+                #Header .navigation ul li:hover { background: url(/content/images/bg_navigationItems.jpg) repeat-y left top; }
+                    #Header .navigation ul li:hover div { display: block; }
+
+    #Header .subnavigation { margin: 70px 0 0 260px; position: relative; z-index: 110;}
+        #Header .subnavigation ul { float: right; }
+            #Header .subnavigation ul li { float: left; padding: 8px 13px; position: relative; }
+                #Header .subnavigation ul li a { color: White; text-decoration: none; font-size: 16px; font-variant:small-caps;  }
+                #Header .subnavigation ul li div { display: none; background: url(/content/images/bg_subnavigationItems.jpg) repeat-y left top; position: absolute; top: 28px; left: 0; width: 142px; z-index: 105;}
+                    #Header .subnavigation ul li div ul { float: none; }
+                        #Header .subnavigation ul li div ul li { float: none; border-bottom: solid 1px #2E2C44; }
+                
+                #Header .subnavigation ul li:hover { background: url(/content/images/bg_subnavigationItems.jpg) repeat-y left top; }
+                    #Header .subnavigation ul li:hover div { display: block; }
+                                        
+#Content {background: url(/content/images/bg_content.jpg) repeat-y left top;}
+    #Content .left { float: left; width: 540px; padding: 10px;}
+    #Content .right { margin-left: 560px; }
+    
+    #Content .top .left { height: 185px; }
+    
+    #Content .top .right a, #Content .normalWide .right a { display: block; padding: 45px 40px 35px; height: 105px; text-decoration: none; }
+    
+    #Content .right span { text-transform: uppercase; color: #60BDEA; font-size: 22px; }
+    #Content .right span b { color: White; font-size: 44px; font-family: Arial Black; font-weight: bold; letter-spacing: -2px; display: block;  }
+    
+        #Content .top .left h2 { font-size: 21px; font-weight: normal; line-height: 25px; margin-bottom: 0; }
+            #Content .top .left h2 span { color: #46A9C3; }
+            
+    #Content .top .right { background: transparent url(/content/images/bg_homeRight.jpg) no-repeat left bottom; position: relative; }
+        
+    #Content .right .download { width: 94px; height: 24px; position: absolute; right: 0; top: 20px; }
+        #Content .right .download em { background: url(/content/images/ir_download.jpg) no-repeat left top;  }
+    
+    #ContentCallout { height: 185px; }
+        #ContentCallout .superWide { position: absolute; width: 100%; left: 0; background: #262336; }
+            #ContentCallout .superWide .imageWide { width: 1200px; margin: 0 auto; position: relative; }
+                #ContentCallout .superWide .imageWide img { padding: 0; margin: 0; }
+            #ContentCallout .superWide .imageWide .normalWide { position: absolute; width: 950px; top: 0; left: 125px; }
+                #ContentCallout .superWide .imageWide .normalWide .right { width: 390px; height: 185px; background: url(/content/images/bg_homeRight.jpg) no-repeat left top; }
+    
+    #ContentCallout .normalWide .right span.c4 { display: block; overflow: hidden; background: url("Images/c4logo.png") no-repeat scroll 175px top transparent; cursor: pointer; }
+    #ContentCallout .normalWide .right .signup { width: 74px; height: 24px; position: absolute; right: 0; top: 20px; }
+        #ContentCallout .normalWide .right .signup em { background: url(/content/images/ir_signup.jpg) no-repeat left top;  }
+    
+    #Content .bottom { overflow: hidden;}
+      #Content .bottom p, #Content .bottom ul.verbose li { font-size: 14px; line-height: 20px; padding: 0 0 10px; }        
+        #Content .bottom .left h3 { color: #959594; font-size: 20px; text-transform: uppercase; font-weight: normal; padding: 10px 0; }
+        #Content .bottom .left strong { color: #22A9E6; font-weight: normal; font-size: 18px; padding: 0 0 8px; display: block; }
+        #Content .bottom .left ul { margin: 0 0 14px; }
+        #Content .bottom .left ul li { font-size: 14px; list-style: disc inside; margin: 0 0 3px; }
+        #Content .bottom h1 {font-size: 22px; font-weight: normal; text-transform: uppercase; font-family: Arial Black; color: #22A9E6; padding: 10px 0;}
+        
+        
+        #Content .bottom .right { padding: 40px 30px; overflow: hidden; width: 330px;}
+            #Content .bottom .right h3 {  color: #959594; font-size: 20px; text-transform: uppercase; font-weight: normal; padding: 10px 0; }
+            #Content .bottom .right strong { color: #22A9E6; font-weight: normal; font-size: 18px; display: block; }
+            #Content a.readmore { width: 65px; height: 16px; margin: 4px 0 10px; }
+                #Content a.readmore em { background: url(/content/images/ir_readmore.jpg) no-repeat left top; }
+
+            #Content .blackBox { background: #2B2B29; float: left; margin: 0 15px 15px 0; height: 130px; }
+                #Content  .blackBox span { color: White; padding: 15px; display: block; font-weight: bold; font-family: Arial Black; font-size: 18px; text-align: center; }
+
+            #Content .photoBox { float: left; margin: 12px; border: 1px solid black; }
+                #Content  .photoBox span { color: White; display: block; font-weight: bold; font-family: Arial Black; font-size: 18px; text-align: center; }
+    
+    #Content .sub { background: #322F49; overflow: hidden; }
+    #Content .sub .third1 ul li, #Content .sub .third2 div span, #Content .sub .third3 span { font-family: Arial Black; font-size: 16px; font-weight: bold; text-transform: uppercase; color: White; margin: 0 0 4px; display: block;  }
+        #Content .sub .third1, #Content .sub .third2, #Content .sub .third3 { background: url(/content/images/bg_subThird.jpg) repeat-y 1px top; float: left; width: 316px; height: 155px; position: relative; }
+    
+        #Content .sub .third1 ul { margin: 40px; }
+            #Content .sub .third1 ul li {  }
+            #Content .sub .third1 a.learnmore { width: 103px; height: 24px; position: absolute; right: 0; bottom: 20px; }
+                #Content .sub .third1 a.learnmore em { background: url(/content/images/ir_learnmore.jpg) no-repeat left top; }
+            
+            #Content .sub .third2 div { background: url(/content/images/bg_thermometer.jpg) no-repeat 190px 10px; padding: 30px 0 40px; margin: 20px 40px; }
+            
+            #Content .sub .third3 { padding: 40px; width: 236px; height: 75px; }
+                #Content .sub .third3 .phone { color: #E97A1B; }
+            #Content .sub .third3 a.map { width: 48px; height: 24px; position: absolute; right: 0; bottom: 20px; }
+                #Content .sub .third3 a.map em { background: url(/content/images/ir_map.jpg) no-repeat left top; }
+        #Content .contact input { width: 420px; margin: 0 0 10px; font-size: 16px; }
+            #Content .contact input.checkbox { width: 20px; }
+            #Content .contact input.sendButton { width: 100px; }
+        #Content .contact select { width: 426px; margin: 0 0 10px; font-size: 16px; }
+        #Content .contact textarea { width: 420px; height: 100px; margin: 0 0 10px; font-size: 16px; }
+        #Footer { color: #7D7AA9; font-size: 11px; margin: 28px 0 40px; }
+
+
+.postdate { font-size: 11pt; margin-bottom: 16px; font-style: italic; }
+
+#ImageRoller { height: 185px; }
+
+/* Placeholder for inputs */
+.field-compact{ position:relative; }
+  .field-compact label{ overflow:hidden; position:absolute; left:7px; color:#777; text-indent:-9999px; line-height: 22px; }
+  .field-compact-empty label{ text-indent:0; }
+  .field-compact-focus label{ text-indent:-9999px; }
+  
+  
+#Content .feature {
+        background: none repeat scroll 0 0 #FF0000;
+        color: White;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+        text-transform: uppercase;
+}
+
+#Content .feature a {
+  margin: 0 0 0 30px;
+  text-decoration: none;
+  text-transform: capitalize;
+}  
+
+.button
+{
+    padding: 20px;
+    font-size: larger;
+}

@@ -1,0 +1,81 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Services
+@model Oasis.Lib.Models.JuniorsModel
+@{
+    ContentService service = new ContentService();
+    Content content = service.GetPage("juniors", "juniors");
+
+    ViewBag.Title = content.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(new HtmlString(content.Content1))
+
+@section right {
+    <h3>Downloads</h3>
+    <ul class="verbose">
+        <li><a href="/docs/C4_Performance_sign_up.doc" target="_blank">C4 Performance Sign-up Form</a></li>
+    </ul>    
+    <br />
+    <br />
+    <div>
+        <h3>See Also</h3>
+        <ul>
+            <li>
+                <strong>Academy</strong>
+                <a class="ir readmore" href="@Url.Content("~/juniors/academy-program/")"><em></em></a>
+            </li>
+            <!--
+            <li>
+                <strong>Summer Programs</strong>
+                <a class="ir readmore" href="@Url.Content("~/juniors/summer-programs/")"><em></em></a>
+            </li>
+            -->
+            <li>
+                <strong>Home School High Performance</strong>
+                <a class="ir readmore" href="@Url.Content("~/juniors/schooling-program/")"><em></em></a>
+            </li>
+            <li>
+                <strong>Travel Team</strong>
+                <a class="ir readmore" href="@Url.Content("~/juniors/travel-program/")"><em></em></a>
+            </li>
+            <li>
+                <strong>Home School Quickstart</strong>
+                <a class="ir readmore" href="@Url.Content("~/juniors/quickstart-program/")"><em></em></a>
+            </li>
+        </ul>
+
+    </div>
+    <br />
+    <br />
+    <div>
+        <h3>Related Links</h3>
+        <ul class="verbose">
+            <li><a href="/usta-links/">USTA Links & Information</a></li>
+            <li><a href="http://www.texas.usta.com/Tournaments-Pages/3792_Master_Schedule/" target="_blank">USTA Texas Tournament Schedule</a></li>
+        </ul>
+    </div>
+    <br />
+    <br />
+    @Html.Partial("_BlogList", Model.BlogList)
+    <br />
+    <h3>Photos</h3>
+    <div class="blackBox">
+        <span><a href="/content/photos/juniors/daniel2_cropped.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/juniors/daniel2_cropped.jpg" width="110" height="100" /></a></span>
+    </div>
+    <div class="blackBox">
+        <span><a href="/content/photos/juniors/daniel1_cropped.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/juniors/daniel1_cropped.jpg" width="110" height="100" /></a></span>
+    </div>
+    <div class="blackBox">
+        <span><a href="/content/photos/juniors/daniel3.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/juniors/daniel3.jpg" width="110" height="100" /></a></span>
+    </div>
+    <div class="blackBox">
+        <span><a href="/content/photos/juniors/george.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/juniors/george.jpg" width="110" height="100" /></a></span>
+    </div>
+    <div class="blackBox">
+        <span><a href="/content/photos/juniors/jrtenniskids_cropped.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/juniors/jrtenniskids_cropped.jpg" width="110" height="100" /></a></span>
+    </div>
+    <div class="blackBox">
+        <span><a href="/content/photos/juniors/jrtennisinaction_cropped.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/juniors/jrtennisinaction_cropped.jpg" width="110" height="100" /></a></span>
+    </div>
+}

@@ -1,0 +1,28 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Util
+@model Oasis.Lib.Models.AdminMembersSearchModel
+@{
+    ViewBag.Title = "Members Search Results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = true;
+}
+
+<h1>Members Search Results</h1>
+<table class="tabledata" width="100%" border="0" cellspacing="1" cellpadding="3">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Last Login</th>
+    </tr>
+    @foreach (User user in Model.Users)
+    {
+    <tr>
+        <td><a href="/members/edit/@user.UserId">@user.LastName, @user.FirstName</a></td>
+        <td>@user.EmailAddress</td>
+        <td>@OasisUtility.GetUserStatusString(user.UserStatusID)</td>
+        <td>@OasisUtility.GetUserTypeString(user.UserTypeId)</td>
+    </tr>
+    }
+</table>
+

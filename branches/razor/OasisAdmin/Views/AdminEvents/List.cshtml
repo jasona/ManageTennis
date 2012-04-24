@@ -1,0 +1,51 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Util
+@using Oasis.Lib.Services
+@model Oasis.Lib.Models.AdminEventsListModel
+@{
+    EventService service = new EventService();
+    
+    ViewBag.Title = "Manage Events";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = false;
+    
+    var curMax = (Model.PageNumber * 10);
+    var prevPage = Model.PageNumber - 1;
+    var nextPage = Model.PageNumber + 1;    
+}
+
+<h1>Manage Events</h1>
+<table class="tabledata" width="100%" border="0" cellspacing="1" cellpadding="3">
+    <tr>
+        <th>Name</th>
+        <th>Date</th>
+    </tr>
+    @foreach (Event eve in Model.Events) 
+    {
+    <tr>
+        <td><a href="/events/edit/@eve.EventId">@eve.Title</a>&nbsp;&nbsp;(@service.GetRSVPCount(eve.EventId) registered - <a href="/events/view-rsvps/@eve.EventId?name=@Server.UrlEncode(eve.Title)">view</a>)</td>
+        <td>@eve.EventDate.ToShortDateString() @eve.EventDate.ToShortTimeString()</td>
+    </tr>
+    }
+</table>
+@if (Model.PageNumber > 1)
+{
+<a href="/events/list/@prevPage">[Prev Page]</a>
+}
+&nbsp;&nbsp;
+@if (curMax < Model.EventCount)
+{
+    <a href="/events/list/@nextPage">[Next Page]</a>
+}
+
+@section otheroptions {
+    <li><a href="/events/create/">Add Event</a></li>
+}
+
+@section search {
+    <form action="/events/search/" method="get">
+        <input type="text" name="q" /><br />
+        <input type="submit" value="Search Events" />
+    </form>
+}
+

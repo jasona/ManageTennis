@@ -1,0 +1,51 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Util
+@model Oasis.Lib.Models.AdminContentListModel
+@{
+    ViewBag.Title = "Manage Content";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = false;
+    var curMax = (Model.PageNumber * 10);
+    var prevPage = Model.PageNumber - 1;
+    var nextPage = Model.PageNumber + 1;   
+    
+}
+
+<h1>Manage Content</h1>
+<table class="tabledata" width="100%" border="0" cellspacing="1" cellpadding="3">
+    <tr>
+        <th>Title</th>
+        <th>View</th>
+    </tr>
+    @foreach (Content content in Model.Content) 
+    {
+        var url = (!string.IsNullOrEmpty(content.DirName) ? content.DirName + "/" : "") + content.PageName + "/";
+    <tr>
+        <td><a href="/site-content/edit/@content.ContentId">@content.Title</a></td>
+        <td><a href="http://oasistennis.com/@url" target="_blank">Click to View</a></td>
+    </tr>
+    }
+</table>
+@if (Model.PageNumber > 1)
+{
+<a href="/site-content/list/@prevPage">[Prev Page]</a>
+}
+&nbsp;&nbsp;
+@if (curMax < Model.ContentCount)
+{
+    <a href="/site-content/list/@nextPage">[Next Page]</a>
+}
+
+@section otheroptions {
+    <li><a href="/site-content/create/">Add Content</a></li>
+}
+
+@section search {
+    <form action="/site-content/search/" method="get">
+        <input type="text" name="q" /><br />
+        <input type="submit" value="Search Content" />
+    </form>
+}
+
+
+

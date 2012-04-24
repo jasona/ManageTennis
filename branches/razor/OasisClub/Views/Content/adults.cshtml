@@ -1,0 +1,53 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Services
+@model Oasis.Lib.Models.AdultsModel
+@{
+    ContentService service = new ContentService();
+    Content content = service.GetPage("adults", "adults");
+
+    ViewBag.Title = content.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(new HtmlString(content.Content1))
+
+
+@section right {
+    <div>
+        <h3>See Also</h3>
+        <ul>
+            <li>
+                <strong>Teams</strong>
+                <a class="ir readmore" href="@Url.Content("~/adults/teams/")"><em></em></a>
+            </li>
+            <li>
+                <strong>Tournaments & Mixers</strong>
+                <a class="ir readmore" href="@Url.Content("~/adults/tournaments-and-mixers/")"><em></em></a>
+            </li>
+            <li>
+                <strong>Clinics</strong>
+                <a class="ir readmore" href="@Url.Content("~/adults/clinics/")"><em></em></a>
+            </li>
+            <li>
+                <strong>Leagues</strong>
+                <a class="ir readmore" href="@Url.Content("~/adults/leagues/")"><em></em></a>
+            </li>
+            <li>
+                <strong>Lessons</strong>
+                <a class="ir readmore" href="@Url.Content("~/adults/lessons/")"><em></em></a>
+            </li>
+        </ul>
+    </div>
+    <br />
+    <br />
+    <div>
+        <h3>Related Links</h3>
+        <ul class="verbose">
+            <li><a href="/usta-links/">USTA Links & Information</a></li>
+            <li><a href="http://www.texas.usta.com/Tournaments-Pages/3792_Master_Schedule/" target="_blank">USTA Texas Tournament Schedule</a></li>
+        </ul>
+    </div>
+    <br />
+    <br />
+    @Html.Partial("_BlogList", Model.BlogList)
+}

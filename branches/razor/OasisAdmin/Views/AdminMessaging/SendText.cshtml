@@ -1,0 +1,23 @@
+﻿@using Oasis.Lib
+@model Oasis.Lib.Models.AdminMessagingSendTextModel
+@{
+    ViewBag.Title = "Send Text Message";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = false;
+}
+
+<h1>Send Text Message</h1>
+<form action="/messaging/SendTextConfirm/" method="post">
+    <b>To:</b><br />
+    <select id="GroupId" name="GroupId" style="width: 460px">
+    @foreach (Group group in Model.TextGroups)
+    {
+        <option value="@group.GroupId">@group.GroupName (@Model.GroupCount[group.GroupId] members)</option>
+    }
+    </select><br />
+    <br />
+    <b>Message:</b><br />
+    <input type="text" id="message" name="message" maxlength="160" size="75" /><br />
+    <input type="submit" text="Send Text!" class="button" />
+</form>
+

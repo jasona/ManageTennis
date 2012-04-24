@@ -1,0 +1,25 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Util
+@model Oasis.Lib.Models.AdminContentSearchModel
+@{
+    ViewBag.Title = "Content Search Results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = true;
+    
+}
+
+<h1>Content Search Results</h1>
+<table class="tabledata" width="100%" border="0" cellspacing="1" cellpadding="3">
+    <tr>
+        <th>Title</th>
+        <th>View</th>
+    </tr>
+    @foreach (Content content in Model.Content) 
+    {
+        var url = (!string.IsNullOrEmpty(content.DirName) ? content.DirName + "/" : "") + content.PageName + "/";
+    <tr>
+        <td><a href="/site-content/edit/@content.ContentId">@content.Title</a></td>
+        <td><a href="http://oasistennis.com/@url" target="_blank">View</a></td>
+    </tr>
+    }
+</table>

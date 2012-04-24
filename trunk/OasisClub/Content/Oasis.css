@@ -1,0 +1,221 @@
+/***********************************************************************
+*							Table of =Contents
+* ----------------------------------------------------------------------
+* =Normalization (CSS Reset)..................................(Line  13)
+* =Master.....................................................(Line  47)
+* =Home.......................................................(Line XXX)
+* =About Us...................................................(Line XXX)
+*************************************************************************/
+
+/***********************************
+		=Normalization
+***********************************/
+
+/* Normalizes Margin, padding */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin: 0; padding: 0;}
+
+/* Normalizes font-size for headers */
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+
+/* Removes list-style from lists */
+ol, ul { list-style: none; }
+
+/* Normalizes font-style and font-weight to normal */
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal; }
+
+/* Removes border styles from tables */
+table { border-spacing: 0; border-collapse: collapse;}
+
+/* Removes border from fieldset and img */
+fieldset, img { border: 0; }
+
+/* Left aligns text in caption and th */
+caption, th { text-align: left; }
+
+/* Removes quotation marks from q */
+q:before, q:after { content: ''; }
+
+/* Normalize Links for Netscape when image replacements are used (text decorates the whole page width up to the IR'd link with an underline) */
+a { text-decoration: none; color: black;}
+	a:hover { text-decoration: underline; }
+	
+.ir { position: relative; overflow: hidden; display: block;}
+	.ir em { position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; display: block; background-repeat: no-repeat;}
+	
+	a em { cursor: pointer; }
+
+/***********************************
+		=Master
+***********************************/
+body, a { background: #2e2c44; color: White; font-family: Sans-Serif; font-size: 14px; }
+
+#Wrapper { width: 960px; margin: auto; }
+
+#Header { overflow: hidden; margin: 4px 0 4px 38px; background: url(/Content/Images/Header_repeater.jpg) repeat-x left center; }
+    #Header_Logo { float: left; width: 160px; height: 80px; }
+        #Header_Logo em { background: url(/Content/Images/Oasis_logo.jpg) no-repeat left top; }
+    #Header_Info { float: right; margin: 26px 0 0; padding: 0 0 0 10px; background: #2e2c44; }
+
+#Content { overflow: hidden; margin: 0 0 40px 0; }
+    
+#Sidebar { float: left; width: 130px; margin: 24px 0 0; }
+    #Sidebar ul { }
+            #Sidebar ul li a { background: #036596 url(/Content/Images/nav_left.jpg) no-repeat left top; width: 100%; padding: 5px 0 5px 8px; display: block; font-size: 16px; }
+            #Sidebar ul li a:hover { background: #333333 url(/Content/Images/nav_left_hover.jpg) no-repeat left top; text-decoration: none; }
+            #Sidebar ul li.selected a { background: #ffffff; color: #036596; }
+            
+            #Sidebar ul li.first a { background: #036596 url(/Content/Images/nav_topleft.jpg) no-repeat left top; }
+                #Sidebar ul li.first a:hover { background: #036596 url(/Content/Images/nav_topleft_hover.jpg) no-repeat left top; }
+                #Sidebar ul li.first.selected a { background: #ffffff url(/Content/Images/nav_topleft_selected.jpg) no-repeat left top; }
+                
+            #Sidebar ul li.last a { background: #036596 url(/Content/Images/nav_bottomleft.jpg) no-repeat left bottom; }
+                #Sidebar ul li.last a:hover { background: #036596 url(/Content/Images/nav_bottomleft_hover.jpg) no-repeat left bottom; }
+                #Sidebar ul li.last.selected a { background: #ffffff url(/Content/Images/nav_bottomleft_selected.jpg) no-repeat left bottom; }
+
+#SubContent { margin-left: 130px; }
+    #SubContent .bodyWrapper { position: relative; background: #2E2C44; }
+
+    #SubContent .bodyTopLeftRounder, #SubContent .bodyBottomLeftRounder, #SubContent .bodyBottomRightRounder
+    { position: absolute; width: 20px; height: 20px; z-index: 1000; }
+    
+    #SubContent .bodyTopLeftRounder { left: 0; top: 0; background: url(/Content/Images/body_topleft.png) no-repeat left top; }
+    #SubContent .bodyBottomLeftRounder { left: 0; bottom: 0; background: url(/Content/Images/body_bottomleft.png) no-repeat left bottom; }
+    #SubContent .bodyBottomRightRounder { right: 0; bottom: 0; background: url(/Content/Images/body_bottomright.png) no-repeat right bottom; }
+    
+    #Body { border: solid 2px #ffffff; position: relative; }
+
+#Footer  
+{
+    overflow: hidden; 
+    background: url(/Content/Images/footer_shadow.jpg) no-repeat left top;  
+    color: #999999;
+    font-size: 12px;
+}
+    #Footer_Copy { float: left; padding: 24px 0 0; }
+    #Footer_Call { float: right; padding: 12px 0 0; }
+        #Footer_Call span { font-size: 24px; color: #fff; }
+
+.modal{
+	display: none;
+	background: #fff;
+	border: 20px solid #777;
+	float: left;
+	position: fixed;
+	top: 40%; left: 40%;
+}
+
+/***********************************
+		=Home
+***********************************/
+#Home {position: absolute; bottom: 0; z-index: 800; color: #000; font-size: 16px; width: 100%; }
+    #Home a { background: transparent; }
+    #Home h2 { color: #036596; font-size: 64px; font-weight: normal; display: block; float: left; width: 400px; padding: 0; margin: 0 0 0 10px; line-height: 52px; }
+    #Home .homeLeft { float: left; clear: left; width: 368px; padding: 24px 36px 14px 16px; background: #ddd; position: absolute; bottom: 0; font-size: 16px; }
+        #Home .homeLeft a { display: block; padding: 20px 0 0; color: #AA562C; }
+    
+    #Home .homeRight { position: absolute; bottom: 0; right: 0; width: 320px;  background: transparent url(/Content/Images/home_right_bg.png) no-repeat right top; padding: 10px 36px 10px 64px; }
+        #Home .homeRight h3 { font-size: 32px; color: #036596; font-weight: normal; }
+        #Home .homeRight ul { list-style: disc inside; }
+            #Home .homeRight ul li { font-size: 14px;  }
+    
+    #Home .homeCallout { position: absolute; left: 370px; bottom: 105px; width: 92px; height: 92px; }
+        #Home .homeCallout em { background: url(/Content/Images/home_callout.png) no-repeat left top; }
+
+/* rotator in-page placement */
+div#rotator {
+	position:relative;
+	height:530px;
+	overflow: hidden;
+}
+/* rotator css */
+div#rotator ul li {
+	float:left;
+	position:absolute;
+	bottom: 0;
+	left: 0;
+}
+/* rotator image style */	
+div#rotator ul li img {
+	background: #FFF;
+	height: auto;
+	width: 826px;
+	vertical-align: 72px;
+}
+div#rotator ul li.show {
+	z-index:500;
+}
+
+
+
+/***********************************
+		=About Us
+***********************************/
+#About_Top { overflow: hidden; }
+    #About_Left { float: left; width: 500px; }
+    #About_Right { margin-left: 500px; }
+
+/***********************************
+		=Staff
+***********************************/
+
+
+
+/***********************************
+		=Construction
+***********************************/
+
+
+
+/***********************************
+		=C4 Academy
+***********************************/
+
+
+
+/***********************************
+		=Membership
+***********************************/
+#Membership_Top { overflow: hidden; }
+    #Membership_Left { float: left; width: 300px; }
+    #Membership_Right { margin-left: 300px; }
+
+#Membership_Bottom {}
+
+
+/***********************************
+		=Members Area
+***********************************/
+
+
+
+/***********************************
+		=Calendar
+***********************************/
+
+
+
+/***********************************
+		=FAQ
+***********************************/
+
+
+
+/***********************************
+		=Contact Us
+***********************************/
+#Contact { float: left; width: 430px; }
+
+#Contact_Top { overflow: hidden; }
+    #Contact_Location_Left { float: left; width: 260px; }
+    #Contact_Location_Right { margin-left: 260px; }
+    
+#Contact_Bottom {}    
+
+#Contact_Map { margin-left: 430px;}
+
+#ModalSubmitNotify { padding: 20px; margin-left: 400px; }
+
+
+/***********************************
+		=Policy
+***********************************/

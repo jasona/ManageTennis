@@ -1,0 +1,163 @@
+﻿@using Oasis.Lib 
+@{
+    var user = Session["User"] as User;
+    var page = Request.ServerVariables["SCRIPT_NAME"];
+}
+
+@helper ShowActiveTab(string page, string tabName)
+{  
+    if (page == "/" && tabName == "") {
+        @(new HtmlString("class=\"active\""))
+    }
+    else if (tabName != "" && page.StartsWith(tabName))
+    {
+        @(new HtmlString("class=\"active\""))
+    }
+}
+
+@helper ShowSubMenu(string page)
+{
+    if (page == "/") 
+    {
+    }
+    else if (page.StartsWith("/site-content/"))
+    {
+                            <li><a href="/site-content/list/">MANAGE CONTENT</a></li>
+    }
+    else if (page.StartsWith("/events/"))
+    {
+                            <li><a href="/events/list/">MANAGE EVENTS</a></li>
+    }
+    else if (page.StartsWith("/members/"))
+    {
+                            <li><a href="/members/list/">MANAGE MEMBERS</a></li>
+    }
+    else if (page.StartsWith("/billing/"))
+    {
+    }
+    else if (page.StartsWith("/reports/"))
+    {
+    }
+    else if (page.StartsWith("/messaging/"))
+    {
+                            <li><a href="/messaging/groups/">MANAGE GROUPS</a></li>
+                            <li><a href="/messaging/SendEmail/">SEND EMAIL</a></li>
+                            <li><a href="/messaging/SendText/">SEND TEXT</a></li>                            
+    }
+}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Oasis Manager | @ViewBag.Title</title>
+    <link href="/css/admin-blue.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="/css/ui-lightness/jquery-ui-1.8.11.custom.css" rel="Stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript" src="/js/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="/js/general.js"></script>
+    <script type="text/javascript" src="/wymeditor/jquery.wymeditor.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui-1.8.11.custom.min.js"></script>
+    @if (IsSectionDefined("head"))
+    {
+    @RenderSection("head")
+    }
+</head>
+<body>
+    <div id="outer">
+        <div id="header">
+            <div id="header-container" class="clearfix">
+                <div class="contentwidth">
+                    <div id="logo">
+                        <a href="index.html"><img src="/images/logo.gif" alt="Logo" /></a></div>
+                    <div id="headertools">
+                        <p class="welcome">
+                            @user.FirstName @user.LastName
+                        </p>
+                        <p>
+                            <a href="http://oasistennis.com/user/log-out/">Logout</a> / <a href="http://oasistennis.com">View Site</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="menu-container" class="clearfix">
+                <div class="contentwidth">
+                    <div id="menu" class="clearfix">
+                        <ul>
+                            <li><a href="/" @ShowActiveTab(page, "")>HOME</a></li>
+                            <li><a href="/site-content/" @ShowActiveTab(page, "/content/")>CONTENT</a></li>
+                            <li><a href="/events/" @ShowActiveTab(page, "/events/")>EVENTS</a></li>
+                            <li><a href="/members/" @ShowActiveTab(page, "/members/")>MEMBERS</a></li>
+                            <li><a href="/messaging/" @ShowActiveTab(page, "/messaging/")>MESSAGING</a></li>
+                            <li><a href="#" @ShowActiveTab(page, "/billing/")>BILLING</a></li>
+                            <li><a href="#" @ShowActiveTab(page, "/reports/")>REPORTS</a></li>
+                        </ul>
+                    </div>
+                    <div id="submenu">
+                        <ul>
+                            @ShowSubMenu(page)
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="main">
+                <div class="contentwidth clearfix">
+                    <br />
+                    @if (ViewBag.IsOneColumn)
+                    {
+                    <div id="singleCol">
+                        <div class="content borders">
+
+                        @RenderBody()
+
+                        </div>
+                    </div>
+                    }
+                    else
+                    {
+                    <div id="mainCol">
+                        <div class="content borders">
+
+                            @RenderBody()
+                            
+                        </div>
+                    </div>
+                    <div id="sideCol">
+                        @if (IsSectionDefined("otheroptions"))
+                        {
+                        <div class="content borders clearfix">
+                            <h2>Actions</h2>
+                            <p>
+                                <strong>
+                                    @RenderSection("otheroptions")
+                                </strong>
+                            </p>
+                        </div>
+                        }
+                        @if (IsSectionDefined("search"))
+                        {
+                        <div class="content borders clearfix">
+                            <h2>Search</h2>
+                            @RenderSection("search")      
+                        </div>
+                        }
+                        @if (IsSectionDefined("additionaloptions"))
+                        {
+                        <div class="content borders clearfix">
+                            <h2>Additional Options</h2>
+                            @RenderSection("additionaloptions")                            
+                        </div>
+                        }
+                    </div>
+                    }
+                </div>
+            </div>
+            <div id="footer">
+                <div class="contentwidth clearfix">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

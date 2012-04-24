@@ -1,0 +1,102 @@
+
+HTML Template - Website Administration
+Created: 1/2009
+By: Curt Ziegler
+Contact Info: Visit www.CurtZiegler.com
+
+Thank you for your purchase, if you need additional photos or add-ons, please contact me via my user page contact form. Thanks!
+
+
+
+--TABLE OF CONTENTS--
+
+A) HTML Structure 
+B) CSS Files
+C) Javascript 
+D) PSD Files
+E) jQuery
+
+----------------------------------------------------------------------------------------------------------
+
+A) HTML Structure
+
+This theme is a fixed layout with one or two columns. 
+All of the information within the main content area is nested within a div with an id of "mainCol". 
+
+The sidebar's (column #2) content is within a div with an id of "sideCol". 
+
+To create a single column layout, use one-column.html as a starting template.
+
+Theme Colors
+To change the theme colors, just change which stylesheet is used in the <head> of the website.
+Orange Example: <link href="css/admin-orange.css" rel="stylesheet" type="text/css" media="screen" />
+Green Example: <link href="css/admin-green.css" rel="stylesheet" type="text/css" media="screen" />
+Blue Example: <link href="css/admin-blue.css" rel="stylesheet" type="text/css" media="screen" />
+Red Example: <link href="css/admin-red.css" rel="stylesheet" type="text/css" media="screen" />
+
+If you would like to edit the color, font, or style of any elements beyond this, you would do the following:
+
+- Find the element ID or Class in the HTML (ex: id="menu")
+- Look in css/screen.css for the class / id name (ex: #menu)
+- See what attributes are applied to that class / id, making any changes if needed
+
+The majority of color changes can be done simply looking for "color:#xxxxxx" or background:" in the style sheet.
+
+Included HTML Files:
+There are named static HTML files and one PHP file (see section E). Each of these files is named for the area it represents
+along with some sample content. The contact page uses a form that submits to a php page, sending mail then redirecting to
+a thank you page. Please see the PHP section for more information.
+
+There is also a custom 404 page which some servers can display instead of the dreaded, ugly default "page not found".
+
+----------------------------------------------------------------------------------------------------------------------------
+
+B) CSS
+
+I'm using one CSS file per color in this theme. The first statement is a generic reset statement. 
+Many browser interpret the default behavior of html elements differently. 
+By using a general reset CSS statement, we can work around this.
+
+This file also contains some general styling, such as anchor tag colors, font-sizes, etc. 
+Keep in mind, that these values might be overridden somewhere else in the file. 
+
+If you would like to edit a specific section of the site, simply find the appropriate id or class in the HTML file, 
+and then scroll down until you find the appropriate style that needs to be edited in the CSS file. 
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+C) Javascript
+
+This template uses a javascript library, jQuery to hide and show content, visit the jQuery section for more information.
+
+The file general.js in the /js/ folder contains some added on functions. 
+Some are for show in the demo, please read the comments in the file for more help.
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+D) PSD Files
+
+I've included two PSD files with this theme, one to create a custom 
+menu background color and one change the logo or other attributes.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+E) jQuery
+
+jQuery v1.3 is used for the expanding/contracting text if needed.
+For instructions on editing or changing visit: http://www.jquery.com
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Thanks again for your purchase!
+
+I'd be glad to help you if you have any questions relating to this theme, or if you need additional photos, add-ons, and so on.
+
+No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, 
+you might consider visiting the forums and asking your question in the "Item Discussion" section. 
+
+Curt Ziegler
+

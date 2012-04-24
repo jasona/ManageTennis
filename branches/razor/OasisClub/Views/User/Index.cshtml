@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "User Sign In";
+    Layout = "~/Views/Shared/_FullLayout.cshtml";
+}
+
+<h1>User Sign In</h1>
+
+<form action="/user/sign-on/" method="post">
+<div>
+    <font color="red">@Request.QueryString["error"]</font><br />
+    Email Address:<br />
+    <input type="text" size="40" name="emailAddress" /><br />
+    <br />
+    Password:<br />
+    <input type="password" size="40" name="password" /><br />
+    <br />
+    <input type="hidden" name="redirectUrl" value="@Request["redirect"]" />
+    <input type="submit" class="button" value="Sign In" /><br />
+    <br />
+    <a href="/user/recover-password/">Forget your password?</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/user/register/">Register new user!</a>
+</div>
+</form>

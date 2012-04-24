@@ -1,0 +1,44 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Services
+@{
+    ContentService service = new ContentService();
+    Content content = service.GetPage("juniors", "schooling-program");
+
+    ViewBag.Title = content.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(new HtmlString(content.Content1))
+
+@section calloutblock {
+    <div class="right">
+        <a href="/docs/C4_performance_sign_up.doc">
+            <span class="c4">Juniors Academy <b>Sign up<br />now!</b></span>
+            <span class="ir signup"><em></em>Sign Up!</span>
+        </a>
+    </div>
+}
+
+@section right {
+    <h3>Interested?</h3>
+    <p>
+        Contact Academy Director, <a href="/staff/#Raul_Morant">Raul Morant</a>, for more information on this
+        excellent program!
+    </p>
+    <br />
+    <br />
+    <h3>Photos</h3>
+    <div class="blackBox">
+        <span><a href="/content/photos/267_cropped.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/267_cropped.jpg" width="110" height="100" /></a></span>
+    </div>
+    <div class="blackBox">
+        <span><a href="/content/photos/268_cropped.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/268_cropped.jpg" width="110" height="100" /></a></span>
+    </div>
+    <div class="blackBox">
+        <span><a href="/content/photos/271_cropped.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/271_cropped.jpg" width="110" height="100" /></a></span>
+    </div>
+    <div class="blackBox">
+        <span><a href="/content/photos/273_cropped.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/273_cropped.jpg" width="110" height="100" /></a></span>
+    </div>
+
+}

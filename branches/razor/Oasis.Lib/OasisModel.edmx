@@ -1,0 +1,1512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Oasis.Lib.Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="OasisLibModelStoreContainer">
+          <EntitySet Name="CommunityActivity" EntityType="Oasis.Lib.Model.Store.CommunityActivity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Content" EntityType="Oasis.Lib.Model.Store.Content" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentSidebarContent" EntityType="Oasis.Lib.Model.Store.ContentSidebarContent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Demographic" EntityType="Oasis.Lib.Model.Store.Demographic" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Event" EntityType="Oasis.Lib.Model.Store.Event" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EventRegistration" EntityType="Oasis.Lib.Model.Store.EventRegistration" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EventStatus" EntityType="Oasis.Lib.Model.Store.EventStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EventType" EntityType="Oasis.Lib.Model.Store.EventType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Group" EntityType="Oasis.Lib.Model.Store.Group" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pages" EntityType="Oasis.Lib.Model.Store.Pages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Payment" EntityType="Oasis.Lib.Model.Store.Payment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Posts" EntityType="Oasis.Lib.Model.Store.Posts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProBillRate" EntityType="Oasis.Lib.Model.Store.ProBillRate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Rank" EntityType="Oasis.Lib.Model.Store.Rank" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SidebarContent" EntityType="Oasis.Lib.Model.Store.SidebarContent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Transaction" EntityType="Oasis.Lib.Model.Store.Transaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="Oasis.Lib.Model.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserAccess" EntityType="Oasis.Lib.Model.Store.UserAccess" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserBilling" EntityType="Oasis.Lib.Model.Store.UserBilling" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserGroup" EntityType="Oasis.Lib.Model.Store.UserGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserStatus" EntityType="Oasis.Lib.Model.Store.UserStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserType" EntityType="Oasis.Lib.Model.Store.UserType" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__Community__UserI__15D01CBC" Association="Oasis.Lib.Model.Store.FK__Community__UserI__15D01CBC">
+            <End Role="User" EntitySet="User" />
+            <End Role="CommunityActivity" EntitySet="CommunityActivity" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ContentSi__Conte__10174366" Association="Oasis.Lib.Model.Store.FK__ContentSi__Conte__10174366">
+            <End Role="Content" EntitySet="Content" />
+            <End Role="ContentSidebarContent" EntitySet="ContentSidebarContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ContentSi__Sideb__110B679F" Association="Oasis.Lib.Model.Store.FK__ContentSi__Sideb__110B679F">
+            <End Role="SidebarContent" EntitySet="SidebarContent" />
+            <End Role="ContentSidebarContent" EntitySet="ContentSidebarContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Event__EventStat__7B1C2680" Association="Oasis.Lib.Model.Store.FK__Event__EventStat__7B1C2680">
+            <End Role="EventStatus" EntitySet="EventStatus" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Event__EventType__7A280247" Association="Oasis.Lib.Model.Store.FK__Event__EventType__7A280247">
+            <End Role="EventType" EntitySet="EventType" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Event__ProUserId__7DF8932B" Association="Oasis.Lib.Model.Store.FK__Event__ProUserId__7DF8932B">
+            <End Role="User" EntitySet="User" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EventRegi__Event__02BD4848" Association="Oasis.Lib.Model.Store.FK__EventRegi__Event__02BD4848">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="EventRegistration" EntitySet="EventRegistration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EventRegi__Trans__0599B4F3" Association="Oasis.Lib.Model.Store.FK__EventRegi__Trans__0599B4F3">
+            <End Role="Transaction" EntitySet="Transaction" />
+            <End Role="EventRegistration" EntitySet="EventRegistration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EventRegi__UserI__03B16C81" Association="Oasis.Lib.Model.Store.FK__EventRegi__UserI__03B16C81">
+            <End Role="User" EntitySet="User" />
+            <End Role="EventRegistration" EntitySet="EventRegistration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProBillRa__UserI__6CCE0729" Association="Oasis.Lib.Model.Store.FK__ProBillRa__UserI__6CCE0729">
+            <End Role="User" EntitySet="User" />
+            <End Role="ProBillRate" EntitySet="ProBillRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__UserB__67152DD3" Association="Oasis.Lib.Model.Store.FK__Transacti__UserB__67152DD3">
+            <End Role="UserBilling" EntitySet="UserBilling" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User__RankId__5402595F" Association="Oasis.Lib.Model.Store.FK__User__RankId__5402595F">
+            <End Role="Rank" EntitySet="Rank" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User__UserStatus__4F3DA442" Association="Oasis.Lib.Model.Store.FK__User__UserStatus__4F3DA442">
+            <End Role="UserStatus" EntitySet="UserStatus" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User__UserTypeId__521A10ED" Association="Oasis.Lib.Model.Store.FK__User__UserTypeId__521A10ED">
+            <End Role="UserType" EntitySet="UserType" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserBilli__UserI__625078B6" Association="Oasis.Lib.Model.Store.FK__UserBilli__UserI__625078B6">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserBilling" EntitySet="UserBilling" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserGroup__Group__5D8BC399" Association="Oasis.Lib.Model.Store.FK__UserGroup__Group__5D8BC399">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="UserGroup" EntitySet="UserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserGroup__UserI__5C979F60" Association="Oasis.Lib.Model.Store.FK__UserGroup__UserI__5C979F60">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserGroup" EntitySet="UserGroup" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CommunityActivity">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+          </Key>
+          <Property Name="ActivityId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="text" Nullable="false" />
+          <Property Name="ActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Content">
+          <Key>
+            <PropertyRef Name="ContentId" />
+          </Key>
+          <Property Name="ContentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DirName" Type="varchar" MaxLength="128" />
+          <Property Name="PageName" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Content" Type="text" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContentSidebarContent">
+          <Key>
+            <PropertyRef Name="ContentSidebarContentId" />
+          </Key>
+          <Property Name="ContentSidebarContentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContentId" Type="int" Nullable="false" />
+          <Property Name="SidebarContentId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Demographic">
+          <Key>
+            <PropertyRef Name="DemographicId" />
+          </Key>
+          <Property Name="DemographicId" Type="int" Nullable="false" />
+          <Property Name="DemographicName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="EncodedTitle" Type="varchar" Nullable="false" MaxLength="220" />
+          <Property Name="Description" Type="text" />
+          <Property Name="MemberCost" Type="money" />
+          <Property Name="NonMemberCost" Type="money" />
+          <Property Name="EventDate" Type="datetime" Nullable="false" />
+          <Property Name="RankingBitMask" Type="int" />
+          <Property Name="DemographicBitMask" Type="int" />
+          <Property Name="EventTypeId" Type="int" Nullable="false" />
+          <Property Name="EventStatusId" Type="int" Nullable="false" />
+          <Property Name="USTASanctioned" Type="bit" Nullable="false" />
+          <Property Name="PrivateEvent" Type="bit" Nullable="false" />
+          <Property Name="ProUserId" Type="int" />
+        </EntityType>
+        <EntityType Name="EventRegistration">
+          <Key>
+            <PropertyRef Name="EventRegistrationId" />
+          </Key>
+          <Property Name="EventRegistrationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EventId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RegistrationDate" Type="datetime" Nullable="false" />
+          <Property Name="TransactionId" Type="int" />
+        </EntityType>
+        <EntityType Name="EventStatus">
+          <Key>
+            <PropertyRef Name="EventStatusId" />
+          </Key>
+          <Property Name="EventStatusId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EventStatusName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EventType">
+          <Key>
+            <PropertyRef Name="EventTypeId" />
+          </Key>
+          <Property Name="EventTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EventTypeName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="Description" Type="text" />
+        </EntityType>
+        <EntityType Name="Pages">
+          <Key>
+            <PropertyRef Name="PageId" />
+          </Key>
+          <Property Name="PageId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ParentPageId" Type="int" />
+          <Property Name="PageName" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Content" Type="varchar(max)" Nullable="false" />
+          <Property Name="Images" Type="varchar" MaxLength="256" />
+          <Property Name="ShowMap" Type="tinyint" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="money" Nullable="false" />
+          <Property Name="Description" Type="text" Nullable="false" />
+          <Property Name="FromFirstName" Type="varchar" Nullable="false" MaxLength="125" />
+          <Property Name="FromLastName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Address1" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Address2" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="City" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="State" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="ZipCode" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="CCNumber" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="CCType" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="CCExpMonth" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="CCExpYear" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="PaymentDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="StatusDescription" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Posts">
+          <Key>
+            <PropertyRef Name="PostId" />
+          </Key>
+          <Property Name="PostId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="TitleEncoded" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Body" Type="text" Nullable="false" />
+          <Property Name="PostDate" Type="datetime" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="ProBillRate">
+          <Key>
+            <PropertyRef Name="BillRateId" />
+          </Key>
+          <Property Name="BillRateId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="BillRate" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rank">
+          <Key>
+            <PropertyRef Name="RankId" />
+          </Key>
+          <Property Name="RankId" Type="int" Nullable="false" />
+          <Property Name="RankName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SidebarContent">
+          <Key>
+            <PropertyRef Name="SidebarContentId" />
+          </Key>
+          <Property Name="SidebarContentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContentName" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Content" Type="text" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="money" Nullable="false" />
+          <Property Name="Description" Type="text" />
+          <Property Name="UserBillingId" Type="int" Nullable="false" />
+          <Property Name="PaymentDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="StatusDescription" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmailAddress" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="AccountValidated" Type="bit" Nullable="false" />
+          <Property Name="RegisterDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="UserStatusID" Type="int" Nullable="false" />
+          <Property Name="UserAccessBitMask" Type="int" Nullable="false" />
+          <Property Name="UserTypeId" Type="int" Nullable="false" />
+          <Property Name="RankId" Type="int" Nullable="false" />
+          <Property Name="ActivationKey" Type="uniqueidentifier" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="125" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Address1" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Address2" Type="varchar" MaxLength="255" />
+          <Property Name="City" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="State" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="ZipCode" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="14" />
+          <Property Name="MobilePhoneNumber" Type="varchar" MaxLength="14" />
+        </EntityType>
+        <EntityType Name="UserAccess">
+          <Key>
+            <PropertyRef Name="UserAccessId" />
+          </Key>
+          <Property Name="UserAccessId" Type="int" Nullable="false" />
+          <Property Name="AccessName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserBilling">
+          <Key>
+            <PropertyRef Name="UserBillingId" />
+          </Key>
+          <Property Name="UserBillingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CCNumber" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="CCType" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="CCExpMonth" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="CCExpYear" Type="char" Nullable="false" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="UserGroupId" />
+          </Key>
+          <Property Name="UserGroupId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserStatus">
+          <Key>
+            <PropertyRef Name="UserStatusId" />
+          </Key>
+          <Property Name="UserStatusId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StatusName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="UserTypeId" />
+          </Key>
+          <Property Name="UserTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__Community__UserI__15D01CBC">
+          <End Role="User" Type="Oasis.Lib.Model.Store.User" Multiplicity="1" />
+          <End Role="CommunityActivity" Type="Oasis.Lib.Model.Store.CommunityActivity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="CommunityActivity">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ContentSi__Conte__10174366">
+          <End Role="Content" Type="Oasis.Lib.Model.Store.Content" Multiplicity="1" />
+          <End Role="ContentSidebarContent" Type="Oasis.Lib.Model.Store.ContentSidebarContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Content">
+              <PropertyRef Name="ContentId" />
+            </Principal>
+            <Dependent Role="ContentSidebarContent">
+              <PropertyRef Name="ContentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ContentSi__Sideb__110B679F">
+          <End Role="SidebarContent" Type="Oasis.Lib.Model.Store.SidebarContent" Multiplicity="1" />
+          <End Role="ContentSidebarContent" Type="Oasis.Lib.Model.Store.ContentSidebarContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SidebarContent">
+              <PropertyRef Name="SidebarContentId" />
+            </Principal>
+            <Dependent Role="ContentSidebarContent">
+              <PropertyRef Name="SidebarContentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Event__EventStat__7B1C2680">
+          <End Role="EventStatus" Type="Oasis.Lib.Model.Store.EventStatus" Multiplicity="1" />
+          <End Role="Event" Type="Oasis.Lib.Model.Store.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventStatus">
+              <PropertyRef Name="EventStatusId" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="EventStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Event__EventType__7A280247">
+          <End Role="EventType" Type="Oasis.Lib.Model.Store.EventType" Multiplicity="1" />
+          <End Role="Event" Type="Oasis.Lib.Model.Store.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventType">
+              <PropertyRef Name="EventTypeId" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="EventTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Event__ProUserId__7DF8932B">
+          <End Role="User" Type="Oasis.Lib.Model.Store.User" Multiplicity="0..1" />
+          <End Role="Event" Type="Oasis.Lib.Model.Store.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="ProUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EventRegi__Event__02BD4848">
+          <End Role="Event" Type="Oasis.Lib.Model.Store.Event" Multiplicity="1" />
+          <End Role="EventRegistration" Type="Oasis.Lib.Model.Store.EventRegistration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="EventId" />
+            </Principal>
+            <Dependent Role="EventRegistration">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EventRegi__Trans__0599B4F3">
+          <End Role="Transaction" Type="Oasis.Lib.Model.Store.Transaction" Multiplicity="0..1" />
+          <End Role="EventRegistration" Type="Oasis.Lib.Model.Store.EventRegistration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transaction">
+              <PropertyRef Name="TransactionId" />
+            </Principal>
+            <Dependent Role="EventRegistration">
+              <PropertyRef Name="TransactionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EventRegi__UserI__03B16C81">
+          <End Role="User" Type="Oasis.Lib.Model.Store.User" Multiplicity="1" />
+          <End Role="EventRegistration" Type="Oasis.Lib.Model.Store.EventRegistration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="EventRegistration">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProBillRa__UserI__6CCE0729">
+          <End Role="User" Type="Oasis.Lib.Model.Store.User" Multiplicity="1" />
+          <End Role="ProBillRate" Type="Oasis.Lib.Model.Store.ProBillRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ProBillRate">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__UserB__67152DD3">
+          <End Role="UserBilling" Type="Oasis.Lib.Model.Store.UserBilling" Multiplicity="1" />
+          <End Role="Transaction" Type="Oasis.Lib.Model.Store.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserBilling">
+              <PropertyRef Name="UserBillingId" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="UserBillingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User__RankId__5402595F">
+          <End Role="Rank" Type="Oasis.Lib.Model.Store.Rank" Multiplicity="1" />
+          <End Role="User" Type="Oasis.Lib.Model.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rank">
+              <PropertyRef Name="RankId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User__UserStatus__4F3DA442">
+          <End Role="UserStatus" Type="Oasis.Lib.Model.Store.UserStatus" Multiplicity="1" />
+          <End Role="User" Type="Oasis.Lib.Model.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserStatus">
+              <PropertyRef Name="UserStatusId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User__UserTypeId__521A10ED">
+          <End Role="UserType" Type="Oasis.Lib.Model.Store.UserType" Multiplicity="1" />
+          <End Role="User" Type="Oasis.Lib.Model.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="UserTypeId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserBilli__UserI__625078B6">
+          <End Role="User" Type="Oasis.Lib.Model.Store.User" Multiplicity="1" />
+          <End Role="UserBilling" Type="Oasis.Lib.Model.Store.UserBilling" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserBilling">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserGroup__Group__5D8BC399">
+          <End Role="Group" Type="Oasis.Lib.Model.Store.Group" Multiplicity="1" />
+          <End Role="UserGroup" Type="Oasis.Lib.Model.Store.UserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="UserGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserGroup__UserI__5C979F60">
+          <End Role="User" Type="Oasis.Lib.Model.Store.User" Multiplicity="1" />
+          <End Role="UserGroup" Type="Oasis.Lib.Model.Store.UserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserGroup">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Oasis.Lib.Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="OasisEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Pages" EntityType="Oasis.Lib.Model.Page" />
+          <EntitySet Name="Posts" EntityType="Oasis.Lib.Model.Post" />
+          <EntitySet Name="Demographics" EntityType="Oasis.Lib.Model.Demographic" />
+          <EntitySet Name="Events" EntityType="Oasis.Lib.Model.Event" />
+          <EntitySet Name="EventRegistrations" EntityType="Oasis.Lib.Model.EventRegistration" />
+          <EntitySet Name="EventTypes" EntityType="Oasis.Lib.Model.EventType" />
+          <EntitySet Name="Payments" EntityType="Oasis.Lib.Model.Payment" />
+          <EntitySet Name="ProBillRates" EntityType="Oasis.Lib.Model.ProBillRate" />
+          <EntitySet Name="Ranks" EntityType="Oasis.Lib.Model.Rank" />
+          <EntitySet Name="Transactions" EntityType="Oasis.Lib.Model.Transaction" />
+          <EntitySet Name="Users" EntityType="Oasis.Lib.Model.User" />
+          <EntitySet Name="UserAccesses" EntityType="Oasis.Lib.Model.UserAccess" />
+          <EntitySet Name="UserBillings" EntityType="Oasis.Lib.Model.UserBilling" />
+          <EntitySet Name="UserStatus" EntityType="Oasis.Lib.Model.UserStatu" />
+          <EntitySet Name="UserTypes" EntityType="Oasis.Lib.Model.UserType" />
+          <AssociationSet Name="FK__Event__EventType__41B8C09B" Association="Oasis.Lib.Model.FK__Event__EventType__41B8C09B">
+            <End Role="EventType" EntitySet="EventTypes" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Event__ProUserId__43A1090D" Association="Oasis.Lib.Model.FK__Event__ProUserId__43A1090D">
+            <End Role="User1" EntitySet="Users" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EventRegi__Event__4865BE2A" Association="Oasis.Lib.Model.FK__EventRegi__Event__4865BE2A">
+            <End Role="Event" EntitySet="Events" />
+            <End Role="EventRegistration" EntitySet="EventRegistrations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EventRegi__Trans__4B422AD5" Association="Oasis.Lib.Model.FK__EventRegi__Trans__4B422AD5">
+            <End Role="Transaction" EntitySet="Transactions" />
+            <End Role="EventRegistration" EntitySet="EventRegistrations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EventRegi__UserI__4959E263" Association="Oasis.Lib.Model.FK__EventRegi__UserI__4959E263">
+            <End Role="User1" EntitySet="Users" />
+            <End Role="EventRegistration" EntitySet="EventRegistrations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProBillRa__UserI__382F5661" Association="Oasis.Lib.Model.FK__ProBillRa__UserI__382F5661">
+            <End Role="User1" EntitySet="Users" />
+            <End Role="ProBillRate" EntitySet="ProBillRates" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User__RankId__28ED12D1" Association="Oasis.Lib.Model.FK__User__RankId__28ED12D1">
+            <End Role="Rank" EntitySet="Ranks" />
+            <End Role="User1" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__UserB__32767D0B" Association="Oasis.Lib.Model.FK__Transacti__UserB__32767D0B">
+            <End Role="UserBilling" EntitySet="UserBillings" />
+            <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User__UserStatus__24285DB4" Association="Oasis.Lib.Model.FK__User__UserStatus__24285DB4">
+            <End Role="UserStatu" EntitySet="UserStatus" />
+            <End Role="User1" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User__UserTypeId__2704CA5F" Association="Oasis.Lib.Model.FK__User__UserTypeId__2704CA5F">
+            <End Role="UserType" EntitySet="UserTypes" />
+            <End Role="User1" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserBilli__UserI__2DB1C7EE" Association="Oasis.Lib.Model.FK__UserBilli__UserI__2DB1C7EE">
+            <End Role="User1" EntitySet="Users" />
+            <End Role="UserBilling" EntitySet="UserBillings" />
+          </AssociationSet>
+          <EntitySet Name="EventStatus" EntityType="Oasis.Lib.Model.EventStatu" />
+          <AssociationSet Name="FK__Event__EventStat__65E11278" Association="Oasis.Lib.Model.FK__Event__EventStat__65E11278">
+            <End Role="EventStatu" EntitySet="EventStatus" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+          <EntitySet Name="Contents" EntityType="Oasis.Lib.Model.Content" />
+          <EntitySet Name="ContentSidebarContents" EntityType="Oasis.Lib.Model.ContentSidebarContent" />
+          <EntitySet Name="SidebarContents" EntityType="Oasis.Lib.Model.SidebarContent" />
+          <AssociationSet Name="FK__ContentSi__Conte__0DB9F9A8" Association="Oasis.Lib.Model.FK__ContentSi__Conte__0DB9F9A8">
+            <End Role="Content" EntitySet="Contents" />
+            <End Role="ContentSidebarContent" EntitySet="ContentSidebarContents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ContentSi__Sideb__0EAE1DE1" Association="Oasis.Lib.Model.FK__ContentSi__Sideb__0EAE1DE1">
+            <End Role="SidebarContent" EntitySet="SidebarContents" />
+            <End Role="ContentSidebarContent" EntitySet="ContentSidebarContents" />
+          </AssociationSet>
+          <EntitySet Name="Groups" EntityType="Oasis.Lib.Model.Group" />
+          <EntitySet Name="UserGroups" EntityType="Oasis.Lib.Model.UserGroup" />
+          <AssociationSet Name="FK__UserGroup__Group__7CAF6937" Association="Oasis.Lib.Model.FK__UserGroup__Group__7CAF6937">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="UserGroup" EntitySet="UserGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserGroup__UserI__7BBB44FE" Association="Oasis.Lib.Model.FK__UserGroup__UserI__7BBB44FE">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserGroup" EntitySet="UserGroups" />
+          </AssociationSet>
+          <EntitySet Name="CommunityActivities" EntityType="Oasis.Lib.Model.CommunityActivity" />
+          <AssociationSet Name="FK__Community__UserI__15D01CBC" Association="Oasis.Lib.Model.FK__Community__UserI__15D01CBC">
+            <End Role="User" EntitySet="Users" />
+            <End Role="CommunityActivity" EntitySet="CommunityActivities" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="PageId" />
+          </Key>
+          <Property Type="Int32" Name="PageId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ParentPageId" />
+          <Property Type="String" Name="PageName" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Images" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="ShowMap" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="PostId" />
+          </Key>
+          <Property Type="Int32" Name="PostId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TitleEncoded" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="PostDate" Nullable="false" />
+          <Property Type="String" Name="Category" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Demographic">
+          <Key>
+            <PropertyRef Name="DemographicId" />
+          </Key>
+          <Property Type="Int32" Name="DemographicId" Nullable="false" />
+          <Property Type="String" Name="DemographicName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Type="Int32" Name="EventId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="EventDate" Nullable="false" />
+          <Property Type="Int32" Name="RankingBitMask" />
+          <Property Type="Int32" Name="DemographicBitMask" />
+          <Property Type="Int32" Name="EventTypeId" Nullable="false" />
+          <Property Type="Boolean" Name="USTASanctioned" Nullable="false" />
+          <Property Type="Int32" Name="ProUserId" />
+          <NavigationProperty Name="EventType" Relationship="Oasis.Lib.Model.FK__Event__EventType__41B8C09B" FromRole="Event" ToRole="EventType" />
+          <NavigationProperty Name="User" Relationship="Oasis.Lib.Model.FK__Event__ProUserId__43A1090D" FromRole="Event" ToRole="User1" />
+          <NavigationProperty Name="EventRegistrations" Relationship="Oasis.Lib.Model.FK__EventRegi__Event__4865BE2A" FromRole="Event" ToRole="EventRegistration" />
+          <Property Type="Int32" Name="EventStatusId" Nullable="false" />
+          <Property Type="Boolean" Name="PrivateEvent" Nullable="false" />
+          <NavigationProperty Name="EventStatu" Relationship="Oasis.Lib.Model.FK__Event__EventStat__65E11278" FromRole="Event" ToRole="EventStatu" />
+          <Property Type="Decimal" Name="MemberCost" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="NonMemberCost" Precision="19" Scale="4" />
+          <Property Type="String" Name="EncodedTitle" Nullable="false" MaxLength="220" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EventRegistration">
+          <Key>
+            <PropertyRef Name="EventRegistrationId" />
+          </Key>
+          <Property Type="Int32" Name="EventRegistrationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="EventId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="DateTime" Name="RegistrationDate" Nullable="false" />
+          <Property Type="Int32" Name="TransactionId" />
+          <NavigationProperty Name="Event" Relationship="Oasis.Lib.Model.FK__EventRegi__Event__4865BE2A" FromRole="EventRegistration" ToRole="Event" />
+          <NavigationProperty Name="Transaction" Relationship="Oasis.Lib.Model.FK__EventRegi__Trans__4B422AD5" FromRole="EventRegistration" ToRole="Transaction" />
+          <NavigationProperty Name="User" Relationship="Oasis.Lib.Model.FK__EventRegi__UserI__4959E263" FromRole="EventRegistration" ToRole="User1" />
+        </EntityType>
+        <EntityType Name="EventType">
+          <Key>
+            <PropertyRef Name="EventTypeId" />
+          </Key>
+          <Property Type="Int32" Name="EventTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="EventTypeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Events" Relationship="Oasis.Lib.Model.FK__Event__EventType__41B8C09B" FromRole="EventType" ToRole="Event" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Type="Int32" Name="PaymentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FromFirstName" Nullable="false" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FromLastName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address1" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address2" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="State" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ZipCode" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CCNumber" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CCType" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CCExpMonth" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CCExpYear" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="PaymentDate" Nullable="false" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StatusDescription" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ProBillRate">
+          <Key>
+            <PropertyRef Name="BillRateId" />
+          </Key>
+          <Property Type="Int32" Name="BillRateId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Decimal" Name="BillRate" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="User" Relationship="Oasis.Lib.Model.FK__ProBillRa__UserI__382F5661" FromRole="ProBillRate" ToRole="User1" />
+        </EntityType>
+        <EntityType Name="Rank">
+          <Key>
+            <PropertyRef Name="RankId" />
+          </Key>
+          <Property Type="Int32" Name="RankId" Nullable="false" />
+          <Property Type="String" Name="RankName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Users" Relationship="Oasis.Lib.Model.FK__User__RankId__28ED12D1" FromRole="Rank" ToRole="User1" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Type="Int32" Name="TransactionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="UserBillingId" Nullable="false" />
+          <Property Type="DateTime" Name="PaymentDate" Nullable="false" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StatusDescription" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EventRegistrations" Relationship="Oasis.Lib.Model.FK__EventRegi__Trans__4B422AD5" FromRole="Transaction" ToRole="EventRegistration" />
+          <NavigationProperty Name="UserBilling" Relationship="Oasis.Lib.Model.FK__Transacti__UserB__32767D0B" FromRole="Transaction" ToRole="UserBilling" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="EmailAddress" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="AccountValidated" Nullable="false" />
+          <Property Type="DateTime" Name="RegisterDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastLoginDate" />
+          <Property Type="Int32" Name="UserStatusID" Nullable="false" />
+          <Property Type="Int32" Name="UserAccessBitMask" Nullable="false" />
+          <Property Type="Int32" Name="UserTypeId" Nullable="false" />
+          <Property Type="Int32" Name="RankId" Nullable="false" />
+          <Property Type="String" Name="Address1" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address2" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="State" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ZipCode" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Events" Relationship="Oasis.Lib.Model.FK__Event__ProUserId__43A1090D" FromRole="User1" ToRole="Event" />
+          <NavigationProperty Name="EventRegistrations" Relationship="Oasis.Lib.Model.FK__EventRegi__UserI__4959E263" FromRole="User1" ToRole="EventRegistration" />
+          <NavigationProperty Name="ProBillRates" Relationship="Oasis.Lib.Model.FK__ProBillRa__UserI__382F5661" FromRole="User1" ToRole="ProBillRate" />
+          <NavigationProperty Name="Rank" Relationship="Oasis.Lib.Model.FK__User__RankId__28ED12D1" FromRole="User1" ToRole="Rank" />
+          <NavigationProperty Name="UserStatu" Relationship="Oasis.Lib.Model.FK__User__UserStatus__24285DB4" FromRole="User1" ToRole="UserStatu" />
+          <NavigationProperty Name="UserType" Relationship="Oasis.Lib.Model.FK__User__UserTypeId__2704CA5F" FromRole="User1" ToRole="UserType" />
+          <NavigationProperty Name="UserBillings" Relationship="Oasis.Lib.Model.FK__UserBilli__UserI__2DB1C7EE" FromRole="User1" ToRole="UserBilling" />
+          <Property Type="Guid" Name="ActivationKey" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserGroups" Relationship="Oasis.Lib.Model.FK__UserGroup__UserI__7BBB44FE" FromRole="User" ToRole="UserGroup" />
+          <Property Type="String" Name="PhoneNumber" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MobilePhoneNumber" MaxLength="14" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CommunityActivities" Relationship="Oasis.Lib.Model.FK__Community__UserI__15D01CBC" FromRole="User" ToRole="CommunityActivity" />
+        </EntityType>
+        <EntityType Name="UserAccess">
+          <Key>
+            <PropertyRef Name="UserAccessId" />
+          </Key>
+          <Property Type="Int32" Name="UserAccessId" Nullable="false" />
+          <Property Type="String" Name="AccessName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserBilling">
+          <Key>
+            <PropertyRef Name="UserBillingId" />
+          </Key>
+          <Property Type="Int32" Name="UserBillingId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="CCNumber" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CCType" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CCExpMonth" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CCExpYear" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Transactions" Relationship="Oasis.Lib.Model.FK__Transacti__UserB__32767D0B" FromRole="UserBilling" ToRole="Transaction" />
+          <NavigationProperty Name="User" Relationship="Oasis.Lib.Model.FK__UserBilli__UserI__2DB1C7EE" FromRole="UserBilling" ToRole="User1" />
+        </EntityType>
+        <EntityType Name="UserStatu">
+          <Key>
+            <PropertyRef Name="UserStatusId" />
+          </Key>
+          <Property Type="Int32" Name="UserStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="StatusName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Users" Relationship="Oasis.Lib.Model.FK__User__UserStatus__24285DB4" FromRole="UserStatu" ToRole="User1" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="UserTypeId" />
+          </Key>
+          <Property Type="Int32" Name="UserTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="TypeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Users" Relationship="Oasis.Lib.Model.FK__User__UserTypeId__2704CA5F" FromRole="UserType" ToRole="User1" />
+        </EntityType>
+        <Association Name="FK__Event__EventType__41B8C09B">
+          <End Type="Oasis.Lib.Model.EventType" Role="EventType" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.Event" Role="Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventType">
+              <PropertyRef Name="EventTypeId" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="EventTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Event__ProUserId__43A1090D">
+          <End Type="Oasis.Lib.Model.User" Role="User1" Multiplicity="0..1" />
+          <End Type="Oasis.Lib.Model.Event" Role="Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User1">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="ProUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EventRegi__Event__4865BE2A">
+          <End Type="Oasis.Lib.Model.Event" Role="Event" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.EventRegistration" Role="EventRegistration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="EventId" />
+            </Principal>
+            <Dependent Role="EventRegistration">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EventRegi__Trans__4B422AD5">
+          <End Type="Oasis.Lib.Model.Transaction" Role="Transaction" Multiplicity="0..1" />
+          <End Type="Oasis.Lib.Model.EventRegistration" Role="EventRegistration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transaction">
+              <PropertyRef Name="TransactionId" />
+            </Principal>
+            <Dependent Role="EventRegistration">
+              <PropertyRef Name="TransactionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EventRegi__UserI__4959E263">
+          <End Type="Oasis.Lib.Model.User" Role="User1" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.EventRegistration" Role="EventRegistration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User1">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="EventRegistration">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProBillRa__UserI__382F5661">
+          <End Type="Oasis.Lib.Model.User" Role="User1" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.ProBillRate" Role="ProBillRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User1">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ProBillRate">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User__RankId__28ED12D1">
+          <End Type="Oasis.Lib.Model.Rank" Role="Rank" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.User" Role="User1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rank">
+              <PropertyRef Name="RankId" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="RankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__UserB__32767D0B">
+          <End Type="Oasis.Lib.Model.UserBilling" Role="UserBilling" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.Transaction" Role="Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserBilling">
+              <PropertyRef Name="UserBillingId" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="UserBillingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User__UserStatus__24285DB4">
+          <End Type="Oasis.Lib.Model.UserStatu" Role="UserStatu" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.User" Role="User1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserStatu">
+              <PropertyRef Name="UserStatusId" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="UserStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User__UserTypeId__2704CA5F">
+          <End Type="Oasis.Lib.Model.UserType" Role="UserType" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.User" Role="User1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="UserTypeId" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="UserTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserBilli__UserI__2DB1C7EE">
+          <End Type="Oasis.Lib.Model.User" Role="User1" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.UserBilling" Role="UserBilling" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User1">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserBilling">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EventStatu">
+          <Key>
+            <PropertyRef Name="EventStatusId" />
+          </Key>
+          <Property Type="Int32" Name="EventStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="EventStatusName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Events" Relationship="Oasis.Lib.Model.FK__Event__EventStat__65E11278" FromRole="EventStatu" ToRole="Event" />
+        </EntityType>
+        <Association Name="FK__Event__EventStat__65E11278">
+          <End Type="Oasis.Lib.Model.EventStatu" Role="EventStatu" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.Event" Role="Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventStatu">
+              <PropertyRef Name="EventStatusId" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="EventStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Content">
+          <Key>
+            <PropertyRef Name="ContentId" />
+          </Key>
+          <Property Type="Int32" Name="ContentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PageName" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Content1" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <NavigationProperty Name="ContentSidebarContents" Relationship="Oasis.Lib.Model.FK__ContentSi__Conte__0DB9F9A8" FromRole="Content" ToRole="ContentSidebarContent" />
+          <Property Type="String" Name="DirName" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ContentSidebarContent">
+          <Key>
+            <PropertyRef Name="ContentSidebarContentId" />
+          </Key>
+          <Property Type="Int32" Name="ContentSidebarContentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ContentId" Nullable="false" />
+          <Property Type="Int32" Name="SidebarContentId" Nullable="false" />
+          <NavigationProperty Name="Content" Relationship="Oasis.Lib.Model.FK__ContentSi__Conte__0DB9F9A8" FromRole="ContentSidebarContent" ToRole="Content" />
+          <NavigationProperty Name="SidebarContent" Relationship="Oasis.Lib.Model.FK__ContentSi__Sideb__0EAE1DE1" FromRole="ContentSidebarContent" ToRole="SidebarContent" />
+        </EntityType>
+        <EntityType Name="SidebarContent">
+          <Key>
+            <PropertyRef Name="SidebarContentId" />
+          </Key>
+          <Property Type="Int32" Name="SidebarContentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ContentName" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <NavigationProperty Name="ContentSidebarContents" Relationship="Oasis.Lib.Model.FK__ContentSi__Sideb__0EAE1DE1" FromRole="SidebarContent" ToRole="ContentSidebarContent" />
+        </EntityType>
+        <Association Name="FK__ContentSi__Conte__0DB9F9A8">
+          <End Type="Oasis.Lib.Model.Content" Role="Content" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.ContentSidebarContent" Role="ContentSidebarContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Content">
+              <PropertyRef Name="ContentId" />
+            </Principal>
+            <Dependent Role="ContentSidebarContent">
+              <PropertyRef Name="ContentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ContentSi__Sideb__0EAE1DE1">
+          <End Type="Oasis.Lib.Model.SidebarContent" Role="SidebarContent" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.ContentSidebarContent" Role="ContentSidebarContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SidebarContent">
+              <PropertyRef Name="SidebarContentId" />
+            </Principal>
+            <Dependent Role="ContentSidebarContent">
+              <PropertyRef Name="SidebarContentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Type="Int32" Name="GroupId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="GroupName" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserGroups" Relationship="Oasis.Lib.Model.FK__UserGroup__Group__7CAF6937" FromRole="Group" ToRole="UserGroup" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="UserGroupId" />
+          </Key>
+          <Property Type="Int32" Name="UserGroupId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="GroupId" Nullable="false" />
+          <NavigationProperty Name="Group" Relationship="Oasis.Lib.Model.FK__UserGroup__Group__7CAF6937" FromRole="UserGroup" ToRole="Group" />
+          <NavigationProperty Name="User" Relationship="Oasis.Lib.Model.FK__UserGroup__UserI__7BBB44FE" FromRole="UserGroup" ToRole="User" />
+        </EntityType>
+        <Association Name="FK__UserGroup__Group__7CAF6937">
+          <End Type="Oasis.Lib.Model.Group" Role="Group" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.UserGroup" Role="UserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="UserGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserGroup__UserI__7BBB44FE">
+          <End Type="Oasis.Lib.Model.User" Role="User" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.UserGroup" Role="UserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserGroup">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CommunityActivity">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+          </Key>
+          <Property Type="Int32" Name="ActivityId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ActivityDate" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Oasis.Lib.Model.FK__Community__UserI__15D01CBC" FromRole="CommunityActivity" ToRole="User" />
+        </EntityType>
+        <Association Name="FK__Community__UserI__15D01CBC">
+          <End Type="Oasis.Lib.Model.User" Role="User" Multiplicity="1" />
+          <End Type="Oasis.Lib.Model.CommunityActivity" Role="CommunityActivity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="CommunityActivity">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OasisLibModelStoreContainer" CdmEntityContainer="OasisEntities">
+          <EntitySetMapping Name="Pages">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.Page">
+              <MappingFragment StoreEntitySet="Pages">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ShowMap" ColumnName="ShowMap" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="ParentPageId" ColumnName="ParentPageId" />
+                <ScalarProperty Name="PageId" ColumnName="PageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posts">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.Post">
+              <MappingFragment StoreEntitySet="Posts">
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="PostDate" ColumnName="PostDate" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="TitleEncoded" ColumnName="TitleEncoded" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Demographics">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.Demographic">
+              <MappingFragment StoreEntitySet="Demographic">
+                <ScalarProperty Name="DemographicName" ColumnName="DemographicName" />
+                <ScalarProperty Name="DemographicId" ColumnName="DemographicId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="EncodedTitle" ColumnName="EncodedTitle" />
+                <ScalarProperty Name="NonMemberCost" ColumnName="NonMemberCost" />
+                <ScalarProperty Name="MemberCost" ColumnName="MemberCost" />
+                <ScalarProperty Name="PrivateEvent" ColumnName="PrivateEvent" />
+                <ScalarProperty Name="EventStatusId" ColumnName="EventStatusId" />
+                <ScalarProperty Name="ProUserId" ColumnName="ProUserId" />
+                <ScalarProperty Name="USTASanctioned" ColumnName="USTASanctioned" />
+                <ScalarProperty Name="EventTypeId" ColumnName="EventTypeId" />
+                <ScalarProperty Name="DemographicBitMask" ColumnName="DemographicBitMask" />
+                <ScalarProperty Name="RankingBitMask" ColumnName="RankingBitMask" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventRegistrations">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.EventRegistration">
+              <MappingFragment StoreEntitySet="EventRegistration">
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="EventRegistrationId" ColumnName="EventRegistrationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventTypes">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.EventType">
+              <MappingFragment StoreEntitySet="EventType">
+                <ScalarProperty Name="EventTypeName" ColumnName="EventTypeName" />
+                <ScalarProperty Name="EventTypeId" ColumnName="EventTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.Payment">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="StatusDescription" ColumnName="StatusDescription" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="CCExpYear" ColumnName="CCExpYear" />
+                <ScalarProperty Name="CCExpMonth" ColumnName="CCExpMonth" />
+                <ScalarProperty Name="CCType" ColumnName="CCType" />
+                <ScalarProperty Name="CCNumber" ColumnName="CCNumber" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="FromLastName" ColumnName="FromLastName" />
+                <ScalarProperty Name="FromFirstName" ColumnName="FromFirstName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProBillRates">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.ProBillRate">
+              <MappingFragment StoreEntitySet="ProBillRate">
+                <ScalarProperty Name="BillRate" ColumnName="BillRate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="BillRateId" ColumnName="BillRateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ranks">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.Rank">
+              <MappingFragment StoreEntitySet="Rank">
+                <ScalarProperty Name="RankName" ColumnName="RankName" />
+                <ScalarProperty Name="RankId" ColumnName="RankId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.Transaction">
+              <MappingFragment StoreEntitySet="Transaction">
+                <ScalarProperty Name="StatusDescription" ColumnName="StatusDescription" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="UserBillingId" ColumnName="UserBillingId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="MobilePhoneNumber" ColumnName="MobilePhoneNumber" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ActivationKey" ColumnName="ActivationKey" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="RankId" ColumnName="RankId" />
+                <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+                <ScalarProperty Name="UserAccessBitMask" ColumnName="UserAccessBitMask" />
+                <ScalarProperty Name="UserStatusID" ColumnName="UserStatusID" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+                <ScalarProperty Name="AccountValidated" ColumnName="AccountValidated" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccesses">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.UserAccess">
+              <MappingFragment StoreEntitySet="UserAccess">
+                <ScalarProperty Name="AccessName" ColumnName="AccessName" />
+                <ScalarProperty Name="UserAccessId" ColumnName="UserAccessId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserBillings">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.UserBilling">
+              <MappingFragment StoreEntitySet="UserBilling">
+                <ScalarProperty Name="CCExpYear" ColumnName="CCExpYear" />
+                <ScalarProperty Name="CCExpMonth" ColumnName="CCExpMonth" />
+                <ScalarProperty Name="CCType" ColumnName="CCType" />
+                <ScalarProperty Name="CCNumber" ColumnName="CCNumber" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserBillingId" ColumnName="UserBillingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserStatus">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.UserStatu">
+              <MappingFragment StoreEntitySet="UserStatus">
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="UserStatusId" ColumnName="UserStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTypes">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.UserType">
+              <MappingFragment StoreEntitySet="UserType">
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventStatus">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.EventStatu">
+              <MappingFragment StoreEntitySet="EventStatus">
+                <ScalarProperty Name="EventStatusName" ColumnName="EventStatusName" />
+                <ScalarProperty Name="EventStatusId" ColumnName="EventStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contents">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.Content">
+              <MappingFragment StoreEntitySet="Content">
+                <ScalarProperty Name="DirName" ColumnName="DirName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Content1" ColumnName="Content" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentSidebarContents">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.ContentSidebarContent">
+              <MappingFragment StoreEntitySet="ContentSidebarContent">
+                <ScalarProperty Name="SidebarContentId" ColumnName="SidebarContentId" />
+                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+                <ScalarProperty Name="ContentSidebarContentId" ColumnName="ContentSidebarContentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SidebarContents">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.SidebarContent">
+              <MappingFragment StoreEntitySet="SidebarContent">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ContentName" ColumnName="ContentName" />
+                <ScalarProperty Name="SidebarContentId" ColumnName="SidebarContentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.Group">
+              <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserGroups">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.UserGroup">
+              <MappingFragment StoreEntitySet="UserGroup">
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommunityActivities">
+            <EntityTypeMapping TypeName="Oasis.Lib.Model.CommunityActivity">
+              <MappingFragment StoreEntitySet="CommunityActivity">
+                <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="OasisModel">
+        <EntityTypeShape EntityType="Oasis.Lib.Model.Page" Width="1.5" PointX="0.75" PointY="0.75" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.Post" Width="1.5" PointX="2.75" PointY="0.75" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.Demographic" Width="1.5" PointX="7.75" PointY="0.75" Height="1.4033821614583317" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.Event" Width="1.5" PointX="10.25" PointY="9.375" Height="4.2879036458333335" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.EventRegistration" Width="1.5" PointX="14.75" PointY="12.875" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.EventType" Width="1.5" PointX="8" PointY="6.25" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.Payment" Width="1.5" PointX="0.75" PointY="7.75" Height="4.2879036458333353" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.ProBillRate" Width="1.5" PointX="10.25" PointY="13.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.Rank" Width="1.5" PointX="5.75" PointY="11.25" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.Transaction" Width="1.5" PointX="12.5" PointY="16.25" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.User" Width="1.5" PointX="8" PointY="9.25" Height="5.8263151041666656" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.UserAccess" Width="1.5" PointX="2.75" PointY="7.75" Height="1.4033821614583388" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.UserBilling" Width="1.5" PointX="10.25" PointY="16.375" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.UserStatu" Width="1.5" PointX="5.75" PointY="8.125" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.UserType" Width="1.5" PointX="5.75" PointY="14.5" Height="1.5956835937500049" />
+        <AssociationConnector Association="Oasis.Lib.Model.FK__Event__EventType__41B8C09B" >
+          <ConnectorPoint PointX="9.5" PointY="7.4778857421875014" />
+          <ConnectorPoint PointX="10.291015625" PointY="7.4778857421875014" />
+          <ConnectorPoint PointX="10.291015625" PointY="9.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="Oasis.Lib.Model.FK__Event__ProUserId__43A1090D" >
+          <ConnectorPoint PointX="9.5" PointY="11.615102539062502" />
+          <ConnectorPoint PointX="10.25" PointY="11.615102539062502" />
+        </AssociationConnector>
+        <AssociationConnector Association="Oasis.Lib.Model.FK__EventRegi__Event__4865BE2A" >
+          <ConnectorPoint PointX="11.75" PointY="13.365102539062502" />
+          <ConnectorPoint PointX="12.041666666666666" PointY="13.365102539062502" />
+          <ConnectorPoint PointX="12.208333333333334" PointY="13.365102539062502" />
+          <ConnectorPoint PointX="13.885416666666666" PointY="13.365102539062502" />
+          <ConnectorPoint PointX="14.052083333333334" PointY="13.365102539062502" />
+          <ConnectorPoint PointX="14.75" PointY="13.365102539062502" />
+        </AssociationConnector>
+        <AssociationConnector Association="Oasis.Lib.Model.FK__EventRegi__Trans__4B422AD5" >
+          <ConnectorPoint PointX="13.25" PointY="16.25" />
+          <ConnectorPoint PointX="13.25" PointY="14.153595377604166" />
+          <ConnectorPoint PointX="13.885416666666666" PointY="14.153595377604166" />
+          <ConnectorPoint PointX="14.052083333333334" PointY="14.153595377604166" />
+          <ConnectorPoint PointX="14.75" PointY="14.153595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="Oasis.Lib.Model.FK__EventRegi__UserI__4959E263" >
+          <ConnectorPoint PointX="9.5" PointY="15.7230029296875" />
+          <ConnectorPoint PointX="12.041666666666666" PointY="15.7230029296875" />
+          <ConnectorPoint PointX="12.208333333333334" PointY="15.7230029296875" />
+          <ConnectorPoint PointX="13.166666666666666" PointY="15.7230029296875" />
+          <ConnectorPoint PointX="13.333333333333334" PointY="15.7230029296875" />
+          <ConnectorPoint PointX="15.5" PointY="15.7230029296875" />
+          <ConnectorPoint PointX="15.5" PointY="15.432190755208332" />
+        </AssociationConnector>
+        <AssociationConnector Association="Oasis.Lib.Model.FK__ProBillRa__UserI__382F5661" >
+          <ConnectorPoint PointX="9.5" PointY="14.643992513020834" />
+          <ConnectorPoint PointX="10.25" PointY="14.643992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="Oasis.Lib.Model.FK__User__RankId__28ED12D1" >
+          <ConnectorPoint PointX="7.25" PointY="12.047841796875002" />
+          <ConnectorPoint PointX="8" PointY="12.047841796875002" />
+        </AssociationConnector>
+        <AssociationConnector Association="Oasis.Lib.Model.FK__Transacti__UserB__32767D0B" >
+          <ConnectorPoint PointX="11.75" PointY="17.653595377604169" />
+          <ConnectorPoint PointX="12.041666666666666" PointY="17.653595377604169" />
+          <ConnectorPoint PointX="12.208333333333334" PointY="17.653595377604169" />
+          <ConnectorPoint PointX="12.5" PointY="17.653595377604169" />
+        </AssociationConnector>
+        <AssociationConnector Association="Oasis.Lib.Model.FK__User__UserStatus__24285DB4" >
+          <ConnectorPoint PointX="7.25" PointY="9.4853417968750016" />
+          <ConnectorPoint PointX="8" PointY="9.4853417968750016" />
+        </AssociationConnector>
+        <AssociationConnector Association="Oasis.Lib.Model.FK__User__UserTypeId__2704CA5F" >
+          <ConnectorPoint PointX="7.25" PointY="15.172760416666666" />
+          <ConnectorPoint PointX="8" PointY="15.172760416666666" />
+        </AssociationConnector>
+        <AssociationConnector Association="Oasis.Lib.Model.FK__UserBilli__UserI__2DB1C7EE" >
+          <ConnectorPoint PointX="8.75" PointY="15.845520833333334" />
+          <ConnectorPoint PointX="8.75" PointY="17.653595377604169" />
+          <ConnectorPoint PointX="9.0729191666666669" PointY="17.653595377604169" />
+          <ConnectorPoint PointX="9.2395858333333347" PointY="17.653595377604169" />
+          <ConnectorPoint PointX="10.25" PointY="17.653595377604169" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Oasis.Lib.Model.EventStatu" Width="1.5" PointX="3.375" PointY="3.875" Height="1.5956835937500031" />
+        <AssociationConnector Association="Oasis.Lib.Model.FK__Event__EventStat__65E11278" >
+          <ConnectorPoint PointX="4.875" PointY="4.34375" />
+          <ConnectorPoint PointX="10.2705078125" PointY="4.34375" />
+          <ConnectorPoint PointX="10.2705078125" PointY="9.375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Oasis.Lib.Model.Content" Width="1.5" PointX="10.375" PointY="0.875" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.ContentSidebarContent" Width="1.5" PointX="12.625" PointY="1" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.SidebarContent" Width="1.5" PointX="10.375" PointY="4.875" Height="2.1725878906250031" />
+        <AssociationConnector Association="Oasis.Lib.Model.FK__ContentSi__Conte__0DB9F9A8" >
+          <ConnectorPoint PointX="11.875" PointY="1.9901432291666694" />
+          <ConnectorPoint PointX="12.625" PointY="1.9901432291666694" />
+        </AssociationConnector>
+        <AssociationConnector Association="Oasis.Lib.Model.FK__ContentSi__Sideb__0EAE1DE1" >
+          <ConnectorPoint PointX="11.875" PointY="5.9612939453125016" />
+          <ConnectorPoint PointX="13.375" PointY="5.9612939453125016" />
+          <ConnectorPoint PointX="13.375" PointY="2.9802864583333388" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Oasis.Lib.Model.Group" Width="1.5" PointX="11" PointY="21.375" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="Oasis.Lib.Model.UserGroup" Width="1.5" PointX="13.25" PointY="9.25" Height="1.9802864583333388" />
+        <AssociationConnector Association="Oasis.Lib.Model.FK__UserGroup__Group__7CAF6937" >
+          <ConnectorPoint PointX="12.125" PointY="21.375" />
+          <ConnectorPoint PointX="12.125" PointY="9.28125" />
+          <ConnectorPoint PointX="13.25" PointY="9.28125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Oasis.Lib.Model.FK__UserGroup__UserI__7BBB44FE" >
+          <ConnectorPoint PointX="9.5" PointY="15.691750429687506" />
+          <ConnectorPoint PointX="12.041666666666666" PointY="15.691750429687506" />
+          <ConnectorPoint PointX="12.208333333333334" PointY="15.691750429687506" />
+          <ConnectorPoint PointX="13.166666666666666" PointY="15.691750429687506" />
+          <ConnectorPoint PointX="13.333333333333334" PointY="15.691750429687506" />
+          <ConnectorPoint PointX="13.96875" PointY="15.691750429687506" />
+          <ConnectorPoint PointX="13.96875" PointY="11.230286458333339" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Oasis.Lib.Model.CommunityActivity" Width="1.5" PointX="10.25" PointY="24.5" Height="1.9802864583333317" />
+        <AssociationConnector Association="Oasis.Lib.Model.FK__Community__UserI__15D01CBC" >
+          <ConnectorPoint PointX="9.1562525" PointY="15.845520833333334" />
+          <ConnectorPoint PointX="9.1562525" PointY="25.490143229166666" />
+          <ConnectorPoint PointX="10.25" PointY="25.490143229166666" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

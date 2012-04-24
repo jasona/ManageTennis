@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Add Member";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = true;
+}
+
+<h1>Add Member</h1>
+<form action="/members/create/" method="post">
+<div>
+    <font color="red">@Request.QueryString["error"]</font><br />
+    Email Address:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="emailAddress" size="40" maxlength="255" /><br />
+    <br />
+    Email Address, again:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="emailAddressConfirmed" size="40" maxlength="255" /><br />
+    <br />
+    Password:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="password" name="password" size="40" maxlength="12" /><br />
+    <br />
+    First Name:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="firstName" size="40" maxlength="125" /><br />
+    <br />
+    Last Name:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="lastName" size="40" maxlength="255" /><br />
+    <br />
+    Phone Number:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="phoneNumber" size="40" maxlength="14" /><br />
+    <br />
+    Mobile Phone Number:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="mobilePhoneNumber" size="40" maxlength="14" /><br />
+    <br />
+    Address 1:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="address1" size="40" maxlength="255" /><br />
+    <br />
+    Address 2:<br />
+    <input type="text" name="address2" size="40" maxlength="255" /><br />
+    <br />
+    City:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="city" size="40" maxlength="255" /><br />
+    <br />
+    State:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="state" size="40" maxlength="255" /><br />
+    <br />
+    Zip Code:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="zipCode" size="40" maxlength="25" /><br />
+    <br />
+    User Type:&nbsp;&nbsp;<font color="red">*</font><br />
+    <select name="userType">
+        <option value="0">Web-only User (non-member)</option>
+        <option value="1">Member</option>
+        <option value="2">Prior Member</option>
+        <option value="3">Employee</option>
+    </select><br />
+    <br />
+    User Status:&nbsp;&nbsp;<font color="red">*</font><br />
+    <select name="userStatus">
+        <option value="0">Disabled</option>
+        <option value="1">Active</option>
+        <option value="2">Unvalidated</option>
+    </select><br />
+    <br />
+    Rank:&nbsp;&nbsp;<font color="red">*</font><br />
+    <select name="rank">
+        <option value="1">1.5</option>
+        <option value="2">2.0</option>
+        <option value="4">2.5</option>
+        <option value="8">3.0</option>
+        <option value="16">3.5</option>
+        <option value="32">4.0</option>
+        <option value="64">4.5</option>
+        <option value="128">5.0</option>
+        <option value="256">5.5</option>
+        <option value="512">6.0</option>
+        <option value="1024">6.5</option>
+        <option value="2048">7.0</option>
+    </select><br />
+    <br />
+    User Access:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="checkbox" name="userAccess" value="1" />&nbsp;&nbsp;User<br />
+    <input type="checkbox" name="userAccess" value="2" />&nbsp;&nbsp;Member<br />
+    <input type="checkbox" name="userAccess" value="4" />&nbsp;&nbsp;Pro<br />
+    <input type="checkbox" name="userAccess" value="8" />&nbsp;&nbsp;Employee<br />
+    <input type="checkbox" name="userAccess" value="16" />&nbsp;&nbsp;Admin<br />
+    <br />
+    <font color="red">* = Required Field</font><br />
+    <br />
+    <input type="submit" value="Add Member" class="button" />
+</div>
+</form>

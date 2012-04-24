@@ -1,0 +1,56 @@
+﻿@using Oasis.Lib
+@model Oasis.Lib.Models.AdminMessagingSendEmailModel
+@{
+    ViewBag.Title = "Send Email";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = true;
+}
+
+<h1>Send Email</h1>
+<br />
+<form action="/messaging/SendEmailConfirm/" method="post" enctype="multipart/form-data">
+<p>
+    <b>To:</b><br />
+    <select id="GroupId" name="GroupId" style="width: 460px">
+    @foreach (Group group in Model.EmailGroups)
+    {
+        <option value="@group.GroupId">@group.GroupName (@Model.GroupCount[group.GroupId] members)</option>
+    }
+    </select><br />
+    <br />
+    <b>Subject:</b><br />
+    <input type="text" id="EmailSubject" name="EmailSubject" size="122" /><br />
+    <br />
+    <b>Body:</b><br />
+    <textarea id="EmailBody" name="EmailBody" class="wymeditor"></textarea><br />
+    <b>Files to Attach:</b><br />
+    <input type="file" id="EmailFile1" name="EmailFile1" /><br />
+    <input type="file" id="EmailFile2" name="EmailFile2" /><br />
+    <input type="file" id="EmailFile3" name="EmailFile3" /><br />
+    <input type="file" id="EmailFile4" name="EmailFile4" /><br />
+    <input type="file" id="EmailFile5" name="EmailFile5" /><br />
+    <br />
+    <input type="submit" value="Send Email" class="button wymupdate" />
+</p>
+</form>
+
+@section head {
+<script type="text/javascript">
+
+    /* Here we replace each element with class 'wymeditor'
+    * (typically textareas) by a WYMeditor instance.
+    * 
+    * We could use the 'html' option, to initialize the editor's content.
+    * If this option isn't set, the content is retrieved from
+    * the element being replaced.
+    */
+
+    jQuery(function () {
+        jQuery('.wymeditor').wymeditor({
+            dialogFeatures: "resizable=yes",
+            skin: "compact"
+        });
+    });
+ 
+</script> 
+}

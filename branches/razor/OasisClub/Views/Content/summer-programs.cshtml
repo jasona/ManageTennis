@@ -1,0 +1,13 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Services
+@{
+    ContentService service = new ContentService();
+    Content content = service.GetPage("juniors", "summer-programs");
+
+    ViewBag.Title = content.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(new HtmlString(content.Content1))
+
+

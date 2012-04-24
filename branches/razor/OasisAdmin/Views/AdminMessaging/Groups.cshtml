@@ -1,0 +1,28 @@
+﻿@using Oasis.Lib
+@model Oasis.Lib.Models.AdminGroupsListModel
+@{
+    ViewBag.Title = "Manage Groups";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = false;
+}
+
+<h1>Manage Groups</h1>
+<table class="tabledata" width="100%" border="0" cellspacing="1" cellpadding="3">
+    <tr>
+        <th>Group Name</th>
+        <th># Members</th>
+        <th>Actions</th>
+    </tr>
+@foreach (Group group in Model.Groups)
+{
+    <tr>
+        <td><a href="/messaging/EditGroup/@group.GroupId">@group.GroupName</a></td>
+        <td>@Model.NumberOfMembers[group.GroupId]</td>
+        <td><a href="/messaging/EditGroupMembers/@group.GroupId">Edit Members</a></td>
+    </tr>
+}
+</table>
+
+@section otheroptions {
+    <li><a href="/messaging/CreateGroup/">Add Group</a></li>
+}

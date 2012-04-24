@@ -1,0 +1,14 @@
+﻿@model Oasis.Lib.Models.BlogListModel
+
+<h3>@Model.ListTitle</h3>
+@foreach (var item in Model.Posts) {
+    <strong>@item.Title</strong>
+    <a href="@Url.Content("~/blog/" + item.TitleEncoded + "/")" class="ir readmore"><em></em>@item.TitleEncoded</a>
+}
+
+@if (Model.Posts.Count() == 0)
+{
+    <p>
+        <i>No news to display, currently.</i>
+    </p>
+}

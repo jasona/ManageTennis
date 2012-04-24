@@ -1,0 +1,34 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Services
+@{
+    ContentService service = new ContentService();
+    Content content = service.GetPage("juniors", "travel-program");
+
+    ViewBag.Title = content.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(new HtmlString(content.Content1))
+
+@section calloutblock {
+    <div class="right">
+        <a href="/docs/C4_performance_sign_up.doc">
+            <span class="c4">Juniors Academy <b>Sign up<br />now!</b></span>
+            <span class="ir signup"><em></em>Sign Up!</span>
+        </a>
+    </div>
+}
+
+@section right {
+    <h3>Downloads</h3>
+    <ul class="verbose">
+        <li><a href="/docs/Calendar_of_Junior_Tournaments.doc">Juniors Tournament Calendar</a></li>
+    </ul>
+    <br />
+    <br />
+    <h3>Interested?</h3>
+    <p>
+        Please <a href="@Url.Content("~/contact/")">contact us</a> for more details on pricing, scheduling 
+        and availability.
+    </p>
+}

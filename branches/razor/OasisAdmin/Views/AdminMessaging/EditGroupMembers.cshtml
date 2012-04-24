@@ -1,0 +1,89 @@
+﻿@using Oasis.Lib
+@model Oasis.Lib.Models.AdminGroupsEditMembersModel
+@{
+    ViewBag.Title = "Edit Group Members";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = true;
+}
+
+<h1>Edit Group Members</h1>
+<br />
+<form action="/messaging/EditGroupMembersConfirm/" method="post">
+<table width="100%">
+    <tr>
+        <td align="center" valign="top">
+            <b>Current Members:</b><br />
+            <select multiple="multiple" id="GroupMembers" name="GroupMembers" style="width:250px">
+            @foreach (User user in Model.GroupMembers)
+            {
+                <option value="@user.UserId">@user.LastName, @user.FirstName (@user.EmailAddress)</option>
+            }
+            </select>
+        </td>
+        <td align="center" valign="top">
+            &nbsp;<br />
+            <input type="button" value="   <<  " name="left" class="button" /><br />
+            <input type="button" value="   >>  " name="right" class="button" /><br />
+            <input type="button" value="Reset" name="reset" class="button" /><br />
+            <input type="button" value=" Save " name="save" class="button" />
+        </td>
+        <td align="center" valign="top">
+            <b>Available Members:</b><br />
+            <select multiple="multiple" id="NotGroupMembers" name="NotGroupMembers" style="width:250px">
+            @foreach (User user in Model.NotGroupMembers)
+            {
+                <option value="@user.UserId">@user.LastName, @user.FirstName (@user.EmailAddress)</option>
+            }
+            </select>
+        </td>
+    </tr>
+</table>
+<input type="hidden" id="GroupId" name="GroupId" value="@Model.GroupId" />
+</form>
+@section head
+{
+    <script type="text/javascript" src="/js/jquery.selso.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            function sortBoxes() {
+                $('select[name=GroupMembers],select[name=NotGroupMembers]').find('option').selso({
+                    type: 'alpha',
+                    extract: function (o) { return $(o).text(); }
+                });
+
+                $('select[name=GroupMembers],select[name=NotGroupMembers]').find('option:selected').removeAttr('selected');
+            }
+
+            $('input[name=left]').click(function () {
+                $('select[name=NotGroupMembers] option:selected').each(function () {
+                    $('select[name=GroupMembers]').append(this);
+                });
+                sortBoxes();
+            });
+
+            $('input[name=right]').click(function () {
+                $('select[name=GroupMembers] option:selected').each(function () {
+                    $('select[name=NotGroupMembers]').append(this);
+                });
+                sortBoxes();
+            });
+
+            $('input[name=reset]').click(function () {
+                window.location.reload();
+            });
+
+            $('input[name=save]').click(function () {
+                $('select[name=GroupMembers]').find('option').each(function () {
+                    $(this).attr('selected', 'selected');
+                });
+
+                $('form').submit();
+            });
+
+            sortBoxes();
+        });
+
+    </script>
+}

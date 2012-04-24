@@ -1,0 +1,23 @@
+﻿@{
+    Random random = new Random();
+    var totalAds = 2;
+    var randomAd = random.Next(1, totalAds + 1);
+}
+
+@if (randomAd == 1)
+{
+    <div class="right">
+        <a href="/docs/C4_performance_sign_up.doc">
+            <span class="c4">Juniors Academy <b>Sign up<br />now!</b></span>
+            <span class="ir signup"><em></em>Sign Up!</span>
+        </a>
+    </div>
+} else if (randomAd == 2) {
+    <div class="right">
+        <a href="/docs/MembershipApplication.pdf">
+            <span>Get an Oasis <b>Membership Application</b></span>
+            <span class="ir download"><em></em>Download</span>
+        </a>
+    </div> 
+}
+ 

@@ -1,0 +1,564 @@
+/***********************************************************************
+*							Table of =Contents
+* ----------------------------------------------------------------------
+* =Normalization (CSS Reset)..................................(Line  20)
+* =Master.....................................................(Line  57)
+* =Home.......................................................(Line 117)
+* =About Us...................................................(Line 162)
+* =Staff......................................................(Line 200)
+* =Construction...............................................(Line 261)
+* =C4 Academy.................................................(Line 301)
+* =Membership.................................................(Line 353)
+* =Members Area...............................................(Line 385)
+* =Calendar...................................................(Line 416)
+* =FAQ........................................................(Line 443)
+* =Contact Us.................................................(Line 464)
+* =Policy.....................................................(Line 518)
+*************************************************************************/
+
+/***********************************
+		=Normalization
+***********************************/
+
+/* Normalizes Margin, padding */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin: 0; padding: 0;}
+
+/* Normalizes font-size for headers */
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+
+/* Removes list-style from lists */
+ol, ul { list-style: none; }
+
+/* Normalizes font-style and font-weight to normal */
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal; }
+
+/* Removes border styles from tables */
+table { border-spacing: 0; border-collapse: collapse;}
+
+/* Removes border from fieldset and img */
+fieldset, img { border: 0; }
+
+/* Left aligns text in caption and th */
+caption, th { text-align: left; }
+
+/* Removes quotation marks from q */
+q:before, q:after { content: ''; }
+
+/* Normalize Links for Netscape when image replacements are used (text decorates the whole page width up to the IR'd link with an underline) */
+a { text-decoration: none; color: black;}
+	a:hover { text-decoration: underline; }
+	
+.ir { position: relative; overflow: hidden; display: block;}
+	.ir em { position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; display: block; background-repeat: no-repeat;}
+	
+	a em { cursor: pointer; }
+
+/***********************************
+		=Master
+***********************************/
+body, a { background: #2e2c44; color: White; font-family: Calibri,Sans-Serif; font-size: 14px; }
+
+#Wrapper { width: 960px; margin: auto; }
+
+#Header { overflow: hidden; margin: 4px 0 4px 38px; background: url(/Content/Images/Header_repeater.jpg) repeat-x left center; }
+    #Header_Logo { float: left; width: 160px; height: 80px; }
+        #Header_Logo em { background: url(/Content/Images/Oasis_logo.jpg) no-repeat left top; }
+    #Header_Info { float: right; margin: 26px 0 0; padding: 0 0 0 10px; background: #2e2c44; }
+
+#Content { overflow: hidden; margin: 0 0 40px 0; }
+    
+#Sidebar { float: left; width: 130px; margin: 24px 0 0; }
+    #Sidebar ul { }
+            #Sidebar ul li a { background: #036596 url(/Content/Images/nav_left.jpg) no-repeat left top; width: 100%; padding: 5px 0 5px 8px; display: block; font-size: 16px; }
+            #Sidebar ul li a:hover { background: #333333 url(/Content/Images/nav_left_hover.jpg) no-repeat left top; text-decoration: none; }
+            #Sidebar ul li.selected a { background: #ffffff; color: #036596; }
+            
+            #Sidebar ul li.first a { background: #036596 url(/Content/Images/nav_topleft.jpg) no-repeat left top; }
+                #Sidebar ul li.first a:hover { background: #036596 url(/Content/Images/nav_topleft_hover.jpg) no-repeat left top; }
+                #Sidebar ul li.first.selected a { background: #ffffff url(/Content/Images/nav_topleft_selected.jpg) no-repeat left top; }
+                
+            #Sidebar ul li.last a { background: #036596 url(/Content/Images/nav_bottomleft.jpg) no-repeat left bottom; }
+                #Sidebar ul li.last a:hover { background: #036596 url(/Content/Images/nav_bottomleft_hover.jpg) no-repeat left bottom; }
+                #Sidebar ul li.last.selected a { background: #ffffff url(/Content/Images/nav_bottomleft_selected.jpg) no-repeat left bottom; }
+
+#SubContent { margin-left: 130px; }
+    #SubContent .bodyWrapper { position: relative; background: #2E2C44; }
+
+    #SubContent .bodyTopLeftRounder, #SubContent .bodyBottomLeftRounder, #SubContent .bodyBottomRightRounder
+    { position: absolute; width: 20px; height: 20px; z-index: 1000; }
+    
+    #SubContent .bodyTopLeftRounder { left: 0; top: 0; background: url(/Content/Images/body_topleft.png) no-repeat left top; }
+    #SubContent .bodyBottomLeftRounder { left: 0; bottom: 0; background: url(/Content/Images/body_bottomleft.png) no-repeat left bottom; }
+    #SubContent .bodyBottomRightRounder { right: 0; bottom: 0; background: url(/Content/Images/body_bottomright.png) no-repeat right bottom; }
+    
+    #BodyContent { border: solid 2px #ffffff; position: relative; }
+
+#Footer  
+{
+    overflow: hidden; 
+    background: url(/Content/Images/footer_shadow.jpg) no-repeat left top;  
+    color: #999999;
+    font-size: 12px;
+}
+    #Footer_Copy { float: left; padding: 24px 0 0; }
+    #Footer_Call { float: right; padding: 12px 0 0; }
+        #Footer_Call span { font-size: 24px; color: #fff; }
+
+.modal{
+	display: none;
+	background: #fff;
+	border: 20px solid #777;
+	float: left;
+	position: fixed;
+	top: 40%; left: 40%;
+}
+
+/***********************************
+		=Home
+***********************************/
+#Home {position: absolute; bottom: 0; z-index: 800; color: #000; font-size: 16px; width: 100%; }
+    #Home a { background: transparent; }
+    #Home h2 { color: #036596; font-size: 64px; font-weight: normal; display: block; float: left; width: 400px; padding: 0; margin: 0 0 0 10px; line-height: 52px; }
+    #Home h2.welcome { padding: 0 0 170px 0; }
+    #Home .homeLeft { float: left; clear: left; width: 368px; padding: 24px 36px 14px 16px; background: #ddd; position: absolute; bottom: 0; font-size: 16px; }
+        #Home .homeLeft a { display: block; padding: 20px 0 0; color: #AA562C; }
+    
+    #Home .homeRight { position: absolute; bottom: 0; right: 0; width: 320px;  background: transparent url(/Content/Images/home_right_bg.png) no-repeat right top; padding: 10px 36px 10px 64px; }
+        #Home .homeRight b { font-size: 12px; font-weight: bolder; }
+        #Home .homeRight h3 { font-size: 32px; color: #036596; font-weight: normal; }
+        #Home .homeRight ul { list-style: disc inside; }
+            #Home .homeRight ul li { font-size: 14px; padding-left: 16px; font-weight: lighter;  }
+    
+    #Home .homeCallout { position: absolute; left: 370px; bottom: 105px; width: 92px; height: 92px; }
+        #Home .homeCallout em { background: url(/Content/Images/home_callout.png) no-repeat left top; }
+        #Home a.homeSpecialCallout:hover { text-decoration:none; }
+
+/* rotator in-page placement */
+div#homeRotator {
+	position:relative;
+	height:530px;
+	overflow: hidden;
+}
+/* rotator css */
+div#homeRotator ul li {
+	float:left;
+	position:absolute;
+	bottom: 0;
+	left: 0;
+}
+/* rotator image style */	
+div#homeRotator ul li img {
+	background: #FFF;
+	height: auto;
+	width: 826px;
+	vertical-align: 72px;
+}
+div#homeRotator ul li.show {
+	z-index:500;
+}
+
+
+
+/***********************************
+		=About Us
+***********************************/
+#About { padding: 0px 10px 20px; background: #fff; color: #000; font-size: 12px; }
+
+#About_Top { overflow: hidden; }
+    #About_Left { float: left; width: 560px; margin-bottom: 4px; }
+        #About_Left h1 { font-size: 28px; color: #036596; font-weight: normal; }
+        #About_Left h2 { font-size: 24px; color: #a53f1e; font-weight: normal; }
+    #About_Right { margin-left: 560px; }
+        #About_Right a { display: block; margin: 20px 0 0; color: #AA562C; font-size: 12px; background: #fff; }
+    
+#About_Bottom p { padding: 0 0 14px; }    
+    
+/* rotator in-page placement */
+div#aboutRotator {
+	position:relative;
+	height:240px;
+	overflow: hidden;
+}
+/* rotator css */
+div#aboutRotator ul li {
+	float:left;
+	position:absolute;
+	left: 0;
+}
+/* rotator image style */	
+div#aboutRotator ul li img {
+	background: #FFF;
+	height: auto;
+	width: 826px;
+	
+}
+div#aboutRotator ul li.show {
+	z-index:500;
+}
+    
+
+/***********************************
+		=Staff
+***********************************/
+
+#Staff { padding: 0px 10px 10px 10px; background: #fff; color: #000; }
+
+#Staff_Top { overflow: hidden; }
+    #Staff_Left { float: left; width: 560px; }
+        #Staff_Left h1 { font-size: 28px; color: #036596; font-weight: normal; }
+        #Staff_Left h2 { font-size: 24px; color: #a53f1e; font-weight: normal; }
+
+    #Staff_Right { margin: 20px 0 0 560px; }
+        #Staff_Right a { color: #AA562C; font-size: 12px; background: #fff; }
+    
+#Staff_Bottom { display: block; width: 100%; overflow: hidden; margin: 10px 0 0; }
+    #ChrisHill { float: left; width: 104px; }
+    #Staff_Lower_Left
+    { 
+        background: url(/Content/Images/bg_staff_lower.jpg) repeat-x left top; 
+        float: left;
+        width: 274px;
+        padding: 0 8px 8px;
+        margin-right: 4px;
+    }
+    #RaulMorant { float: left; width: 104px; }
+    #Staff_Lower_Right
+    {
+        background: url(/Content/Images/bg_staff_lower.jpg) repeat-x left top; 
+        margin-left: 506px;
+        padding: 0 8px 8px;
+    }
+    
+    #Staff_Lower_Left .inner, #Staff_Lower_Right .inner { height: 226px; overflow: auto; }
+    #Staff_Lower_Left .inner p span { margin-right: 10px; }
+    
+    #Staff_Bottom h3 { color: #a53f1e; display: inline; font-size: 16px; }
+    #Staff_Bottom h4 { margin: 2px 0; }
+    #Staff_Bottom a { color: #a53f1e; margin-left: 8px; background: transparent; font-size: 12px; }
+    #Staff_Bottom p { font-size: 12px; margin-bottom: 12px; }     
+
+/* rotator in-page placement */
+div#staffRotator {
+	position:relative;
+	height:240px;
+	overflow: hidden;
+}
+/* rotator css */
+div#staffRotator ul li {
+	float:left;
+	position:absolute;
+	left: 0;
+}
+/* rotator image style */	
+div#staffRotator ul li img {
+	background: #FFF;
+	height: auto;
+	width: 826px;
+	
+}
+div#staffRotator ul li.show {
+	z-index:500;
+}
+
+/***********************************
+		=Construction
+***********************************/
+
+#Construction_Top 
+{ 
+    background: #fff url(/Content/Images/bg_construction.jpg) no-repeat right top; 
+    color: #000; 
+    height: 196px; 
+    position: relative; 
+    padding: 0px 16px 16px 16px;
+}
+    #Construction_Top h2 { color: #a53f1e; font-size: 38px; }
+    #Construction_Top p { display: block; width: 460px; font-size: 12px; padding-bottom: 16px; }
+    #Construction_Top #Elevation_Callout 
+    {
+        position: absolute;
+        bottom: 20px;
+        left: 70px;  
+    }
+        #Construction_Top #Elevation_Callout a 
+        {  
+            background: transparent;
+            color: #000;
+            float: left;
+            clear: left;
+        }
+            #Construction_Top #Elevation_Callout a span { font-size: 11px; }
+
+#Construction_Bottom { background: #81723E; overflow: hidden; font-size: 12px; padding-bottom: 16px; }
+    #Construction_Bottom div { margin: 8px; }
+    #Construction_Bottom_Left { float: left; width: 266px; }
+    #Construction_Bottom_Middle { float: left; width: 266px; }
+    #Construction_Bottom_Right { margin-left: 564px; }
+    
+    #Construction_Bottom h3 { font-size: 20px; font-weight: normal; }
+    #Construction_Bottom ul { margin-top: 8px; list-style: disc inside; }
+
+
+/***********************************
+		=C4 Academy
+***********************************/
+#C4 { background: #fff; color: #000;  }    
+    #C4Left 
+    { 
+        float: left; 
+        width: 508px; 
+        height: 516px; 
+        overflow: auto; 
+        margin-top: 4px; 
+        background: url(/Content/Images/bg_c4.jpg) repeat-x left top; 
+    }
+        #C4Left .gradient { margin: 4px; padding: 4px; }
+        #C4Left p { padding-bottom: 8px; font-size: 15px; }
+        #C4Left h3 { padding: 16px 0 6px; font-size: 16px; }
+        #C4Left ul {}
+            #C4Left ul li { padding-bottom: 8px; }
+                #C4Left ul li p { padding-bottom: 0; }
+                    #C4Left ul li b { font-size: 14px; }
+                #C4Left ul li.socials p { padding-top: 8px; }
+                    #C4Left ul li.socials ul { list-style: disc inside; margin-left: 20px; }
+                        #C4Left ul li.socials ul li { padding: 6px 0; }
+        
+    #C4Right { margin-left: 517px; }
+        #C4Right_Bottom { margin: 4px 0 0 4px; }
+
+
+
+/* rotator in-page placement */
+div#c4Rotator {
+	position:relative;
+	height:249px;
+	overflow: hidden;
+}
+/* rotator css */
+div#c4Rotator ul li {
+	float:left;
+	position:absolute;
+	left: 0;
+}
+/* rotator image style */	
+div#c4Rotator ul li img {
+	background: #FFF;
+	height: auto;
+	width: 309px;
+	
+}
+div#c4Rotator ul li.show {
+	z-index:500;
+}
+
+
+/***********************************
+		=Membership
+***********************************/
+#Membership_Top { overflow: hidden; background: #f6f6f6 url(/Content/Images/bg_membership.jpg) no-repeat left top; padding-top: 164px; color: #000; }
+    #Membership_Top h2 { color: #036596; font-size: 32px; font-weight: normal; margin-left: 8px; } 
+    #Membership_Left { float: left; width: 300px; padding: 30px 0 0 40px; }
+    
+        #Membership_Left h3 { color: red; font-size: 22px; font-weight: normal; width: 246px; height: 30px; padding-bottom: 16px; }
+        #Membership_Left h3 em { background: url(/Content/Images/Membership_1st_100_members.jpg) no-repeat left top; }
+        
+        #Header_Logo { float: left; width: 160px; height: 80px; }
+        #Header_Logo em { background: url(/Content/Images/Oasis_logo.jpg) no-repeat left top; }
+        
+        #Membership_Left div { padding: 6px 0; }
+        #Membership_Left p { font-weight: bold; font-size: 12px; }
+        
+            #Membership_Left table thead tr th, #Membership_Left table tbody tr td 
+            { font-weight: bold; font-size: 12px; padding: 0 6px;}
+            
+        
+    #Membership_Right { margin: 30px 0 0 340px; width: 372px; height: 226px; }
+    #Membership_Right em { background: url(/content/Images/Membership_table_right.jpg) no-repeat left top; }
+
+#Membership_Bottom { background: #f6f6f6; clear: both; padding: 40px 0 20px 40px; }  
+    #Membership_Bottom a { color: #a53f1e; background: #f6f6f6; }
+
+#Membership_Callout { position: absolute; bottom: 8px; right: 80px; color: #000;}
+    #Membership_Callout h4 {text-transform:uppercase; font-size: 12px; font-weight: bold; }
+    #Membership_Callout h2 { color: #a53f1e; font-size: 26px; font-weight: normal; line-height: 28px;}
+    #Membership_Callout a { background: #f6f6f6; color:#106f9f; font-size: 12px; }
+
+
+/***********************************
+		=Members Area
+***********************************/
+
+#Members { background: #fff; height: 200px; }
+    #Members h2 { color: #036596; font-size: 32px; font-weight: normal; padding: 0px 8px 8px 8px; }
+    #Members a { background: #fff; color: #a53f1e; display: block; width: 200px; padding: 10px 24px; }
+
+/* rotator in-page placement */
+div#membersRotator {
+	position:relative;
+	height:200px;
+	overflow: hidden;
+}
+/* rotator css */
+div#membersRotator ul li {
+	float:left;
+	position:absolute;
+	left: 0;
+}
+/* rotator image style */	
+div#membersRotator ul li img {
+	background: #FFF;
+	height: auto;
+	width: 830px;
+}
+div#membersRotator ul li.show {
+	z-index:500;
+}
+
+
+/***********************************
+		=Calendar
+***********************************/
+#Calendar { background: #fff; }
+
+#Calendar_Top 
+{ 
+    overflow: hidden; 
+    background: #fff url(/Content/Images/bg_membership.jpg) no-repeat left top; 
+    color: #000; 
+    padding: 164px 0 0 10px;
+}
+    #Calendar_Top h2 { color: #036596; font-size: 32px; font-weight: normal; padding-bottom: 16px; }
+    #Calendar_Top h4 { color: #036596; font-weight: normal; font-size: 16px; padding-bottom: 16px; }
+    
+    #Calendar_Left, #Calendar_Middle, #Calendar_Right { height: 260px; }
+    
+    #Calendar_Left { float: left; width: 266px; border-right: solid 1px #d6d6d6; }
+    #Calendar_Middle { float: left; width: 266px; border-right: solid 1px #d6d6d6; }
+    #Calendar_Right { margin-left: 546px; position: relative; }
+
+#Calendar_Callout { color: #000; bottom: 8px; left: 0; position: absolute; }
+    #Calendar_Callout h4 {text-transform:uppercase; font-size: 12px; font-weight: bold; }
+    #Calendar_Callout h2 { color: #a53f1e; font-size: 26px; font-weight: normal; line-height: 28px;}
+    #Calendar_Callout a { background: #fff; color:#106f9f; font-size: 12px; }
+
+
+/***********************************
+		=FAQ
+***********************************/
+#FAQ { color: #000; padding: 10px; background: #fff; }    
+    #FAQ_Content { background: #fff url(/Content/Images/bg_faq.jpg) no-repeat right top; }
+        #FAQ_Scroller 
+        { 
+            overflow: auto; 
+            width: 488px;
+            height: 484px;
+            margin: 4px; 
+            padding: 4px; 
+            background: url(/Content/Images/bg_c4.jpg) repeat-x right top; 
+        }
+        
+    #FAQ_Scroller h2 { font-size: 20px; font-weight: bold; margin: 0 0 16px; }
+        #FAQ_Scroller ul li  { padding-bottom: 12px; }
+            #FAQ_Scroller ul li p { margin-bottom: 12px; font-size: 12px; }
+                #FAQ_Scroller ul li p b { font-size: 13px; }
+
+
+/***********************************
+		=Contact Us
+***********************************/
+#Contact { background: #fff; color: #000; }
+    #Contact h2 { color: #036596; font-size: 32px; font-weight: normal; margin: 6px 0; }
+   
+#Contact_Left { float: left; width: 468px; margin: 16px; }
+    #Contact_Left_Left { float: left; width: 240px; }
+        #Contact_Left_Left div { padding-bottom: 16px; }
+        #Contact_Left_Left p a { color: #a53f1e; background: #fff; }
+        #Contact_Left_Left .phone { color: #717171; }
+    
+    #Contact_Left_Right { margin-left: 240px; }
+    
+    #Contact_Form { clear: both; position: relative; width: 400px; }
+        #Contact_Form span 
+        { 
+            width: 80px; 
+            display: block; 
+            float: left; 
+            clear: left; 
+            margin: 5px 0; 
+            font-size: 10px; 
+        }
+        #Contact_Form input, #Contact_Form textarea 
+        { 
+            float: left; 
+            width: 300px; 
+            background: #f3f3f3;
+            border: solid 1px #d3d3d3;
+            overflow: hidden;
+            margin: 5px 0;
+            line-height: 16px;
+            height: 16px;
+        } 
+            #Contact_Form textarea { width: 300px; height: 64px; resize: none; }
+            #Contact_Form input.checkbox { border: none; width: auto; background: #fff; } 
+            #Contact_Form input.sendButton 
+            { 
+                border: none;
+                margin: 0 0 0 324px;
+                height: 24px;
+                line-height: 24px;
+                background: none; 
+                width: 60px; 
+                font-size: 24px;
+                color: #036596;
+                font-weight: bold;
+                letter-spacing: -2px;
+            }
+            #Contact_Form input.sendButton:hover { color: #025485; cursor: pointer; }
+    
+        
+#Contact_Right { margin: 0 0 0 500px; }
+
+/***********************************
+		=Policy
+***********************************/
+#Policy { overflow: hidden; background: #f6f6f6 url(/Content/Images/bg_membership.jpg) no-repeat left top; padding: 164px 16px 0 8px; color: #000; }
+    #Policy .scroller { overflow: auto;height: 400px; margin: 2px 0 ; }
+    
+    #Policy h2 { font-size: 32px; color: #036596; font-weight: normal; padding-top: 0px;  }
+    
+    #Policy h3 { font-size: 18px; margin: 10px 0; }
+    
+    #Policy ul li ul { list-style: disc inside; margin-bottom: 14px; }
+        #Policy ul li ul li { font-size: 12px; }
+        
+/*
+
+    =ContentPage
+*/     
+#ContentPage { background: #fff; height: 200px; }
+    #ContentPage h2 { color: #036596; font-size: 32px; font-weight: normal; padding: 0px 8px 8px 8px; }
+    #ContentPage a { background: #fff; color: #a53f1e; display: block; width: 200px; padding: 10px 24px; }
+    #ContentPage p { color: #000000; margin-left: 8px; }
+    
+/* rotator in-page placement */
+div#contentPageRotator {
+	position:relative;
+	height:200px;
+	overflow: hidden;
+}
+/* rotator css */
+div#contentPageRotator ul li {
+	float:left;
+	position:absolute;
+	left: 0;
+}
+/* rotator image style */	
+div#contentPageRotator ul li img {
+	background: #FFF;
+	height: auto;
+	width: 830px;
+}
+div#contentPageRotator ul li.show {
+	z-index:500;
+}
+

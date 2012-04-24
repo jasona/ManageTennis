@@ -1,0 +1,27 @@
+﻿<script type="text/javascript">
+    // This will dynamically add the selected class to the current li item
+    $(document).ready(SetSelectedListItem);
+
+    function SetSelectedListItem() {
+        var currentAction = '<%= Url.RequestContext.RouteData.Values["action"] %>';
+        var liToChange = "#navli_" + currentAction;
+        $(liToChange).parent().addClass("selected");
+    }
+</script>
+@{
+    var currentAction = Url.RequestContext.RouteData.Values["action"].ToString().ToLower().Trim();
+}
+<ul>
+    <li @{ if (currentAction == "index") {<text>class="first selected"</text> } else {<text>class="first"</text> } }><a href="/" id="navli_Index">Home</a></li>
+    <li @{ if (currentAction == "about") {<text>class="selected"</text>} }><a href="/About/" id="navli_About">About Us</a></li>
+    <li @{ if (currentAction == "staff") {<text>class="selected"</text>} }><a href="/Staff/" id="navli_Staff">Staff</a></li>
+    <li @{ if (currentAction == "construction") {<text>class="selected"</text>} }><a href="/Construction/" id="navli_Construction">Construction</a></li>
+    <li @{ if (currentAction == "c4academy") {<text>class="selected"</text>} }><a href="/C4Academy/" id="navli_C4Academy">C4 Academy</a></li>
+    <li @{ if (currentAction == "membership") {<text>class="selected"</text>} }><a href="/Membership/" id="navli_Membership">Membership</a></li>
+    <li @{ if (currentAction == "members") {<text>class="selected"</text>} }><a href="/Members/" id="navli_Members">Members Area</a></li>
+    <li @{ if (currentAction == "calendar") {<text>class="selected"</text>} }><a href="/Calendar/" id="navli_Calendar">Calendar</a></li>
+    <li @{ if (currentAction == "faq") {<text>class="selected"</text>} }><a href="/FAQ/" id="navli_FAQ">FAQ</a></li>
+    <li @{ if (currentAction == "links") {<text>class="selected"</text>} }><a href="/Links/" id="navli_Links">Links</a></li>
+    <li @{ if (currentAction == "contact") {<text>class="selected"</text>} }><a href="/Contact/" id="navli_Contact">Contact Us</a></li>
+    <li @{ if (currentAction == "policy") {<text>class="last selected"</text>} else {<text>class="last"</text>} }><a href="/Policy/" id="navli_Policy">Policy</a></li>
+</ul>

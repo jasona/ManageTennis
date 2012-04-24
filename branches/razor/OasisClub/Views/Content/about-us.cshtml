@@ -1,0 +1,36 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Services
+@model Oasis.Lib.Models.AboutUsModel
+@{
+    ContentService service = new ContentService();
+    Content content = service.GetPage(null, "about-us");
+
+    ViewBag.Title = content.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(new HtmlString(content.Content1))
+
+@section right {
+    @Html.Partial("_BlogList", Model.BlogList)    
+    <br />
+    <h3>Photos</h3>
+    <div class="blackBox">
+        <span><a href="/content/photos/zuni_and_raul.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/zuni_and_raul.jpg" width="110" height="100" /></a></span>
+    </div>
+    <div class="blackBox">
+        <span><a href="/content/photos/100_0346.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/100_0346.jpg" width="110" height="100" /></a></span>
+    </div>
+    <div class="blackBox">
+        <span><a href="/content/photos/DSC01449_cropped.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/DSC01449_cropped.jpg" width="110" height="100" /></a></span>
+    </div>
+    <div class="blackBox">
+        <span><a href="/content/photos/Raul.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/Raul.jpg" width="110" height="100" /></a></span>
+    </div>
+    <div class="blackBox">
+        <span><a href="/content/photos/SLC_Tennis_Finals.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/SLC_Tennis_Finals.jpg" width="110" height="100" /></a></span>
+    </div>
+    <div class="blackBox">
+        <span><a href="/content/photos/SLC_Tennis_Finals_02.jpg" class="lightbox" rel="juniorsphoto"><img src="/content/photos/SLC_Tennis_Finals_02.jpg" width="110" height="100" /></a></span>
+    </div>
+}

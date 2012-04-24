@@ -1,0 +1,50 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Util
+@model Oasis.Lib.Models.AdminMembersListModel
+@{
+    ViewBag.Title = "Manage Members";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = false;
+    var curMax = (Model.PageNumber * 10);
+    var prevPage = Model.PageNumber - 1;
+    var nextPage = Model.PageNumber + 1;
+}
+
+<h1>Manage Members</h1>
+<table class="tabledata" width="100%" border="0" cellspacing="1" cellpadding="3">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Type</th>
+    </tr>
+    @foreach (User user in Model.Users)
+    {
+    <tr>
+        <td><a href="/members/edit/@user.UserId">@user.LastName, @user.FirstName</a></td>
+        <td>@user.EmailAddress</td>
+        <td>@OasisUtility.GetUserStatusString(user.UserStatusID)</td>
+        <td>@OasisUtility.GetUserTypeString(user.UserTypeId)</td>
+    </tr>
+    }
+</table>
+@if (Model.PageNumber > 1)
+{
+<a href="/members/list/@prevPage">[Prev Page]</a>
+}
+&nbsp;&nbsp;
+@if (curMax < Model.UserCount)
+{
+    <a href="/members/list/@nextPage">[Next Page]</a>
+}
+
+@section otheroptions {
+    <li><a href="/members/create/">Add Member</a></li>
+}
+
+@section search {
+    <form action="/members/search/" method="get">
+        <input type="text" name="q" /><br />
+        <input type="submit" value="Search Members" />
+    </form>
+}

@@ -1,0 +1,50 @@
+﻿@model Oasis.Lib.Models.AdminContentEditModel
+@{
+    ViewBag.Title = "Edit Content";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = true;
+}
+
+<h1>Edit Content</h1>
+<form action="/site-content/edit/" method="post">
+<div>
+    <font color="red">@Request.QueryString["error"]</font><br />
+    Content:&nbsp;&nbsp;<font color="red">*</font><br />
+    <textarea name="pageContent" class="wymeditor">@Model.Content.Content1</textarea><br /> 
+    <br />
+    Dir Name:&nbsp;&nbsp;<font color="red">*</font><br />
+    @Html.TextBox("dirName", Model.Content.DirName, new { size = "40", maxlength = "128" })<br />    
+    <br />
+    Page Name:&nbsp;&nbsp;<font color="red">*</font><br />
+    @Html.TextBox("pageName", Model.Content.PageName, new { size = "40", maxlength = "128" })<br />    
+    <br />
+    Title:&nbsp;&nbsp;<font color="red">*</font><br />
+    @Html.TextBox("pageTitle", Model.Content.Title, new { size = "40", maxlength = "128" })<br />    
+    <br />
+    <font color="red">* = Required Field</font><br />
+    <br />
+    <input type="hidden" name="contentId" value="@Model.Content.ContentId" />
+    <input type="submit" value="Save Changes" class="wymupdate" />
+</div>
+</form>
+
+@section head {
+<script type="text/javascript">
+
+    /* Here we replace each element with class 'wymeditor'
+    * (typically textareas) by a WYMeditor instance.
+    * 
+    * We could use the 'html' option, to initialize the editor's content.
+    * If this option isn't set, the content is retrieved from
+    * the element being replaced.
+    */
+
+    jQuery(function () {
+        jQuery('.wymeditor').wymeditor({
+            dialogFeatures: "resizable=yes",
+            skin: "compact"
+        });
+    });
+ 
+</script> 
+}

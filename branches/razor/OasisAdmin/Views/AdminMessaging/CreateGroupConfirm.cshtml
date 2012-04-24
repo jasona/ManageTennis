@@ -1,0 +1,14 @@
+﻿@model Oasis.Lib.Models.AdminGroupsCreateModel
+@{
+    ViewBag.Title = "Group Created!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = false;
+}
+
+<h1>Group Created!</h1>
+
+Your group has been created. <a href="/messaging/EditGroupMembers/@Model.GroupId">Click here</a> to add members to this group.
+
+@section otheroptions {
+    <li><a href="/messaging/CreateGroup/">Add Group</a></li>
+}

@@ -1,0 +1,43 @@
+﻿@model Oasis.Lib.Models.PaymentModel
+@{
+    ViewBag.Title = "Oasis Beach & Tennis Club | Payment Confirmation";
+    Layout = "~/Views/Shared/_FullLayout.cshtml";
+}
+
+<h1>Payment Confirmation</h1>
+
+<h2>@(new HtmlString(Model.ResponseMessage))</h2>
+<br />
+
+@if (Model.TransactionApproved)
+{
+    <b>Payment Details:</b><br />
+    <br />
+    <b>Confirmation Number:</b><br />
+        @Model.AuthorizationCode<br />
+    <b>Amount:</b><br />
+        @Model.Amount<br />
+    <b>Description:</b><br /> 
+        @Model.Description<br />
+    <br />
+    <br />
+    <b>First Name:</b><br />
+        @Model.FirstName<br />
+    <b>Last Name:</b><br />
+        @Model.LastName<br />
+    <b>Address 1:</b><br />
+        @Model.Address1<br />
+    <b>Address 2:</b><br />
+        @Model.Address2<br />
+    <b>City:</b><br />
+        @Model.City<br />
+    <b>Zip Code:</b><br />
+        @Model.ZipCode<br />
+    <br />
+    <b>Credit Card Number:</b><br />
+        <span>********@Model.CCNumber.Substring(Model.CCNumber.Length - 4, 4)</span><br />
+    <b>Type:</b><br />
+        @Model.CCType<br />
+    <b>Expiration:</b><br />
+        <span>@Model.ExpirationMonth / @Model.ExpirationYear</span><br />
+}

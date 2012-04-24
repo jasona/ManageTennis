@@ -1,0 +1,144 @@
+﻿@using Oasis.Lib
+@model Oasis.Lib.Models.AdminEventsEditModel
+@{
+    ViewBag.Title = "Edit Event";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = true;
+}
+
+@helper CheckSelectValue(int valueToCheck, int value, string text)
+{
+    if (valueToCheck == value) {
+    <option value="@valueToCheck" selected>@text</option>
+    } else {
+    <option value="@valueToCheck">@text</option>
+    }
+}
+
+@helper CheckBitmaskCheckboxValue(int value, int valueToCheck, string inputName, string text)
+{
+    if ((valueToCheck & value) == value) {
+    <input type="checkbox" name="@inputName" value="@value" checked />  @text<br />
+    } else {
+    <input type="checkbox" name="@inputName" value="@value" />  @text<br />
+    }    
+}
+
+<h1>Edit Event</h1>
+<form action="/events/edit/" method="post">
+<font color="red">@Request.QueryString["error"]</font><br />
+<table border="0" width="100%" cellpadding="20">
+    <tr>
+        <td width="50%" valign="top">            
+            Name:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("eventTitle", Model.Event.Title, new { size="40", maxlength="150" })<br />
+            <br />
+            Encoded Name (read-only):<br />
+            <input type="textbox" name="encodedTitle" size="40" value="@Model.Event.EncodedTitle" onfocus="this.blur();" /><br />
+            <br />
+            Description:&nbsp;&nbsp;<font color="red">*</font><br />
+            <textarea name="eventDescription" cols="32" rows="10" class="wymeditor">@Model.Event.Description</textarea><br />
+            <br />
+            Member Cost:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("memberCost", Model.Event.MemberCost, new { size="40", maxlength="6" })<br />
+            <br />
+            Non-Member Cost:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("nonMemberCost", Model.Event.NonMemberCost, new { size="40", maxlength="6" })<br />
+            <br />
+
+            <input type="hidden" name="eventId" value="@Model.Event.EventId" />
+            <input type="submit" value="Save Event" class="wymupdate button" />
+
+        </td>
+        <td width="50%" valign="top">
+            Event Date:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("eventDate", Model.Event.EventDate.ToShortDateString(), new { id="datepicker", size="30", maxlength="150" })
+            <select name="eventTime">
+                @for (int i = 5; i <= 12; i++)
+                {
+                    var time = i + ":00 " + (i == 12 ? "pm" : "am");
+                    var selected = (time == Model.Event.EventDate.ToShortTimeString().ToLower() ? " selected" : "");
+                <option value="@time"@selected>@time</option>
+                }
+                @for (int i = 1; i <= 10; i++)
+                {
+                    var time = i + ":00 pm";
+                    var selected = (time == Model.Event.EventDate.ToShortTimeString().ToLower() ? " selected" : "");
+                <option value="@time"@selected>@time</option>
+                }
+            </select><br />
+            <br />
+            For Ranks:&nbsp;&nbsp;<font color="red">*</font><br />  
+            @CheckBitmaskCheckboxValue(1, Convert.ToInt32(Model.Event.RankingBitMask), "rank", "1.5")
+            @CheckBitmaskCheckboxValue(2, Convert.ToInt32(Model.Event.RankingBitMask), "rank", "2.0")
+            @CheckBitmaskCheckboxValue(4, Convert.ToInt32(Model.Event.RankingBitMask), "rank", "2.5")
+            @CheckBitmaskCheckboxValue(8, Convert.ToInt32(Model.Event.RankingBitMask), "rank", "3.0")
+            @CheckBitmaskCheckboxValue(16, Convert.ToInt32(Model.Event.RankingBitMask), "rank", "3.5")
+            @CheckBitmaskCheckboxValue(32, Convert.ToInt32(Model.Event.RankingBitMask), "rank", "4.0")
+            @CheckBitmaskCheckboxValue(64, Convert.ToInt32(Model.Event.RankingBitMask), "rank", "4.5")
+            @CheckBitmaskCheckboxValue(128, Convert.ToInt32(Model.Event.RankingBitMask), "rank", "5.0")
+            @CheckBitmaskCheckboxValue(256, Convert.ToInt32(Model.Event.RankingBitMask), "rank", "5.5")
+            @CheckBitmaskCheckboxValue(512, Convert.ToInt32(Model.Event.RankingBitMask), "rank", "6.0")
+            @CheckBitmaskCheckboxValue(1024, Convert.ToInt32(Model.Event.RankingBitMask), "rank", "6.5")
+            @CheckBitmaskCheckboxValue(2048, Convert.ToInt32(Model.Event.RankingBitMask), "rank", "7.0")
+            <br />
+            For Demographics:&nbsp;&nbsp;<font color="red">*</font><br />
+            @CheckBitmaskCheckboxValue(1, Convert.ToInt32(Model.Event.DemographicBitMask), "demographic", "Adults, Men")
+            @CheckBitmaskCheckboxValue(2, Convert.ToInt32(Model.Event.DemographicBitMask), "demographic", "Adults, Women")
+            @CheckBitmaskCheckboxValue(4, Convert.ToInt32(Model.Event.DemographicBitMask), "demographic", "Juniors, Boys")
+            @CheckBitmaskCheckboxValue(8, Convert.ToInt32(Model.Event.DemographicBitMask), "demographic", "Juniors, Girls")
+            <br />
+            Event Type:&nbsp;&nbsp;<font color="red">*</font><br />
+            <select name="eventType">
+                @CheckSelectValue(Model.Event.EventTypeId, 0, "Clinic")
+                @CheckSelectValue(Model.Event.EventTypeId, 1, "Mixer")
+                @CheckSelectValue(Model.Event.EventTypeId, 2, "3-and-Me")
+                @CheckSelectValue(Model.Event.EventTypeId, 3, "Private")
+                @CheckSelectValue(Model.Event.EventTypeId, 4, "Singles Tournament")
+                @CheckSelectValue(Model.Event.EventTypeId, 5, "Doubles Tournament")
+                @CheckSelectValue(Model.Event.EventTypeId, 6, "Club Dinner")
+            </select><br />
+            <br />
+            @Html.CheckBox("ustaSanctioned", Model.Event.USTASanctioned)&nbsp;&nbsp;USTA Sanctioned?<br />
+            <br />
+            @Html.CheckBox("privateEvent", Model.Event.PrivateEvent)&nbsp;&nbsp;Private Event?<br />
+            <br />
+            Available Pros:<br />
+            <select name="proUserId">
+                <option value="0">No Pro Needed</option>
+            @foreach (User user in Model.AvailablePros)
+            {
+                var selected = (user.UserId == Model.Event.ProUserId ? " selected" : "");
+                <option value="@user.UserId" @selected>@user.FirstName @user.LastName</option>
+            }
+            </select>
+        </td>
+    </tr>
+</table>
+</form>
+
+@section head {
+<script type="text/javascript">
+
+    /* Here we replace each element with class 'wymeditor'
+    * (typically textareas) by a WYMeditor instance.
+    * 
+    * We could use the 'html' option, to initialize the editor's content.
+    * If this option isn't set, the content is retrieved from
+    * the element being replaced.
+    */
+
+    jQuery(function () {
+        jQuery('.wymeditor').wymeditor({
+            dialogFeatures: "resizable=yes",
+            skin: "compact"
+        });
+
+        $("#datepicker").datepicker();
+    });
+
+
+ 
+</script> 
+}
+

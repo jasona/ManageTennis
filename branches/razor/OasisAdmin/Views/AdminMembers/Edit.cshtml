@@ -1,0 +1,121 @@
+﻿@model Oasis.Lib.Models.AdminMembersEditModel
+@{
+    ViewBag.Title = "Edit Member";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = true;
+}
+
+@helper CheckSelectValue(int valueToCheck, int value, string text)
+{
+    if (valueToCheck == value) {
+    <option value="@valueToCheck" selected>@text</option>
+    } else {
+    <option value="@valueToCheck">@text</option>
+    }
+}
+
+@helper CheckBitmaskSelectValue(int valueToCheck, int value, string text)
+{
+    if ((valueToCheck & value) == value) {
+    <option value="@valueToCheck" selected>@text</option>
+    } else {
+    <option value="@valueToCheck">@text</option>
+    }
+}
+
+@helper CheckBitmaskCheckboxValue(int value, int valueToCheck, string inputName, string text)
+{
+    if ((valueToCheck & value) == value) {
+    <input type="checkbox" name="@inputName" value="@value" checked />  @text<br />
+    } else {
+    <input type="checkbox" name="@inputName" value="@value" />  @text<br />
+    }    
+}
+
+<h1>Edit Member</h1>
+<h2>@Model.User.EmailAddress - last login: @Model.User.LastLoginDate</h2>
+<form action="/members/edit/" method="post">
+<font color="red">@Request.QueryString["error"]</font><br />
+<table width="100%">
+    <tr>
+        <td width="50%" valign="top">
+            Email Address:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("emailAddress", Model.User.EmailAddress, new { size = "40", maxlength = "255" })<br />    
+            <br />
+            First Name:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("firstName", Model.User.FirstName, new { size = "40", maxlength = "125" })<br />
+            <br />
+            Last Name:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("lastName", Model.User.LastName, new { size = "40", maxlength = "255" })<br />
+            <br />
+            Phone Number:&nbsp;&nbsp;<font color="red">*</font><br />
+            <input type="text" name="phoneNumber" value="@Model.User.PhoneNumber" size="40" maxlength="14" /><br />
+            <br />
+            Mobile Phone Number:&nbsp;&nbsp;<font color="red">*</font><br />
+            <input type="text" name="mobilePhoneNumber" value="@Model.User.MobilePhoneNumber" size="40" maxlength="14" /><br />
+            <br />
+            Address 1:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("address1", Model.User.Address1, new { size = "40", maxlength = "255" })<br />
+            <br />
+            Address 2:<br />
+            @Html.TextBox("address2", Model.User.Address2, new { size = "40", maxlength = "255" })<br />
+            <br />
+            City:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("city", Model.User.City, new { size = "40", maxlength = "255" })<br />
+            <br />
+            State:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("state", Model.User.State, new { size = "40", maxlength = "255" })<br />
+            <br />
+            Zip Code:&nbsp;&nbsp;<font color="red">*</font><br />
+            @Html.TextBox("zipCode", Model.User.EmailAddress, new { size = "40", maxlength = "255" })<br />
+            <br />
+        </td>
+        <td width="50%" valign="top">
+            User Type:&nbsp;&nbsp;<font color="red">*</font><br />
+            <select name="userType">
+                @CheckSelectValue(0, Model.User.UserTypeId, "Web-only User (non-member)")
+                @CheckSelectValue(1, Model.User.UserTypeId, "Member")
+                @CheckSelectValue(2, Model.User.UserTypeId, "Prior Member")
+                @CheckSelectValue(3, Model.User.UserTypeId, "Employee")
+            </select><br />
+            <br />
+            User Status:&nbsp;&nbsp;<font color="red">*</font><br />
+            <select name="userStatus">
+                @CheckSelectValue(0, Model.User.UserStatusID, "Disabled")
+                @CheckSelectValue(1, Model.User.UserStatusID, "Active")
+                @CheckSelectValue(2, Model.User.UserStatusID, "Unvalidated")
+            </select><br />
+            <br />
+            Rank:&nbsp;&nbsp;<font color="red">*</font><br />
+            <select name="rank">
+                @CheckBitmaskSelectValue(1, Model.User.RankId, "1.5")
+                @CheckBitmaskSelectValue(2, Model.User.RankId, "2.0")
+                @CheckBitmaskSelectValue(4, Model.User.RankId, "2.5")
+                @CheckBitmaskSelectValue(8, Model.User.RankId, "3.0")
+                @CheckBitmaskSelectValue(16, Model.User.RankId, "3.5")
+                @CheckBitmaskSelectValue(32, Model.User.RankId, "4.0")
+                @CheckBitmaskSelectValue(64, Model.User.RankId, "4.5")
+                @CheckBitmaskSelectValue(128, Model.User.RankId, "5.0")
+                @CheckBitmaskSelectValue(256, Model.User.RankId, "5.5")
+                @CheckBitmaskSelectValue(512, Model.User.RankId, "6.0")
+                @CheckBitmaskSelectValue(1024, Model.User.RankId, "6.5")
+                @CheckBitmaskSelectValue(2048, Model.User.RankId, "7.0")
+            </select><br />
+            <br />
+            User Access:&nbsp;&nbsp;<font color="red">*</font><br />
+            @CheckBitmaskCheckboxValue(1, Model.User.UserAccessBitMask, "userAccess", "User")
+            @CheckBitmaskCheckboxValue(2, Model.User.UserAccessBitMask, "userAccess", "Member")
+            @CheckBitmaskCheckboxValue(4, Model.User.UserAccessBitMask, "userAccess", "Pro")
+            @CheckBitmaskCheckboxValue(8, Model.User.UserAccessBitMask, "userAccess", "Employee")
+            @CheckBitmaskCheckboxValue(16, Model.User.UserAccessBitMask, "userAccess", "Admin")
+            <br />
+            <font color="red">* = Required Field</font><br />
+            <br />
+            <input type="hidden" name="password" value="@Model.User.Password" />
+            <input type="hidden" name="userId" value="@Model.User.UserId" />
+            <input type="submit" value="Save Changes" class="button" />
+        </td>
+    </tr>
+</table>
+</form>
+

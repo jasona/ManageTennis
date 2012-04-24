@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Oasis Beach & Tennis Club | Contact Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    IEnumerable<SelectListItem> list = new[] {   
+            new SelectListItem { Text = "Adult Programs"},
+            new SelectListItem { Text = "Junior Programs"},
+            new SelectListItem { Text = "Oasis Membership"}
+        };
+}
+
+<div id="Contact">
+    <div id="Contact_Left">
+        <h2>Location</h2>
+        <div id="Contact_Left_Left">
+            <div>
+                <p><b>Physical Address:</b></p>
+                <p>
+                    <a href="http://maps.google.com/maps?q=5757+State+Hwy+205+Rockwall,+TX+75032&ie=UTF8&hl=en&hq=&hnear=5757+Texas+205,+Rockwall,+Texas+75032&ll=32.831063,-96.362629&spn=0.038801,0.087376&z=14" target="_blank">
+                    5757 State Hwy 205<br />
+                    Rockwall, TX 75032 >>MAP</a></p>
+            </div>
+        
+            <div class="phone">
+                <p>972.772.7768 office</p>
+                <p>214.279.4555 fax</p>
+            </div>
+
+            <div>
+                <p><a href="#" rel="zrzorefuvc/bnfvfgraavf.pbz" class="email">contact</a></p>
+                <p><a href="#" rel="npnqrzl/bnfvfgraavf.pbz" class="email">contact</a></p>
+            </div>
+        </div>
+        <div id="Contact_Left_Right">
+            <div id="Contact_Location_Right">
+                <p><b>Mailing Address:</b></p>
+                <p>519 Interstate 30, Suite 146</p>
+                <p>Rockwall, Texas 75087</p>
+            </div>
+        </div>
+        <div id="Contact_Form">
+            <script type="text/javascript">
+                function ContactSubmitted() {
+                    $("#ModalSubmitNotify").fadeIn("slow").delay(5000).fadeOut("slow");
+                }
+
+                function AjaxFailure() {
+                    $("#ModalSubmitNotify").text("There was an error submitting your information.\nPlease contact us via phone.");
+                }
+            </script>
+            <h2>Contact</h2>
+
+            @using (Ajax.BeginForm("SubmitContact", new AjaxOptions()
+               {
+                   OnBegin = "ContactSubmitted",
+                   OnFailure = "AjaxFailure"
+               }))
+            {
+                <div>
+                    <span>Your Name:</span>@Html.TextBox("Name")
+                </div>
+                <div>
+                    <span>Your Email:</span>@Html.TextBox("Email")
+                </div>
+                <div>
+                    <span>Reason:</span>@Html.DropDownList("Reason", list )
+                </div>
+                <div>
+                    <span>Message:</span>@Html.TextArea("Message")
+                </div>
+                <div>
+                    <span>Subscribe to Newsletter:</span>@Html.CheckBox("NewsletterSubscribe", true, new { Class="checkbox" })
+                </div>
+                <div>
+                    <input class="sendButton" type="submit" value="Send" />
+                </div>
+            }
+
+            <div id="ModalSubmitNotify" class="modal">
+                <p>
+                    Thank you for contacting us.</p>
+                <p>
+                    We will respond soon.</p>
+            </div><!-- END SubmitNotify -->
+        </div>
+    </div>
+    <div id="Contact_Right">
+        <iframe width="324" 
+                height="500" 
+                frameborder="0" 
+                scrolling="no" 
+                marginheight="0" 
+                marginwidth="0" 
+                src="http://maps.google.com/maps?q=5757+State+Hwy+205+Rockwall,+TX+75032&amp;ie=UTF8&amp;hl=en&amp;hq=&amp;hnear=5757+Texas+205,+Rockwall,+Texas+75032&amp;ll=32.831063,-96.362629&amp;spn=0.708718,1.454315&amp;z=10&amp;output=embed">
+        </iframe>
+    </div>
+</div>
+    
+

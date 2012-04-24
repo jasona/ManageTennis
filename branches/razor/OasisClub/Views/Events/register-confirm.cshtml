@@ -1,0 +1,17 @@
+﻿@model Oasis.Lib.Models.RegisterConfirmModel
+@{
+    ViewBag.Title = "Confirm Event Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";    
+}
+
+<form action="/events/register/" method="post">
+<center>
+    <h1>Are you sure you would like to register for this event?</h1>
+    <br />
+    <input type="hidden" name="eventId" value="@Model.EventId" />
+    <input type="hidden" name="userId" value="@Model.UserId" />
+    <input type="submit" value="  Yes  " class="button" width="175"/>&nbsp;&nbsp;<input type="button" value="   No   " onClick="window.location='/events/';" class="button"/><br />
+    <br />
+</center>
+</form>
+

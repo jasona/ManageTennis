@@ -1,0 +1,28 @@
+﻿@model Oasis.Lib.Post
+
+@{
+    ViewBag.Title = "Blog | " + Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="ContentPage">
+    @if (Model != null)
+    {
+    <h1>@Model.Title</h1>
+    <div class="postdate">Posted on @Model.PostDate</div>
+    <p>
+        @Html.Raw(Model.Body)
+    </p>
+    }
+    else
+    {
+        <h1>No such blog post!</h1>
+        <p>
+        We're not sure how you got to this page, but there's no such blog post that you're requesting.<br />
+        <br />
+        Try going <a href="/blog/">here</a> and finding the post you're looking for. Thanks!
+        </p>
+    }
+        
+</div>
+

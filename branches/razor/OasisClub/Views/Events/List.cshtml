@@ -1,0 +1,38 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Util
+@model Oasis.Lib.Models.EventsListModel
+@{
+    ViewBag.Title = "Coming Events";
+    Layout = "~/Views/Shared/_WideLayout.cshtml";
+}
+
+<div style="padding: 15px">
+    <h1>Coming Events</h1>
+    <table width="100%">
+        <tr>
+            <td>Event</td>
+            <td>Date</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+    @foreach (Event eve in Model.Events)
+    {
+        var desc = OasisUtility.StripHTML(eve.Description);
+        <tr>
+            <td>
+                <h3><a href="/events/v/@eve.EncodedTitle">@eve.Title</a></h3>    
+            </td>
+            <td>
+                @eve.EventDate.ToShortDateString() @eve.EventDate.ToShortTimeString()
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @desc.Substring(0, (desc.Length > 100 ? 100 : desc.Length)) ...<br />
+                <br />
+            </td>
+        </tr>
+    }
+    </table>
+</div>

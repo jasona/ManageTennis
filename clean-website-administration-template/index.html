@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Website Administration</title>
+<link href="css/admin-orange.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="js/jquery-1.3.min.js"></script>
+<script type="text/javascript" src="js/general.js"></script>
+</head>
+<body>
+
+<div id="outer">
+
+	<div id="header">
+    
+    	<div id="header-container" class="clearfix">
+        	<div class="contentwidth">
+	            <div id="logo"><a href="index.html"><img src="images/logo.gif" alt="Logo" /></a></div>
+    	        <div id="headertools">
+                	<p class="welcome">Hello, Admin!</p>
+                    <p><a href="login.html">Logout</a> / <a href="login.html">View Site</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="menu-container" class="clearfix">
+        	<div class="contentwidth">
+	            <div id="menu" class="clearfix"><ul><li><a href="index.html" class="active">HOME</a></li><li><a href="one-column.html">ONE COLUMN</a></li><li><a href="two-columns.html">TWO COLUMNS</a></li><li><a href="headings.html">HEADINGS</a></li><li><a href="fields.html">FIELDS</a></li><li><a href="jquery.html">JQUERY</a></li><li><a href="colors.html">COLORS</a></li></ul></div>
+	            <div id="submenu"><ul><li><a href="#">SUB LINK ONE</a></li><li><a href="#">SUB LINK TWO</a></li><li><a href="#">SUB LINK THREE</a></li><li><a href="#">SUB LINK FOUR</a></li><li><a href="#">SUB LINK FIVE</a></li></ul></div>
+            </div>
+    	</div>
+    
+    <div id="main">
+    	<div class="contentwidth clearfix">
+        
+        
+        	<div id="breadcrumbs"><p><strong>You are here: </strong>Home</p></div>
+            
+        	
+            <div id="mainCol">
+                <div class="content borders">
+                	<h1>Admin Home</h1>
+                    <h4>Using Two Column Layout</h4>
+                    <p>The admin pages can be set up in <a href="one-column.html">one</a> or <a href="two-columns.html">two columns</a>. A single, wide column may be better for displaying a large amount of data. The two columns may be better when you want options or additional information in a sidebar.</p>
+                	
+                
+                	<form id="form01" action="index.html" method="get" >
+                    
+                    
+                        
+                        <div class="field">
+                        	<label for="tbx01">Field Label, textbox small:</label>
+                            <input type="text" name="tbx01" id="tbx01" class="textbox-small" />
+                        </div>
+                        
+                        
+                        
+                        <div class="field">
+                        	<label for="tbx02">Field Label, standard textbox:</label>
+                            <input type="text" name="tbx02" id="tbx02" class="textbox" />
+                        </div>
+                        
+                        <div class="field">
+                            <label for="tbx03">Field Label, large textbox:</label>
+                            <input type="text" name="tbx03" id="tbx03" class="textbox-large" />
+                        </div>
+                        
+                        <div class="field">
+                            <label>Field Label, large textarea:</label>
+                            <textarea class="textarea-large" rows="5" cols="5"></textarea>
+                        </div>
+						
+						<div class="field">
+                        	<label>Field Label, Select box:</label>
+                        	<select>
+                            	<option>Select Box, Option One</option>
+                                <option>Select Box, Option Two</option>
+                                <option>Select Box, Option Three</option>
+                            </select>
+                        </div>
+                        
+                        <div class="field"><input type="submit" class="button-bold" value="Add Page" /> <input type="button" class="button-subdued" value="Cancel" /></div>
+                    </form>
+                
+                    
+                </div>
+            </div>
+            
+            
+            <div id="sideCol">
+            
+            	<div class="content borders clearfix">
+                    <h2>Additional Colors!</h2>
+						<p><strong>
+						<a href="colors.html">Orange</a> - Default<br />
+						<a href="colors-blue.html">Blue</a><br />
+						<a href="colors-red.html">Red</a><br />
+						<a href="colors-green.html">Green</a></strong></p>
+                </div>
+                
+            	<div class="content borders clearfix">
+                    <h2>Additional Options</h2>
+                    <p>Paragraph text paragraph text.</p>
+                    <form action="index.html" method="get"><input type="text" class="textbox-small" /></form>
+                </div>
+                <div class="content borders clearfix">
+                	<h2>Additional Options</h2>
+                    <p>Radio Buttons...</p>
+                    <form action="">
+                    <div><label for="radio01"><input type="radio" value="radio" name="group01" id="radio01"  /> Option One</label></div>
+                    <div><label for="radio02"><input type="radio" value="radio" name="group01" id="radio02" /> Option Two</label></div>
+                    <div class="hideshow03">
+                        <div><label for="radio03"><input type="radio" value="radio" name="group01" id="radio03" /> Option Three</label></div>
+                        <div><label for="radio04"><input type="radio" value="radio" name="group01" id="radio04" /> Option Four</label></div>
+                        <div><label for="radio05"><input type="radio" value="radio" name="group01" id="radio05" /> Option Five</label></div>
+                    </div>
+                    <p><a href="javascript:void(null);" class="hideshow03">Toggle Options...</a></p>
+                    </form>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+        </div>
+    </div>
+    
+    
+    <div id="footer">
+    	<div class="contentwidth clearfix">
+        	<p>Copyright Your Business</p>
+        </div>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

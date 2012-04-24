@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "User Registration";
+    Layout = "~/Views/Shared/_FullLayout.cshtml";
+}
+
+<h1>Register User</h1>
+<form action="/user/submit-registration/" onsubmit="return validateForm();" method="post">
+<div>
+    <font color="red">@Request.QueryString["error"]</font><br />
+    Email Address:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="emailAddress" id="emailAddress" size="40" maxlength="255" /><br />
+    <br />
+    Email Address, again:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="emailAddressConfirmed" id="emailAddressConfirmed" size="40" maxlength="255" /><br />
+    <br />
+    Password:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="password" name="password" size="40" maxlength="12" /><br />
+    <br />
+    First Name:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="firstName" size="40" maxlength="125" /><br />
+    <br />
+    Last Name:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="lastName" size="40" maxlength="255" /><br />
+    <br />
+    Phone Number:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="phoneNumber" size="40" maxlength="14" /><br />
+    <br />
+    Mobile Phone Number:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="mobilePhoneNumber" size="40" maxlength="14" /><br />
+    <br />
+    Address 1:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="address1" size="40" maxlength="255" /><br />
+    <br />
+    Address 2:<br />
+    <input type="text" name="address2" size="40" maxlength="255" /><br />
+    <br />
+    City:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="city" size="40" maxlength="255" /><br />
+    <br />
+    State:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="state" size="40" maxlength="255" /><br />
+    <br />
+    Zip Code:&nbsp;&nbsp;<font color="red">*</font><br />
+    <input type="text" name="zipCode" size="40" maxlength="25" /><br />
+    <font color="red">* = Required Field</font><br />
+    <br />
+    <input type="submit" value="Register User" class="button" />
+</div>
+</form>
+
+@section head
+{
+    <script type="text/javascript">
+
+        function validateForm() {
+            var valid = true;
+
+            if ($(':input[name=emailAddress]').val().length == 0) {
+                valid = false;
+                alert('Email address must be specified.');
+            }
+
+            if (valid && $(':input[name=emailAddressConfirmed]').val().length == 0) {
+                valid = false;
+                alert('Please confirm the email address.');
+            }
+
+            if (valid && $(':input[name=password]').val().length == 0) {
+                valid = false;
+                alert('Password must be specified.');
+            }
+
+            if (valid && $(':input[name=firstName]').val().length == 0) {
+                valid = false;
+                alert('First name must be specified.');
+            }
+
+            if (valid && $(':input[name=lastName]').val().length == 0) {
+                valid = false;
+                alert('Last name must be specified.');
+            }
+
+            if (valid && $(':input[name=address1]').val().length == 0) {
+                valid = false;
+                alert('Address 1 must be specified.');
+            }
+
+            if (valid && $(':input[name=city]').val().length == 0) {
+                valid = false;
+                alert('City must be specified.');
+            }
+
+            if (valid && $(':input[name=state]').val().length == 0) {
+                valid = false;
+                alert('State must be specified.');
+            }
+
+            if (valid && $(':input[name=zipCode]').val().length == 0) {
+                valid = false;
+                alert('Zip code must be specified.');
+            }
+
+            return valid;
+        }
+
+    </script>
+}

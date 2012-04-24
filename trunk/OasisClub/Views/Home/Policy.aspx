@@ -1,0 +1,107 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Oasis.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <h2>Policy</h2>
+
+    <h3>Membership and Guest Policies</h3>
+
+    <ul>
+        <li>
+            <b>Guest Fee Policy</b>
+            <ul>
+                <li>Members are welcome to bring guests to the club.</li>
+                <li>Members must check their guests in at the pro shop before play.</li>
+                <li>Members must accompany their guests at all times. </li>
+                <li>The guest fee is $10 per adult and $5 per child each day.</li>
+                <li>Members may bring the same guests only once per month. </li>
+            </ul>
+        </li>
+        <li>
+            <b>Family Member Guest Fee Policy</b>
+            <ul>
+                <li>Members may bring their family to enjoy the club.</li>
+                <li>Members will only pay half price for immediate family members (children out of college, grandchildren).</li>
+            </ul>
+        </li>
+        <li>
+            <b>Mixers:</b> Tennis mixers are social events that include food, friends, and fitness.
+            <ul>
+                <li>Guests may attend only one (1) tennis mixer. </li>
+                <li>The fee will be the mixer fee plus a guest fee.</li>
+            </ul>
+        </li>
+        <li>
+            <b>Leagues</b>
+            <ul>
+                <li>Leagues are for members only.</li>
+                <li>Guests may only sub in one (1) league for an 8 week season.</li>
+            </ul>
+        </li>
+        <li>
+            <b>Teams</b>
+            <ul>
+                <li>Teams are for members only.</li>
+                <li>Each team can sign up for weekly clinics with our staff pros.</li>
+            </ul>
+        </li>
+        <li>
+            <b>Private Lessons</b>
+            <ul>
+                <li>Private lessons are for members and nonmembers.</li>
+                <li>Nonmembers will be required to pay a $10 guest fee to be added to the price of the pros private lesson rate.</li>
+            </ul>
+        </li>
+        <li>
+            <b>Clinics</b>
+            <ul>
+                <li>Our clinics are for members and nonmembers.</li>
+                <li>Clinics may be signed up for on the website.</li>
+                <li>Clinics for members will be charged at a rate of $10 per hour.</li>
+                <li>Nonmembers may come to clinic for the clinic price plus a $10 guest fee.</li>
+            </ul>
+        </li>
+        <li>
+            <b>Indoor Court Time</b>
+            <ul>
+                <li>ndoor Court reservations are for members only.</li>
+                <li>Indoor courts may be reserved by members up to one week in advance.</li>
+                <li>Permanent court times will be available for reservations.</li>
+                <li>Guests will be required to pay the normal court rates plus $10/hour.</li>
+            </ul>
+        </li>
+        <li>
+            <b>Tournaments</b>
+            <ul>
+                <li>We will host tournaments for both members and nonmembers.</li>
+                <li>Club Championships will be for members only.</li>
+            </ul>
+        </li>
+        <li>
+            <b>Pro Shop</b>
+            <ul>
+                <li>The pro shop will sell to members and nonmembers.</li>
+                <li>Members will get a 10% discount on any item in the pro shop.</li>
+            </ul>
+        </li>
+        <li>
+            <b>Bar & Grill</b>
+            <ul>
+                <li>The bar & grill will be for members and their guests.</li>
+                <li>Members will get a 10% discount in the bar & grill on any item.</li>
+            </ul>
+        </li>
+        <li>
+            <b>Pool</b>
+            <ul>
+                <li>The pool is for members only.</li>
+                <li>Members may bring a guest for $10 per adult and $5 per child.</li>
+                <li>Members may bring the same guest one time per month.</li>
+            </ul>
+        </li>
+    </ul>
+
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Head" runat="server">
+</asp:Content>

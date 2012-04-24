@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Oasis Beach & Tennis Club | Links";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+
+    function theRotator() {
+        //Set the opacity of all images to 0
+        $('div#contentPageRotator ul li').css({ opacity: 0.0 });
+
+        //Get the first image and display it (gets set to full opacity)
+        $('div#contentPageRotator ul li:first').css({ opacity: 1.0 });
+
+        //Call the rotator function to run the slideshow, 6000 = change to next image after 6 seconds
+        setInterval('rotate()', 4000);
+
+    }
+
+    function rotate() {
+        //Get the first image
+        var current = ($('div#contentPageRotator ul li.show') ? $('div#contentPageRotator ul li.show') : $('div#contentPageRotator ul li:first'));
+
+        //Get next image, when it reaches the end, rotate it back to the first image
+        var next = ((current.next().length) ? ((current.next().hasClass('show')) ? $('div#contentPageRotator ul li:first') : current.next()) : $('div#contentPageRotator ul li:first'));
+
+        //Set the fade in effect for the next image, the show class has higher z-index
+        next.css({ opacity: 0.0 })
+	        .addClass('show')
+	        .animate({ opacity: 1.0 }, 1000);
+
+        //Hide the current image
+        current.animate({ opacity: 0.0 }, 1000)
+	        .removeClass('show');
+
+    };
+
+    $(document).ready(function () {
+        //Load the slideshow
+        theRotator();
+    });
+
+</script>
+
+<div id="contentPageRotator">
+    <ul>
+        <li class="show"><img src="/Content/Images/Members_1.jpg" width="976" height="650"  alt="pic1" /></li>
+        <li><img src="/Content/Images/Members_2.jpg" alt="pic2" /></li>
+        <li><img src="/Content/Images/Members_3.jpg" alt="pic3" /></li>
+        <li><img src="/Content/Images/Members_4.jpg" alt="pic4" /></li>
+        <li><img src="/Content/Images/Members_5.jpg" alt="pic5" /></li>
+        <li><img src="/Content/Images/Members_6.jpg" alt="pic6" /></li>
+    </ul>
+</div>
+
+<div id="ContentPage">
+    <h2>Links</h2>
+    <p>
+        Here we've gathered together some links that we believe are important, and that you may find interesting:<br />
+        <br />
+        <ul>
+            <li><a href="http://www.texas.usta.com/Tournaments-Pages/3792_Master_Schedule/" target="_blank">USTA Texas Tournament Schdule</a></li>
+            <li><a href="http://www.tcd.org/" target="_blank">TCD Standings for Ladies and Mixed</a></li>
+        </ul>
+    </p>
+</div>
+

@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A11F208B-9E85-4B11-84EB-29BDC69B498E}</ProjectGuid>
+    <ProjectTypeGuids>{e53f8fea-eae0-44a6-8774-ffd645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OasisClub</RootNamespace>
+    <AssemblyName>OasisClub</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FlickrNet">
+      <HintPath>..\..\..\Flickrnet\FlickrNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MvcTurbine, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0e426322531bc5b0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\refs\MvcTurbineFor3\MvcTurbine.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcTurbine.Ninject, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0e426322531bc5b0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\refs\MvcTurbineFor3\MvcTurbine.Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcTurbine.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0e426322531bc5b0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\refs\MvcTurbineFor3\MvcTurbine.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\refs\MvcTurbineFor3\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Images\bg_content.jpg" />
+    <Content Include="Content\Images\bg_header.png" />
+    <Content Include="Content\Images\bg_homeRight.jpg" />
+    <Content Include="Content\Images\bg_navigationItems.jpg" />
+    <Content Include="Content\Images\bg_subThird.jpg" />
+    <Content Include="Content\Images\bg_thermometer.jpg" />
+    <Content Include="Content\Images\c4Logo.png" />
+    <Content Include="Content\Images\clubhouse.jpg" />
+    <Content Include="Content\Images\dinnerwine.jpg" />
+    <Content Include="Content\Images\Index01.jpg" />
+    <Content Include="Content\Images\Index02.jpg" />
+    <Content Include="Content\Images\index03.jpg" />
+    <Content Include="Content\Images\index04.jpg" />
+    <Content Include="Content\Images\index05.jpg" />
+    <Content Include="Content\Images\index06.jpg" />
+    <Content Include="Content\Images\ir_download.jpg" />
+    <Content Include="Content\Images\ir_learnmore.jpg" />
+    <Content Include="Content\Images\ir_map.jpg" />
+    <Content Include="Content\Images\ir_readmore.jpg" />
+    <Content Include="Content\Images\ir_signup.jpg" />
+    <Content Include="Content\Images\lightbox\blank.gif" />
+    <Content Include="Content\Images\lightbox\close.gif" />
+    <Content Include="Content\Images\lightbox\closelabel.gif" />
+    <Content Include="Content\Images\lightbox\loading.gif" />
+    <Content Include="Content\Images\lightbox\next.gif" />
+    <Content Include="Content\Images\lightbox\nextlabel.gif" />
+    <Content Include="Content\Images\lightbox\prev.gif" />
+    <Content Include="Content\Images\lightbox\prevlabel.gif" />
+    <Content Include="Content\Images\oasisLogo.jpg" />
+    <Content Include="Content\Images\tenniscourt.jpg" />
+    <Content Include="Content\Images\workingout.jpg" />
+    <Content Include="Content\lightbox.css" />
+    <Content Include="Content\oasisv2.css" />
+    <Content Include="Content\old\About_1.jpg" />
+    <Content Include="Content\old\About_1_small.jpg" />
+    <Content Include="Content\old\About_2.jpg" />
+    <Content Include="Content\old\About_2_small.jpg" />
+    <Content Include="Content\old\About_3.jpg" />
+    <Content Include="Content\old\About_3_small.jpg" />
+    <Content Include="Content\old\bg_c4.jpg" />
+    <Content Include="Content\old\bg_construction.jpg" />
+    <Content Include="Content\old\bg_faq.jpg" />
+    <Content Include="Content\old\bg_membership.jpg" />
+    <Content Include="Content\old\bg_staff_lower.jpg" />
+    <Content Include="Content\old\body_bottomleft.png" />
+    <Content Include="Content\old\body_bottomright.png" />
+    <Content Include="Content\old\body_topleft.png" />
+    <Content Include="Content\old\C4_1.jpg" />
+    <Content Include="Content\old\C4_2.jpg" />
+    <Content Include="Content\old\C4_3.jpg" />
+    <Content Include="Content\old\C4_4.jpg" />
+    <Content Include="Content\old\C4_5.jpg" />
+    <Content Include="Content\old\C4_6.jpg" />
+    <Content Include="Content\old\C4_7.jpg" />
+    <Content Include="Content\old\C4_8.jpg" />
+    <Content Include="Content\old\C4_9.jpg" />
+    <Content Include="Content\old\C4_Logo.jpg" />
+    <Content Include="Content\Images\Chris_Hill.jpg" />
+    <Content Include="Content\old\Chris_Hill.jpg" />
+    <Content Include="Content\old\footer_shadow.jpg" />
+    <Content Include="Content\old\Header_repeater.jpg" />
+    <Content Include="Content\old\Home_1.jpg" />
+    <Content Include="Content\old\Home_2.jpg" />
+    <Content Include="Content\old\Home_3.jpg" />
+    <Content Include="Content\old\Home_4.jpg" />
+    <Content Include="Content\old\Home_5.jpg" />
+    <Content Include="Content\old\Home_6.jpg" />
+    <Content Include="Content\old\home_callout.png" />
+    <Content Include="Content\old\home_right_bg.png" />
+    <Content Include="Content\old\ir_send.jpg" />
+    <Content Include="Content\old\Membership_1st_100_members.jpg" />
+    <Content Include="Content\old\Membership_table_right.jpg" />
+    <Content Include="Content\old\Members_1.jpg" />
+    <Content Include="Content\old\Members_2.jpg" />
+    <Content Include="Content\old\Members_3.jpg" />
+    <Content Include="Content\old\Members_4.jpg" />
+    <Content Include="Content\old\Members_5.jpg" />
+    <Content Include="Content\old\Members_6.jpg" />
+    <Content Include="Content\old\nav_bottomleft.jpg" />
+    <Content Include="Content\old\nav_bottomleft_hover.jpg" />
+    <Content Include="Content\old\nav_bottomleft_selected.jpg" />
+    <Content Include="Content\old\nav_left.jpg" />
+    <Content Include="Content\old\nav_left_hover.jpg" />
+    <Content Include="Content\old\nav_topleft.jpg" />
+    <Content Include="Content\old\nav_topleft_hover.jpg" />
+    <Content Include="Content\old\nav_topleft_selected.jpg" />
+    <Content Include="Content\old\Oasis_logo.jpg" />
+    <Content Include="Content\Images\Raul_Morant.JPG" />
+    <Content Include="Content\old\Staff_1_small.jpg" />
+    <Content Include="Content\photos\100_0346.JPG" />
+    <Content Include="Content\photos\267_cropped.jpg" />
+    <Content Include="Content\photos\268_cropped.jpg" />
+    <Content Include="Content\photos\271_cropped.jpg" />
+    <Content Include="Content\photos\273_cropped.jpg" />
+    <Content Include="Content\photos\aerial_1.jpg" />
+    <Content Include="Content\photos\beach_entry_cabana_bar.jpg" />
+    <Content Include="Content\photos\building_front_1.jpg" />
+    <Content Include="Content\photos\building_front_entry.jpg" />
+    <Content Include="Content\photos\chris1_resized.jpg" />
+    <Content Include="Content\photos\DSC01449_cropped.jpg" />
+    <Content Include="Content\photos\juniors\daniel1_cropped.jpg" />
+    <Content Include="Content\photos\juniors\daniel2_cropped.jpg" />
+    <Content Include="Content\photos\juniors\daniel3.jpg" />
+    <Content Include="Content\photos\juniors\george.jpg" />
+    <Content Include="Content\photos\juniors\george_cropped.jpg" />
+    <Content Include="Content\photos\juniors\head5x4.jpg" />
+    <Content Include="Content\photos\juniors\jrtennisinaction_cropped.jpg" />
+    <Content Include="Content\photos\juniors\jrtenniskids_cropped.jpg" />
+    <Content Include="Content\photos\juniors\tennisballs2_cropped.jpg" />
+    <Content Include="Content\photos\juniors\tennisdrills2_cropped.jpg" />
+    <Content Include="Content\photos\juniors\tennisdrills_cropped.jpg" />
+    <Content Include="Content\photos\juniors\tennislineup_cropped.jpg" />
+    <Content Include="Content\photos\Raul.jpg" />
+    <Content Include="Content\photos\raul1_resized.jpg" />
+    <Content Include="Content\photos\sand_beach.jpg" />
+    <Content Include="Content\photos\SLC_Tennis_Finals.jpg" />
+    <Content Include="Content\photos\SLC_Tennis_Finals_02.jpg" />
+    <Content Include="Content\photos\zuni_and_raul.jpg" />
+    <Content Include="Content\players\player1.jpg" />
+    <Content Include="Content\players\player10.jpg" />
+    <Content Include="Content\players\player11.jpg" />
+    <Content Include="Content\players\player12.jpg" />
+    <Content Include="Content\players\player13.jpg" />
+    <Content Include="Content\players\player14.jpg" />
+    <Content Include="Content\players\player15.jpg" />
+    <Content Include="Content\players\player2.jpg" />
+    <Content Include="Content\players\player3.jpg" />
+    <Content Include="Content\players\player4.jpg" />
+    <Content Include="Content\players\player5.jpg" />
+    <Content Include="Content\players\player6.jpg" />
+    <Content Include="Content\players\player7.jpg" />
+    <Content Include="Content\players\player8.jpg" />
+    <Content Include="Content\players\player9.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Oasis.css" />
+    <Content Include="Scripts\FTWLabs.CompactForm.js" />
+    <Content Include="Scripts\FTWLabs.Rotator.js" />
+    <Content Include="Scripts\FTWLabs.SecureMail.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.min-vsdoc.js" />
+    <Content Include="Scripts\jquery.lightbox.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.min-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Events\List.cshtml" />
+    <Content Include="Views\Events\register-confirm.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Events\View.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Content\juniors.cshtml" />
+    <Content Include="Views\Content\adults.cshtml" />
+    <Content Include="Views\Content\academy-program.cshtml" />
+    <Content Include="Views\Content\schooling-program.cshtml" />
+    <Content Include="Views\Content\quickstart-program.cshtml" />
+    <Content Include="Views\Content\development-program.cshtml" />
+    <Content Include="Views\Content\travel-program.cshtml" />
+    <None Include="C4_performance_sign_up.doc" />
+    <Content Include="Views\Content\teams.cshtml" />
+    <Content Include="Views\Content\tournaments-and-mixers.cshtml" />
+    <Content Include="Views\Content\clinics.cshtml" />
+    <Content Include="Views\Content\leagues.cshtml" />
+    <Content Include="Views\Content\lessons.cshtml" />
+    <Content Include="Views\Shared\_BlogList.cshtml" />
+    <Content Include="Views\Shared\_BlockAdRotator.cshtml" />
+    <Content Include="Views\Content\summer-programs.cshtml" />
+    <Content Include="Views\Shared\_ImageRoller.cshtml" />
+    <Content Include="Views\Content\usta-links.cshtml" />
+    <Content Include="Views\Content\spring-break-camps.cshtml" />
+    <Content Include="Views\Content\pool.cshtml" />
+    <Content Include="Views\Content\gallery.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Gallery\ViewPhotoSet.cshtml" />
+    <Content Include="Views\Content\delivery-methods-and-timing.cshtml" />
+    <Content Include="Views\Content\return-refund-and-cancellation-policy.cshtml" />
+    <Content Include="Views\Content\privacy-policy.cshtml" />
+    <Content Include="Views\Shared\_FullLayout.cshtml" />
+    <Content Include="Views\Events\Register.cshtml" />
+    <Content Include="Views\Content\tennis-staff.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml.old" />
+    <Content Include="Views\Shared\_WideLayout.cshtml" />
+    <Content Include="Views\User\activate-account.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\recover-password.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\User\registration-confirmation.cshtml" />
+    <Content Include="Views\User\send-password.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content\Content.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Oasis.Lib\Oasis.Lib.csproj">
+      <Project>{C867AA48-EB4E-4B6F-9E9F-63CA254D113F}</Project>
+      <Name>Oasis.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blog\ViewPost.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blog\PostList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content\about-us.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content\staff.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content\c4-academy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content\calendar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content\construction.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content\contact.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content\faq.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content\links.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content\members-area.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content\membership.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content\policy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MembershipBrochure.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Home\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>45293</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

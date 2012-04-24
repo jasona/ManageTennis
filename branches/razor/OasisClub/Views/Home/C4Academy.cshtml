@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "Oasis Beach & Tennis Club | C4 Academy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+
+    function theRotator() {
+        //Set the opacity of all images to 0
+        $('div#c4Rotator ul li').css({ opacity: 0.0 });
+
+        //Get the first image and display it (gets set to full opacity)
+        $('div#c4Rotator ul li:first').css({ opacity: 1.0 });
+
+        //Call the rotator function to run the slideshow, 6000 = change to next image after 6 seconds
+        setInterval('rotate()', 4000);
+
+    }
+
+    function rotate() {
+        //Get the first image
+        var current = ($('div#c4Rotator ul li.show') ? $('div#c4Rotator ul li.show') : $('div#c4Rotator ul li:first'));
+
+        //Get next image, when it reaches the end, rotate it back to the first image
+        var next = ((current.next().length) ? ((current.next().hasClass('show')) ? $('div#c4Rotator ul li:first') : current.next()) : $('div#c4Rotator ul li:first'));
+
+        //Set the fade in effect for the next image, the show class has higher z-index
+        next.css({ opacity: 0.0 })
+	        .addClass('show')
+	        .animate({ opacity: 1.0 }, 1000);
+
+        //Hide the current image
+        current.animate({ opacity: 0.0 }, 1000)
+	        .removeClass('show');
+
+    };
+
+    $(document).ready(function () {
+        //Load the slideshow
+        theRotator();
+    });
+
+</script>
+
+<div id="C4">
+    <div id="C4Left">
+        <div class="gradient">
+            <p>Welcome to the C4 Tennis Academy.</p>
+            <p>The 4 Cs represent <b>Commitment, Consistency, Courage, and Character to produce Champions</b>, in tennis and in life.  At C4 we wholeheartedly embrace these concepts as we will work to unleash your childs potential. Tennis is a sport in which physical strength, mental toughness, excellent technique, and discipline are essential components of the game. We believe that focusing on excelling in these four elements of tennis provides valuable training instruments and experiences that are crucial to achieving objectives both on, and off, the court. </p>
+            <p>Our philosophy and goal is to teach our players the importance of work ethic, character, responsibility and handling adversity. C4 Academy will train our students to be the best tennis player and person they can be in tennis and in all aspects of life. With the appropriate physical, mental, and technique training our players will have the opportunity to become top high school, collegiate, and even professional athletes.</p>
+
+            <h3>Academy Program</h3>
+            <ul>
+                <li>
+                    <p><b>Academy Prep</b></p>
+                    <p>This program is designed for players who know how to rally and play matches.  Emphasis will be on consistency, placement, and spin.  Fitness and mental training will also be incorporated.  Players must be playing local tournaments to be in this class.</p>
+                </li>
+                <li>
+                    <p><b>Academy</b></p>
+                    <p>This select program is designed for kids playing ZAT tournaments.  Complete player development will be emphasized.  A rigorous fitness program will be followed.  Players will be encouraged to join  academy travel teams for ZAT tournaments.</p>
+                </li>
+                <li>
+                    <p><b>Academy Champ</b></p>
+                    <p>Players must be Champ qualified to train in this invitation only program.   Players will be expected to join our academy travel teams that compete in Champ tournaments</p>
+                </li>
+                <li>
+                    <p><b>Academy Superchamp</b></p>
+                    <p>Players must be superchamp qualified to train in this invitation only program.  Academy travel teams are required for our Superchamp players. </p>
+                </li>
+            </ul>
+
+            <h3>Quickstart Program</h3>
+            <ul>
+                <li>
+                    <p><b>Ages 10 and under</b></p>
+                    <p>Quickstart is a fun, exciting and challenging tennis program for kids under 10 years of age.  We use modified courts, balls, and racquets to maximize early success and enjoyment.  Through quickstart kids fall in love with tennis at an early age and stay with it!</p>
+                </li>
+                <li>
+                    <p><b>Ages 5-6</b></p>
+                    <p>Basic skills are introduced through fun games and team competitions.  Emphasis is on coordination, movement, and fun!</p>
+                </li>
+                <li>
+                    <p><b>Ages 7-8</b></p>
+                    <p>Kids learn to rally on a short 36court and can even start to play real tennis matches.</p>
+                </li>
+                <li>
+                    <p><b>Ages 9-10</b></p>
+                    <p>Players begin to rally on a 3/4 60 court.  Emphasis is on consistency and placement.  Kids learn basic strategies and scorekeeping.</p>
+                </li>
+                <li>
+                    <p><b>Teen Tennis</b></p>
+                    <p>Tennis is a great sport for any age, but especially for teenagers.  Through tennis, they will be active, challenged, and experience athletic success that is great for their self-esteem.  Tennis will provide a means for fun, friends, and fitness in their lives.</p>
+                </li>
+                <li>
+                    <p><b>Pre-teen Tweeners</b></p>
+                    <p>Fun, challenging tennis designed for beginner kids ages 11-12.</p>    
+                </li>
+                <li>
+                    <p><b>Tennis for Teens</b></p>
+                    <p>Beginner program designed to teach tennis to teenagers.  Emphasis is on fun, challenging activities teaching basic strokes, strategies, and scorekeeping for teenagers.</p>    
+                </li>
+                <li>
+                    <p><b>Junior Memberships</b></p>
+                    <p>We offer full club memberships for our C4 junior players. these memberships
+                        have no initiation fees, are month to month contracts, and are payable at the first
+                        of the month (time of academy tuition).</p>
+                </li>
+                <li>
+                    <p><b>Academy Memberships</b> (18 and under)-$75 per month, $50 per month for each 
+                        additional sibling.</p>
+                </li>
+                <li>
+                    <p><b>Quick Start Memberships</b> (10 and under)-$50 per month, $40 per month for each 
+                        additional sibling.</p>
+                </li>
+                <li>
+                    <p><b>Drop in Academy</b></p>
+                    <p>If players want to drop in for drills for a day, they must reserve their spot that 
+                        day by 3pm. Drop in rates are $12/hour for members and $18/hour for nonmembers.</p>
+                </li>
+                <li>
+                    <p><b>Super Champ Player Discount</b></p>
+                    <p>Any player ranked in the top 10 in Texas will receive a 20% monthly discount on 
+                        Academy tuition for the months that apply.</p>
+                </li>
+                <li class="socials">
+                    <p><b>Junior socials</b></p>
+                    <p>Ever Friday Night</p>
+                    <ul>
+                        <li>Academy High School - 6:30pm - 10pm</li>
+                        <li>Academy Middle School - 6:30pm - 10pm</li>
+                        <li>Quick Start (10 and under) - 6:30pm - 9:30pm</li>
+                    </ul>
+                    <p>See flyer for pricing and details on Junior Mixers</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="C4Right">
+        <div id="c4Rotator">
+            <ul>
+                <li class="show"><img src="/Content/Images/C4_1.jpg" alt="pic1" /></li>
+                <li><img src="/Content/Images/C4_2.jpg" alt="pic2" /></li>
+                <li><img src="/Content/Images/C4_3.jpg" alt="pic3" /></li>
+                <li><img src="/Content/Images/C4_4.jpg" alt="pic3" /></li>
+                <li><img src="/Content/Images/C4_5.jpg" alt="pic3" /></li>
+                <li><img src="/Content/Images/C4_6.jpg" alt="pic3" /></li>
+                <li><img src="/Content/Images/C4_7.jpg" alt="pic3" /></li>
+                <li><img src="/Content/Images/C4_8.jpg" alt="pic3" /></li>
+                <li><img src="/Content/Images/C4_9.jpg" alt="pic3" /></li>
+            </ul>
+        </div>
+        <div id="C4Right_Bottom">
+            <img src="/Content/Images/C4_Logo.jpg" alt="C4 Logo" />
+        </div>
+    </div>
+</div>

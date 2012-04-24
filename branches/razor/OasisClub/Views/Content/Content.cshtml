@@ -1,0 +1,17 @@
+﻿@using Oasis.Lib
+@model Oasis.Lib.Models.ContentModel
+@{
+    ViewBag.Title = Model.Content.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(new HtmlString(Model.Content.Content1))
+
+@section right
+{
+    @foreach(SidebarContent content in Model.SidebarContent)
+    {
+        @(new HtmlString(content.Content))
+        <br />
+    }
+}

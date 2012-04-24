@@ -1,0 +1,18 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Services
+@{
+    ContentService service = new ContentService();
+    Content content = service.GetPage(null, "membership");
+
+    ViewBag.Title = content.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(new HtmlString(content.Content1))
+
+
+@section right {
+    <h3>Contact Information</h3>
+    <h2>972.772.7768</h2>
+    <a href="/contact/">Click here to email us!</a>
+}

@@ -1,0 +1,169 @@
+﻿@{
+    ViewBag.Title = "Oasis Beach & Tennis Club | Make Payment";
+    Layout = "~/Views/Shared/_FullLayout.cshtml";
+}
+
+<h1>Make a Payment</h1>
+
+<form action="/make-payment/submit-payment/" onsubmit="return validateForm();" method="post">
+<fieldset>
+    <legend>Payment Details</legend>
+
+    <label for="Amount">Amount</label><br />
+    <input type="text" size="60" id="Amount" name="Amount" /><br />
+    <br />
+
+    <label for="Description">Description</label><br />
+    <textarea id="Description" name="Description" rows="10" cols="60"></textarea><br />
+
+</fieldset>
+
+<fieldset>
+    <legend>Personal Details</legend>
+
+    <label for="FirstName">First Name</label><br />
+    <input type="text" size="60" maxlength="125" id="FirstName" name="FirstName" /><br />
+    <br />
+    
+    <label for="LastName">Last Name</label><br />
+    <input type="text" size="60" maxlength="255" id="LastName" name="LastName" /><br />
+    <br />
+    
+    <label for="Address1">Address 1</label><br />
+    <input type="text" size="60" maxlength="255" id="Address1" name="Address1" /><br />
+    <br />
+    
+    <label for="Address2">Address 2</label><br />
+    <input type="text" size="60" maxlength="255" id="Address2" name="Address2" /><br />
+    <br />
+    
+    <label for="City">City</label><br />
+    <input type="text" size="60" maxlength="255" id="City" name="City" /><br />
+    <br />
+        
+    <label for="State">State</label><br />
+    <input type="text" size="60" maxlength="255" id="State" name="State" /><br />
+    <br />
+        
+    <label for="ZipCode">ZipCode</label><br />
+    <input type="text" size="60" maxlength="25" id="ZipCode" name="ZipCode" /><br />
+    <br />
+
+</fieldset>
+
+<fieldset>
+    <legend>Credit Card Details</legend>
+
+    <label for="CCNumber">Credit Card Number</label><br />
+    <input type="text" size="60" maxlength="255" id="CCNumber" name="CCNumber" /><br />
+    <br />
+
+    <label for="CCType">Credit Card Type</label><br />
+    <select id="CCType" name="CCType">
+        <option value="Visa">Visa</option>
+        <option value="Mastercard">Mastercard</option>
+        <option value="American Express">American Express</option>
+    </select><br />
+    <br />
+
+    <label for="Expiration">Expiration</label><br />
+    <select id="ExpirationMonth" name="ExpirationMonth">
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>&nbsp;&nbsp;/&nbsp;&nbsp;
+    <select id="ExpirationYear" name="ExpirationYear">
+        @for (int i = 2011; i <= 2031; i++)
+        {
+        <option value="@i">@i</option>
+        }
+    </select><br />
+    <br />
+
+</fieldset>
+<br />
+<input type="submit" class="button" value="Submit Payment" />
+</form>
+
+
+@section head
+{
+
+    <script type="text/javascript">
+
+    function validateForm() {
+        var valid = true;
+
+        if ($(':input[name=Amount]').val().length == 0) {
+            valid = false;
+            alert('You must enter an amount to pay.');
+        }
+
+        if (valid && $(':input[name=FirstName]').val().length == 0) {
+            valid = false;
+            alert('First name must be specified.');
+        }
+
+        if (valid && $(':input[name=LastName]').val().length == 0) {
+            valid = false;
+            alert('Last name must be specified.');
+        }
+
+        if (valid && $(':input[name=Address1]').val().length == 0) {
+            valid = false;
+            alert('Address 1 must be specified.');
+        }
+
+        if (valid && $(':input[name=City]').val().length == 0) {
+            valid = false;
+            alert('City must be specified.');
+        }
+
+        if (valid && $(':input[name=State]').val().length == 0) {
+            valid = false;
+            alert('State must be specified.');
+        }
+
+        if (valid && $(':input[name=ZipCode]').val().length == 0) {
+            valid = false;
+            alert('Zip code must be specified.');
+        }
+
+        if (valid && $(':input[name=CCNumber]').val().length == 0) {
+            valid = false;
+            alert('You must enter a credit card number to pay with.');
+        }
+
+
+        
+        return valid;
+    }
+
+    </script>
+
+    <style type="text/css">
+        
+        label 
+        {
+            margin-right: 5px;
+            vertical-align: top;
+            
+        }
+        
+        fieldset
+        {
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+    </style>
+}

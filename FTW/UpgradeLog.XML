@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="BillRob.Web.Caching">
+</Property><Property Name="Solution File" Value="C:\MyData\FTW\JasonA\OasisClub\FTW\BillRob.Web.Caching.sln">
+</Property><Property Name="User Options File" Value="C:\MyData\FTW\JasonA\OasisClub\FTW\BillRob.Web.Caching.suo">
+</Property><Property Name="Date" Value="Monday, March 07, 2011">
+</Property><Property Name="Time" Value="11:03 AM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="BillRob.Web.Caching.sln" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\BillRob.Web.Caching.sln">
+</Event><Event ErrorLevel="0" Project="" Source="BillRob.Web.Caching.suo" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\BillRob.Web.Caching.suo">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="BillRob.Web.Caching.csproj" Description="Project file successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\BillRob.Web.Caching.csproj">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="CacheEntry.cs" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\CacheEntry.cs">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="CacheLoaderErrorException.cs" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\CacheLoaderErrorException.cs">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="CacheLockbox.cs" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\CacheLockbox.cs">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="Collections\BaseItemCollection.cs" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\Collections\BaseItemCollection.cs">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="Collections\CollectionCount.cs" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\Collections\CollectionCount.cs">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="Collections\CollectionItemEntry.cs" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\Collections\CollectionItemEntry.cs">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="Collections\ExpirationAttribute.cs" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\Collections\ExpirationAttribute.cs">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="Collections\MultipleItemCollection.cs" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\Collections\MultipleItemCollection.cs">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="Collections\SingleItemCollection.cs" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\Collections\SingleItemCollection.cs">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="NoCacheEntryException.cs" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\NoCacheEntryException.cs">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="TCache.cs" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\TCache.cs">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="ThreadPool.cs" Description="File successfully backed up as C:\MyData\FTW\JasonA\OasisClub\FTW\Backup\ThreadPool.cs">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="BillRob.Web.Caching.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="BillRob.Web.Caching" Source="BillRob.Web.Caching.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="BillRob.Web.Caching.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="BillRob.Web.Caching.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="BillRob.Web.Caching" Source="BillRob.Web.Caching.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

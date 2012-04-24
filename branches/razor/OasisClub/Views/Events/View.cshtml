@@ -1,0 +1,59 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Util
+@using Oasis.Lib.Services
+@model Oasis.Lib.Models.EventsViewModel
+@{
+    ViewBag.Title = "Event Details | " + Model.Event.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Model.Event.Title</h1>
+<br />
+<b>Description:</b><br />
+@(new HtmlString(Model.Event.Description))
+<br />
+<b>Date:</b>  @Model.Event.EventDate.ToShortDateString() @Model.Event.EventDate.ToShortTimeString()<br />
+<br />
+<b>Member Cost:</b>  @String.Format("{0:C}", Model.Event.MemberCost)<br />
+<br />
+<b>Non-Member Cost:</b>  @String.Format("{0:C}", Model.Event.NonMemberCost)<br />
+<br />
+<b>Ranks:</b>  @OasisUtility.GetRankBitMaskList(Model.Event.RankingBitMask)<br />
+<br />
+<b>Demographics:</b>  @OasisUtility.GetDemographicBitMaskList(Model.Event.DemographicBitMask)<br />
+<br />
+<b>Event Type:</b>  @OasisUtility.GetEventTypeString(Model.Event.EventTypeId)<br />
+<br />
+<b>USTA Sanctioned:</b>  @OasisUtility.GetBooleanString(Model.Event.USTASanctioned)<br />
+<br />
+<b>Private Event:</b>  @OasisUtility.GetBooleanString(Model.Event.PrivateEvent)<br />
+<br />
+<b>Tennis Pro:</b>  @OasisUtility.GetProName(Model.Event.ProUserId)<br />
+<br />
+
+@section right
+{
+       @{ 
+           var service = new EventService();
+       }
+        @if (Session["User"] != null) {
+            var user = (User)Session["User"];
+            
+            if (service.CheckEventRegistration(Model.Event.EventId, user.UserId))
+            {
+            <div style="text-align: center; font-size: smaller; font-color: red; font-weight: bold;">You have already registered for this event.</div>    
+            }
+            else
+            {
+            <form action="/events/register-confirm/" method="post">
+                <input type="hidden" name="eventId" value="@Model.Event.EventId" />
+                <input type="hidden" name="userId" value="@user.UserId" />
+                <input type="submit" value="RSVP for this Event" class="button" />
+            </form>     
+            }
+        }
+        else
+        {
+            <div style="text-align: center; font-size: smaller; font-color: red; font-weight: bold;">You must login in order to RSVP for this event.</div>
+        }
+}

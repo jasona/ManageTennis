@@ -1,0 +1,60 @@
+﻿@model Oasis.Lib.Models.GalleryModel
+@using Oasis.Lib.Util
+@{
+    ViewBag.Title = "Photo Gallery";
+    Layout = "~/Views/Shared/_WideLayout.cshtml";
+    
+    
+}
+
+<br />
+<h1>&nbsp;&nbsp;Photo Gallery</h1>
+
+<div id="PhotoGallery">
+
+@foreach (var set in Model.PhotoSets)
+{
+    <div id="Photo">
+        <img src="@set.PhotosetSquareThumbnailUrl" id="PhotoSet" title="@set.Title"/><br />
+        <a href="@set.ToFriendlyUrl()/">@set.Title</a>
+    </div>
+}
+
+</div>
+
+@section head {
+    
+    <style type="text/css">
+
+        .bottom 
+        {
+            height: 600px;
+        }
+                        
+        #PhotoGallery
+        {
+            padding:20px; 
+            margin-left: 80px;
+        }
+        
+        #Photo
+        {
+            float: left;
+            width: 200px;
+            margin-bottom: 40px;
+            vertical-align: middle;
+            text-align: center;            
+        }
+       
+        #PhotoSet 
+        {
+            border: 1px solid black;
+            padding: 4px;
+            margin-bottom: 20px;
+            width: 120px;
+            height: 120px;
+        }
+ 
+    </style>
+
+}

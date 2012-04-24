@@ -1,0 +1,26 @@
+﻿@using Oasis.Lib
+@using Oasis.Lib.Services
+@{
+    ContentService service = new ContentService();
+    Content content = service.GetPage("adults", "tournaments-and-mixers");
+
+    ViewBag.Title = content.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(new HtmlString(content.Content1))
+
+@section right {
+    <h3>Downloads</h3>
+    <a href="/docs/Adult_Calendar_of_Tennis_Events.docx">Adults Event Calendar (Word format)</a><br />
+    <br />
+    <br />
+    <h3>This Month's Calendar</h3>
+    <iframe style="width: 335px; height: 269px; border:thin; overflow: hidden;" frameborder="0" scrolling="auto" id="ids-miniecal" name="ids-miniecal" src="http://tennis.oasisbeachandtennisclub.com/components/miniecalendar/index.cfm?clubid=120630&showone=4501&pid=47E6647D-F4EA-9DD7-FFEE960C486B51AD"></iframe>
+    <br />
+    <strong>Want to see more?</strong>
+    <a href="http://www.tennis.oasisbeachandtennisclub.com/pages/ecalendar/index.cfm?action=month&showone=4501" target="_blank">Click here to see the full calendar of Mixers and Tournaments!</a>
+    <br />
+    <br />
+}
+

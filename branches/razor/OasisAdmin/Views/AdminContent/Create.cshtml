@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Add Content";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsOneColumn = true;
+}
+
+<h1>Add Content</h1>
+<form action="/site-content/create/" method="post">
+<div>
+    <font color="red">@Request.QueryString["error"]</font><br />
+    Dir Name:&nbsp;&nbsp;<font color="red">*</font><br />
+    @Html.TextBox("dirName", null, new { size="40", maxlength="128" })<br />
+    <br />
+    Page Name:&nbsp;&nbsp;<font color="red">*</font><br />
+    @Html.TextBox("pageName", null, new { size="40", maxlength="128" })<br />
+    <br />
+    Title:&nbsp;&nbsp;<font color="red">*</font><br />
+    @Html.TextBox("pageTitle", null, new { size="40", maxlength="128" })<br />
+    <br />
+    Content:&nbsp;&nbsp;<font color="red">*</font><br />
+    <textarea name="pageContent" class="wymeditor"></textarea><br />
+    <br />
+    <font color="red">* = Required Field</font><br />
+    <br />
+    <input type="submit" value="Add Content" class="wymupdate" />
+</div>
+</form>
+
+@section head {
+<script type="text/javascript">
+
+    /* Here we replace each element with class 'wymeditor'
+    * (typically textareas) by a WYMeditor instance.
+    * 
+    * We could use the 'html' option, to initialize the editor's content.
+    * If this option isn't set, the content is retrieved from
+    * the element being replaced.
+    */
+
+    jQuery(function () {
+        jQuery('.wymeditor').wymeditor({
+            dialogFeatures: "resizable=yes",
+            skin: "compact"
+        });
+    });
+ 
+</script> 
+}
