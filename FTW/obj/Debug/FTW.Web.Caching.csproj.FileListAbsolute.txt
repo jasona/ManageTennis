@@ -3,3 +3,8 @@ C:\MyData\FTW\JasonA\OasisClub\FTW\bin\Debug\FTW.Web.Caching.pdb
 C:\MyData\FTW\JasonA\OasisClub\FTW\obj\Debug\ResolveAssemblyReference.cache
 C:\MyData\FTW\JasonA\OasisClub\FTW\obj\Debug\FTW.Web.Caching.dll
 C:\MyData\FTW\JasonA\OasisClub\FTW\obj\Debug\FTW.Web.Caching.pdb
+C:\MyData\SVN_JasonA\ManageTennis\FTW\bin\Debug\FTW.Web.Caching.dll
+C:\MyData\SVN_JasonA\ManageTennis\FTW\bin\Debug\FTW.Web.Caching.pdb
+C:\MyData\SVN_JasonA\ManageTennis\FTW\obj\Debug\ResolveAssemblyReference.cache
+C:\MyData\SVN_JasonA\ManageTennis\FTW\obj\Debug\FTW.Web.Caching.dll
+C:\MyData\SVN_JasonA\ManageTennis\FTW\obj\Debug\FTW.Web.Caching.pdb

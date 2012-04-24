@@ -1,0 +1,761 @@
+--------------------------------------------
+-- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
+-- --------------------------------------------------
+-- Date Created: 04/24/2012 15:55:07
+-- Generated from EDMX file: C:\MyData\SVN_JasonA\ManageTennis\branches\razor\Oasis.Lib\OasisModel.edmx
+-- --------------------------------------------------
+
+SET QUOTED_IDENTIFIER OFF;
+GO
+USE [ManageTennis];
+GO
+IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
+GO
+
+-- --------------------------------------------------
+-- Dropping existing FOREIGN KEY constraints
+-- --------------------------------------------------
+
+IF OBJECT_ID(N'[dbo].[FK__Community__UserI__15D01CBC]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CommunityActivity] DROP CONSTRAINT [FK__Community__UserI__15D01CBC];
+GO
+IF OBJECT_ID(N'[dbo].[FK__ContentSi__Conte__10174366]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ContentSidebarContent] DROP CONSTRAINT [FK__ContentSi__Conte__10174366];
+GO
+IF OBJECT_ID(N'[dbo].[FK__ContentSi__Sideb__110B679F]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ContentSidebarContent] DROP CONSTRAINT [FK__ContentSi__Sideb__110B679F];
+GO
+IF OBJECT_ID(N'[dbo].[FK__Event__EventStat__7B1C2680]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Event] DROP CONSTRAINT [FK__Event__EventStat__7B1C2680];
+GO
+IF OBJECT_ID(N'[dbo].[FK__Event__EventType__7A280247]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Event] DROP CONSTRAINT [FK__Event__EventType__7A280247];
+GO
+IF OBJECT_ID(N'[dbo].[FK__Event__ProUserId__7DF8932B]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Event] DROP CONSTRAINT [FK__Event__ProUserId__7DF8932B];
+GO
+IF OBJECT_ID(N'[dbo].[FK__EventRegi__Event__02BD4848]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[EventRegistration] DROP CONSTRAINT [FK__EventRegi__Event__02BD4848];
+GO
+IF OBJECT_ID(N'[dbo].[FK__EventRegi__Trans__0599B4F3]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[EventRegistration] DROP CONSTRAINT [FK__EventRegi__Trans__0599B4F3];
+GO
+IF OBJECT_ID(N'[dbo].[FK__EventRegi__UserI__03B16C81]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[EventRegistration] DROP CONSTRAINT [FK__EventRegi__UserI__03B16C81];
+GO
+IF OBJECT_ID(N'[dbo].[FK__ProBillRa__UserI__6CCE0729]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProBillRate] DROP CONSTRAINT [FK__ProBillRa__UserI__6CCE0729];
+GO
+IF OBJECT_ID(N'[dbo].[FK__Transacti__UserB__67152DD3]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Transaction] DROP CONSTRAINT [FK__Transacti__UserB__67152DD3];
+GO
+IF OBJECT_ID(N'[dbo].[FK__User__RankId__5402595F]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[User] DROP CONSTRAINT [FK__User__RankId__5402595F];
+GO
+IF OBJECT_ID(N'[dbo].[FK__User__UserStatus__4F3DA442]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[User] DROP CONSTRAINT [FK__User__UserStatus__4F3DA442];
+GO
+IF OBJECT_ID(N'[dbo].[FK__User__UserTypeId__521A10ED]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[User] DROP CONSTRAINT [FK__User__UserTypeId__521A10ED];
+GO
+IF OBJECT_ID(N'[dbo].[FK__UserBilli__UserI__625078B6]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserBilling] DROP CONSTRAINT [FK__UserBilli__UserI__625078B6];
+GO
+IF OBJECT_ID(N'[dbo].[FK__UserGroup__Group__5D8BC399]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserGroup] DROP CONSTRAINT [FK__UserGroup__Group__5D8BC399];
+GO
+IF OBJECT_ID(N'[dbo].[FK__UserGroup__UserI__5C979F60]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserGroup] DROP CONSTRAINT [FK__UserGroup__UserI__5C979F60];
+GO
+
+-- --------------------------------------------------
+-- Dropping existing tables
+-- --------------------------------------------------
+
+IF OBJECT_ID(N'[dbo].[CommunityActivity]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CommunityActivity];
+GO
+IF OBJECT_ID(N'[dbo].[Content]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Content];
+GO
+IF OBJECT_ID(N'[dbo].[ContentSidebarContent]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ContentSidebarContent];
+GO
+IF OBJECT_ID(N'[dbo].[Demographic]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Demographic];
+GO
+IF OBJECT_ID(N'[dbo].[Event]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Event];
+GO
+IF OBJECT_ID(N'[dbo].[EventRegistration]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[EventRegistration];
+GO
+IF OBJECT_ID(N'[dbo].[EventStatus]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[EventStatus];
+GO
+IF OBJECT_ID(N'[dbo].[EventType]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[EventType];
+GO
+IF OBJECT_ID(N'[dbo].[Group]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Group];
+GO
+IF OBJECT_ID(N'[dbo].[Pages]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Pages];
+GO
+IF OBJECT_ID(N'[dbo].[Payment]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Payment];
+GO
+IF OBJECT_ID(N'[dbo].[Posts]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Posts];
+GO
+IF OBJECT_ID(N'[dbo].[ProBillRate]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProBillRate];
+GO
+IF OBJECT_ID(N'[dbo].[Rank]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Rank];
+GO
+IF OBJECT_ID(N'[dbo].[SidebarContent]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SidebarContent];
+GO
+IF OBJECT_ID(N'[dbo].[Transaction]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Transaction];
+GO
+IF OBJECT_ID(N'[dbo].[User]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[User];
+GO
+IF OBJECT_ID(N'[dbo].[UserAccess]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserAccess];
+GO
+IF OBJECT_ID(N'[dbo].[UserBilling]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserBilling];
+GO
+IF OBJECT_ID(N'[dbo].[UserGroup]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserGroup];
+GO
+IF OBJECT_ID(N'[dbo].[UserStatus]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserStatus];
+GO
+IF OBJECT_ID(N'[dbo].[UserType]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserType];
+GO
+
+-- --------------------------------------------------
+-- Creating all tables
+-- --------------------------------------------------
+
+-- Creating table 'Pages'
+CREATE TABLE [dbo].[Pages] (
+    [PageId] int IDENTITY(1,1) NOT NULL,
+    [ParentPageId] int  NULL,
+    [PageName] varchar(128)  NOT NULL,
+    [Title] varchar(128)  NOT NULL,
+    [Content] varchar(max)  NOT NULL,
+    [Images] varchar(256)  NULL,
+    [ShowMap] tinyint  NOT NULL,
+    [CreateDate] datetime  NOT NULL,
+    [CreatedBy] varchar(256)  NOT NULL
+);
+GO
+
+-- Creating table 'Posts'
+CREATE TABLE [dbo].[Posts] (
+    [PostId] int IDENTITY(1,1) NOT NULL,
+    [Title] varchar(255)  NOT NULL,
+    [TitleEncoded] varchar(255)  NOT NULL,
+    [Body] varchar(max)  NOT NULL,
+    [PostDate] datetime  NOT NULL,
+    [Category] varchar(255)  NULL
+);
+GO
+
+-- Creating table 'Demographics'
+CREATE TABLE [dbo].[Demographics] (
+    [DemographicId] int  NOT NULL,
+    [DemographicName] varchar(50)  NOT NULL
+);
+GO
+
+-- Creating table 'Events'
+CREATE TABLE [dbo].[Events] (
+    [EventId] int IDENTITY(1,1) NOT NULL,
+    [Title] varchar(150)  NOT NULL,
+    [Description] varchar(max)  NULL,
+    [EventDate] datetime  NOT NULL,
+    [RankingBitMask] int  NULL,
+    [DemographicBitMask] int  NULL,
+    [EventTypeId] int  NOT NULL,
+    [USTASanctioned] bit  NOT NULL,
+    [ProUserId] int  NULL,
+    [EventStatusId] int  NOT NULL,
+    [PrivateEvent] bit  NOT NULL,
+    [MemberCost] decimal(19,4)  NULL,
+    [NonMemberCost] decimal(19,4)  NULL,
+    [EncodedTitle] varchar(220)  NOT NULL
+);
+GO
+
+-- Creating table 'EventRegistrations'
+CREATE TABLE [dbo].[EventRegistrations] (
+    [EventRegistrationId] int IDENTITY(1,1) NOT NULL,
+    [EventId] int  NOT NULL,
+    [UserId] int  NOT NULL,
+    [RegistrationDate] datetime  NOT NULL,
+    [TransactionId] int  NULL
+);
+GO
+
+-- Creating table 'EventTypes'
+CREATE TABLE [dbo].[EventTypes] (
+    [EventTypeId] int IDENTITY(1,1) NOT NULL,
+    [EventTypeName] varchar(50)  NOT NULL
+);
+GO
+
+-- Creating table 'Payments'
+CREATE TABLE [dbo].[Payments] (
+    [PaymentId] int IDENTITY(1,1) NOT NULL,
+    [Amount] decimal(19,4)  NOT NULL,
+    [Description] varchar(max)  NOT NULL,
+    [FromFirstName] varchar(125)  NOT NULL,
+    [FromLastName] varchar(255)  NOT NULL,
+    [Address1] varchar(255)  NOT NULL,
+    [Address2] varchar(255)  NOT NULL,
+    [City] varchar(255)  NOT NULL,
+    [State] varchar(255)  NOT NULL,
+    [ZipCode] varchar(25)  NOT NULL,
+    [CCNumber] varchar(255)  NOT NULL,
+    [CCType] varchar(12)  NOT NULL,
+    [CCExpMonth] char(2)  NOT NULL,
+    [CCExpYear] char(4)  NOT NULL,
+    [PaymentDate] datetime  NOT NULL,
+    [Status] varchar(25)  NOT NULL,
+    [StatusDescription] varchar(255)  NULL
+);
+GO
+
+-- Creating table 'ProBillRates'
+CREATE TABLE [dbo].[ProBillRates] (
+    [BillRateId] int IDENTITY(1,1) NOT NULL,
+    [UserId] int  NOT NULL,
+    [BillRate] decimal(19,4)  NOT NULL
+);
+GO
+
+-- Creating table 'Ranks'
+CREATE TABLE [dbo].[Ranks] (
+    [RankId] int  NOT NULL,
+    [RankName] varchar(50)  NOT NULL
+);
+GO
+
+-- Creating table 'Transactions'
+CREATE TABLE [dbo].[Transactions] (
+    [TransactionId] int IDENTITY(1,1) NOT NULL,
+    [Amount] decimal(19,4)  NOT NULL,
+    [Description] varchar(max)  NULL,
+    [UserBillingId] int  NOT NULL,
+    [PaymentDate] datetime  NOT NULL,
+    [Status] varchar(25)  NOT NULL,
+    [StatusDescription] varchar(255)  NULL
+);
+GO
+
+-- Creating table 'Users'
+CREATE TABLE [dbo].[User] (
+    [UserId] int IDENTITY(1,1) NOT NULL,
+    [EmailAddress] varchar(255)  NOT NULL,
+    [Password] varchar(12)  NOT NULL,
+    [AccountValidated] bit  NOT NULL,
+    [RegisterDate] datetime  NOT NULL,
+    [LastLoginDate] datetime  NULL,
+    [UserStatusID] int  NOT NULL,
+    [UserAccessBitMask] int  NOT NULL,
+    [UserTypeId] int  NOT NULL,
+    [RankId] int  NOT NULL,
+    [Address1] varchar(255)  NOT NULL,
+    [Address2] varchar(255)  NOT NULL,
+    [City] varchar(255)  NOT NULL,
+    [State] varchar(255)  NOT NULL,
+    [ZipCode] varchar(25)  NOT NULL,
+    [ActivationKey] uniqueidentifier  NULL,
+    [FirstName] varchar(125)  NOT NULL,
+    [LastName] varchar(255)  NOT NULL,
+    [PhoneNumber] varchar(14)  NULL,
+    [MobilePhoneNumber] varchar(14)  NULL
+);
+GO
+
+-- Creating table 'UserAccesses'
+CREATE TABLE [dbo].[UserAccesses] (
+    [UserAccessId] int  NOT NULL,
+    [AccessName] varchar(50)  NOT NULL
+);
+GO
+
+-- Creating table 'UserBillings'
+CREATE TABLE [dbo].[UserBillings] (
+    [UserBillingId] int IDENTITY(1,1) NOT NULL,
+    [UserId] int  NOT NULL,
+    [CCNumber] varchar(255)  NOT NULL,
+    [CCType] varchar(12)  NOT NULL,
+    [CCExpMonth] char(2)  NOT NULL,
+    [CCExpYear] char(4)  NOT NULL
+);
+GO
+
+-- Creating table 'UserStatus'
+CREATE TABLE [dbo].[UserStatus] (
+    [UserStatusId] int IDENTITY(1,1) NOT NULL,
+    [StatusName] varchar(50)  NOT NULL
+);
+GO
+
+-- Creating table 'UserTypes'
+CREATE TABLE [dbo].[UserTypes] (
+    [UserTypeId] int IDENTITY(1,1) NOT NULL,
+    [TypeName] varchar(50)  NOT NULL
+);
+GO
+
+-- Creating table 'EventStatus'
+CREATE TABLE [dbo].[EventStatus] (
+    [EventStatusId] int IDENTITY(1,1) NOT NULL,
+    [EventStatusName] varchar(50)  NOT NULL
+);
+GO
+
+-- Creating table 'Contents'
+CREATE TABLE [dbo].[Contents] (
+    [ContentId] int IDENTITY(1,1) NOT NULL,
+    [PageName] varchar(128)  NOT NULL,
+    [Title] varchar(128)  NOT NULL,
+    [Content1] varchar(max)  NOT NULL,
+    [CreateDate] datetime  NOT NULL,
+    [DirName] varchar(128)  NOT NULL
+);
+GO
+
+-- Creating table 'ContentSidebarContents'
+CREATE TABLE [dbo].[ContentSidebarContents] (
+    [ContentSidebarContentId] int IDENTITY(1,1) NOT NULL,
+    [ContentId] int  NOT NULL,
+    [SidebarContentId] int  NOT NULL
+);
+GO
+
+-- Creating table 'SidebarContents'
+CREATE TABLE [dbo].[SidebarContents] (
+    [SidebarContentId] int IDENTITY(1,1) NOT NULL,
+    [ContentName] varchar(128)  NOT NULL,
+    [Title] varchar(128)  NOT NULL,
+    [Content] varchar(max)  NOT NULL,
+    [CreateDate] datetime  NOT NULL
+);
+GO
+
+-- Creating table 'Groups'
+CREATE TABLE [dbo].[Groups] (
+    [GroupId] int IDENTITY(1,1) NOT NULL,
+    [GroupName] varchar(25)  NOT NULL,
+    [Description] varchar(max)  NULL
+);
+GO
+
+-- Creating table 'UserGroups'
+CREATE TABLE [dbo].[UserGroups] (
+    [UserGroupId] int IDENTITY(1,1) NOT NULL,
+    [UserId] int  NOT NULL,
+    [GroupId] int  NOT NULL
+);
+GO
+
+-- Creating table 'CommunityActivities'
+CREATE TABLE [dbo].[CommunityActivities] (
+    [ActivityId] int IDENTITY(1,1) NOT NULL,
+    [UserId] int  NOT NULL,
+    [Description] varchar(max)  NOT NULL,
+    [ActivityDate] datetime  NOT NULL
+);
+GO
+
+-- --------------------------------------------------
+-- Creating all PRIMARY KEY constraints
+-- --------------------------------------------------
+
+-- Creating primary key on [PageId] in table 'Pages'
+ALTER TABLE [dbo].[Pages]
+ADD CONSTRAINT [PK_Pages]
+    PRIMARY KEY CLUSTERED ([PageId] ASC);
+GO
+
+-- Creating primary key on [PostId] in table 'Posts'
+ALTER TABLE [dbo].[Posts]
+ADD CONSTRAINT [PK_Posts]
+    PRIMARY KEY CLUSTERED ([PostId] ASC);
+GO
+
+-- Creating primary key on [DemographicId] in table 'Demographics'
+ALTER TABLE [dbo].[Demographics]
+ADD CONSTRAINT [PK_Demographics]
+    PRIMARY KEY CLUSTERED ([DemographicId] ASC);
+GO
+
+-- Creating primary key on [EventId] in table 'Events'
+ALTER TABLE [dbo].[Events]
+ADD CONSTRAINT [PK_Events]
+    PRIMARY KEY CLUSTERED ([EventId] ASC);
+GO
+
+-- Creating primary key on [EventRegistrationId] in table 'EventRegistrations'
+ALTER TABLE [dbo].[EventRegistrations]
+ADD CONSTRAINT [PK_EventRegistrations]
+    PRIMARY KEY CLUSTERED ([EventRegistrationId] ASC);
+GO
+
+-- Creating primary key on [EventTypeId] in table 'EventTypes'
+ALTER TABLE [dbo].[EventTypes]
+ADD CONSTRAINT [PK_EventTypes]
+    PRIMARY KEY CLUSTERED ([EventTypeId] ASC);
+GO
+
+-- Creating primary key on [PaymentId] in table 'Payments'
+ALTER TABLE [dbo].[Payments]
+ADD CONSTRAINT [PK_Payments]
+    PRIMARY KEY CLUSTERED ([PaymentId] ASC);
+GO
+
+-- Creating primary key on [BillRateId] in table 'ProBillRates'
+ALTER TABLE [dbo].[ProBillRates]
+ADD CONSTRAINT [PK_ProBillRates]
+    PRIMARY KEY CLUSTERED ([BillRateId] ASC);
+GO
+
+-- Creating primary key on [RankId] in table 'Ranks'
+ALTER TABLE [dbo].[Ranks]
+ADD CONSTRAINT [PK_Ranks]
+    PRIMARY KEY CLUSTERED ([RankId] ASC);
+GO
+
+-- Creating primary key on [TransactionId] in table 'Transactions'
+ALTER TABLE [dbo].[Transactions]
+ADD CONSTRAINT [PK_Transactions]
+    PRIMARY KEY CLUSTERED ([TransactionId] ASC);
+GO
+
+-- Creating primary key on [UserId] in table 'Users'
+ALTER TABLE [dbo].[Users]
+ADD CONSTRAINT [PK_Users]
+    PRIMARY KEY CLUSTERED ([UserId] ASC);
+GO
+
+-- Creating primary key on [UserAccessId] in table 'UserAccesses'
+ALTER TABLE [dbo].[UserAccesses]
+ADD CONSTRAINT [PK_UserAccesses]
+    PRIMARY KEY CLUSTERED ([UserAccessId] ASC);
+GO
+
+-- Creating primary key on [UserBillingId] in table 'UserBillings'
+ALTER TABLE [dbo].[UserBillings]
+ADD CONSTRAINT [PK_UserBillings]
+    PRIMARY KEY CLUSTERED ([UserBillingId] ASC);
+GO
+
+-- Creating primary key on [UserStatusId] in table 'UserStatus'
+ALTER TABLE [dbo].[UserStatus]
+ADD CONSTRAINT [PK_UserStatus]
+    PRIMARY KEY CLUSTERED ([UserStatusId] ASC);
+GO
+
+-- Creating primary key on [UserTypeId] in table 'UserTypes'
+ALTER TABLE [dbo].[UserTypes]
+ADD CONSTRAINT [PK_UserTypes]
+    PRIMARY KEY CLUSTERED ([UserTypeId] ASC);
+GO
+
+-- Creating primary key on [EventStatusId] in table 'EventStatus'
+ALTER TABLE [dbo].[EventStatus]
+ADD CONSTRAINT [PK_EventStatus]
+    PRIMARY KEY CLUSTERED ([EventStatusId] ASC);
+GO
+
+-- Creating primary key on [ContentId] in table 'Contents'
+ALTER TABLE [dbo].[Contents]
+ADD CONSTRAINT [PK_Contents]
+    PRIMARY KEY CLUSTERED ([ContentId] ASC);
+GO
+
+-- Creating primary key on [ContentSidebarContentId] in table 'ContentSidebarContents'
+ALTER TABLE [dbo].[ContentSidebarContents]
+ADD CONSTRAINT [PK_ContentSidebarContents]
+    PRIMARY KEY CLUSTERED ([ContentSidebarContentId] ASC);
+GO
+
+-- Creating primary key on [SidebarContentId] in table 'SidebarContents'
+ALTER TABLE [dbo].[SidebarContents]
+ADD CONSTRAINT [PK_SidebarContents]
+    PRIMARY KEY CLUSTERED ([SidebarContentId] ASC);
+GO
+
+-- Creating primary key on [GroupId] in table 'Groups'
+ALTER TABLE [dbo].[Groups]
+ADD CONSTRAINT [PK_Groups]
+    PRIMARY KEY CLUSTERED ([GroupId] ASC);
+GO
+
+-- Creating primary key on [UserGroupId] in table 'UserGroups'
+ALTER TABLE [dbo].[UserGroups]
+ADD CONSTRAINT [PK_UserGroups]
+    PRIMARY KEY CLUSTERED ([UserGroupId] ASC);
+GO
+
+-- Creating primary key on [ActivityId] in table 'CommunityActivities'
+ALTER TABLE [dbo].[CommunityActivities]
+ADD CONSTRAINT [PK_CommunityActivities]
+    PRIMARY KEY CLUSTERED ([ActivityId] ASC);
+GO
+
+-- --------------------------------------------------
+-- Creating all FOREIGN KEY constraints
+-- --------------------------------------------------
+
+-- Creating foreign key on [EventTypeId] in table 'Events'
+ALTER TABLE [dbo].[Events]
+ADD CONSTRAINT [FK__Event__EventType__41B8C09B]
+    FOREIGN KEY ([EventTypeId])
+    REFERENCES [dbo].[EventTypes]
+        ([EventTypeId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__Event__EventType__41B8C09B'
+CREATE INDEX [IX_FK__Event__EventType__41B8C09B]
+ON [dbo].[Events]
+    ([EventTypeId]);
+GO
+
+-- Creating foreign key on [ProUserId] in table 'Events'
+ALTER TABLE [dbo].[Events]
+ADD CONSTRAINT [FK__Event__ProUserId__43A1090D]
+    FOREIGN KEY ([ProUserId])
+    REFERENCES [dbo].[Users]
+        ([UserId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__Event__ProUserId__43A1090D'
+CREATE INDEX [IX_FK__Event__ProUserId__43A1090D]
+ON [dbo].[Events]
+    ([ProUserId]);
+GO
+
+-- Creating foreign key on [EventId] in table 'EventRegistrations'
+ALTER TABLE [dbo].[EventRegistrations]
+ADD CONSTRAINT [FK__EventRegi__Event__4865BE2A]
+    FOREIGN KEY ([EventId])
+    REFERENCES [dbo].[Events]
+        ([EventId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__EventRegi__Event__4865BE2A'
+CREATE INDEX [IX_FK__EventRegi__Event__4865BE2A]
+ON [dbo].[EventRegistrations]
+    ([EventId]);
+GO
+
+-- Creating foreign key on [TransactionId] in table 'EventRegistrations'
+ALTER TABLE [dbo].[EventRegistrations]
+ADD CONSTRAINT [FK__EventRegi__Trans__4B422AD5]
+    FOREIGN KEY ([TransactionId])
+    REFERENCES [dbo].[Transactions]
+        ([TransactionId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__EventRegi__Trans__4B422AD5'
+CREATE INDEX [IX_FK__EventRegi__Trans__4B422AD5]
+ON [dbo].[EventRegistrations]
+    ([TransactionId]);
+GO
+
+-- Creating foreign key on [UserId] in table 'EventRegistrations'
+ALTER TABLE [dbo].[EventRegistrations]
+ADD CONSTRAINT [FK__EventRegi__UserI__4959E263]
+    FOREIGN KEY ([UserId])
+    REFERENCES [dbo].[Users]
+        ([UserId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__EventRegi__UserI__4959E263'
+CREATE INDEX [IX_FK__EventRegi__UserI__4959E263]
+ON [dbo].[EventRegistrations]
+    ([UserId]);
+GO
+
+-- Creating foreign key on [UserId] in table 'ProBillRates'
+ALTER TABLE [dbo].[ProBillRates]
+ADD CONSTRAINT [FK__ProBillRa__UserI__382F5661]
+    FOREIGN KEY ([UserId])
+    REFERENCES [dbo].[Users]
+        ([UserId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__ProBillRa__UserI__382F5661'
+CREATE INDEX [IX_FK__ProBillRa__UserI__382F5661]
+ON [dbo].[ProBillRates]
+    ([UserId]);
+GO
+
+-- Creating foreign key on [RankId] in table 'Users'
+ALTER TABLE [dbo].[Users]
+ADD CONSTRAINT [FK__User__RankId__28ED12D1]
+    FOREIGN KEY ([RankId])
+    REFERENCES [dbo].[Ranks]
+        ([RankId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__User__RankId__28ED12D1'
+CREATE INDEX [IX_FK__User__RankId__28ED12D1]
+ON [dbo].[Users]
+    ([RankId]);
+GO
+
+-- Creating foreign key on [UserBillingId] in table 'Transactions'
+ALTER TABLE [dbo].[Transactions]
+ADD CONSTRAINT [FK__Transacti__UserB__32767D0B]
+    FOREIGN KEY ([UserBillingId])
+    REFERENCES [dbo].[UserBillings]
+        ([UserBillingId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__Transacti__UserB__32767D0B'
+CREATE INDEX [IX_FK__Transacti__UserB__32767D0B]
+ON [dbo].[Transactions]
+    ([UserBillingId]);
+GO
+
+-- Creating foreign key on [UserStatusID] in table 'Users'
+ALTER TABLE [dbo].[Users]
+ADD CONSTRAINT [FK__User__UserStatus__24285DB4]
+    FOREIGN KEY ([UserStatusID])
+    REFERENCES [dbo].[UserStatus]
+        ([UserStatusId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__User__UserStatus__24285DB4'
+CREATE INDEX [IX_FK__User__UserStatus__24285DB4]
+ON [dbo].[Users]
+    ([UserStatusID]);
+GO
+
+-- Creating foreign key on [UserTypeId] in table 'Users'
+ALTER TABLE [dbo].[Users]
+ADD CONSTRAINT [FK__User__UserTypeId__2704CA5F]
+    FOREIGN KEY ([UserTypeId])
+    REFERENCES [dbo].[UserTypes]
+        ([UserTypeId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__User__UserTypeId__2704CA5F'
+CREATE INDEX [IX_FK__User__UserTypeId__2704CA5F]
+ON [dbo].[Users]
+    ([UserTypeId]);
+GO
+
+-- Creating foreign key on [UserId] in table 'UserBillings'
+ALTER TABLE [dbo].[UserBillings]
+ADD CONSTRAINT [FK__UserBilli__UserI__2DB1C7EE]
+    FOREIGN KEY ([UserId])
+    REFERENCES [dbo].[Users]
+        ([UserId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__UserBilli__UserI__2DB1C7EE'
+CREATE INDEX [IX_FK__UserBilli__UserI__2DB1C7EE]
+ON [dbo].[UserBillings]
+    ([UserId]);
+GO
+
+-- Creating foreign key on [EventStatusId] in table 'Events'
+ALTER TABLE [dbo].[Events]
+ADD CONSTRAINT [FK__Event__EventStat__65E11278]
+    FOREIGN KEY ([EventStatusId])
+    REFERENCES [dbo].[EventStatus]
+        ([EventStatusId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__Event__EventStat__65E11278'
+CREATE INDEX [IX_FK__Event__EventStat__65E11278]
+ON [dbo].[Events]
+    ([EventStatusId]);
+GO
+
+-- Creating foreign key on [ContentId] in table 'ContentSidebarContents'
+ALTER TABLE [dbo].[ContentSidebarContents]
+ADD CONSTRAINT [FK__ContentSi__Conte__0DB9F9A8]
+    FOREIGN KEY ([ContentId])
+    REFERENCES [dbo].[Contents]
+        ([ContentId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__ContentSi__Conte__0DB9F9A8'
+CREATE INDEX [IX_FK__ContentSi__Conte__0DB9F9A8]
+ON [dbo].[ContentSidebarContents]
+    ([ContentId]);
+GO
+
+-- Creating foreign key on [SidebarContentId] in table 'ContentSidebarContents'
+ALTER TABLE [dbo].[ContentSidebarContents]
+ADD CONSTRAINT [FK__ContentSi__Sideb__0EAE1DE1]
+    FOREIGN KEY ([SidebarContentId])
+    REFERENCES [dbo].[SidebarContents]
+        ([SidebarContentId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__ContentSi__Sideb__0EAE1DE1'
+CREATE INDEX [IX_FK__ContentSi__Sideb__0EAE1DE1]
+ON [dbo].[ContentSidebarContents]
+    ([SidebarContentId]);
+GO
+
+-- Creating foreign key on [GroupId] in table 'UserGroups'
+ALTER TABLE [dbo].[UserGroups]
+ADD CONSTRAINT [FK__UserGroup__Group__7CAF6937]
+    FOREIGN KEY ([GroupId])
+    REFERENCES [dbo].[Groups]
+        ([GroupId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__UserGroup__Group__7CAF6937'
+CREATE INDEX [IX_FK__UserGroup__Group__7CAF6937]
+ON [dbo].[UserGroups]
+    ([GroupId]);
+GO
+
+-- Creating foreign key on [UserId] in table 'UserGroups'
+ALTER TABLE [dbo].[UserGroups]
+ADD CONSTRAINT [FK__UserGroup__UserI__7BBB44FE]
+    FOREIGN KEY ([UserId])
+    REFERENCES [dbo].[Users]
+        ([UserId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__UserGroup__UserI__7BBB44FE'
+CREATE INDEX [IX_FK__UserGroup__UserI__7BBB44FE]
+ON [dbo].[UserGroups]
+    ([UserId]);
+GO
+
+-- Creating foreign key on [UserId] in table 'CommunityActivities'
+ALTER TABLE [dbo].[CommunityActivities]
+ADD CONSTRAINT [FK__Community__UserI__15D01CBC]
+    FOREIGN KEY ([UserId])
+    REFERENCES [dbo].[Users]
+        ([UserId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK__Community__UserI__15D01CBC'
+CREATE INDEX [IX_FK__Community__UserI__15D01CBC]
+ON [dbo].[CommunityActivities]
+    ([UserId]);
+GO
+
+-- --------------------------------------------------
+-- Script has ended
+-- --------------------------------------------------
