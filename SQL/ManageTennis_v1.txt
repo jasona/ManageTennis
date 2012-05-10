@@ -1,0 +1,94 @@
+/* ManageTennis Data Model */
+
+CREATE TABLE [Club] (
+    [ClubId] 	INT IDENTITY(1,1) NOT NULL
+	PRIMARY KEY NONCLUSTERED(ClubId),
+    [ClubName] 	VARCHAR(255) NOT NULL,
+    [Address1] 	VARCHAR(255) NOT NULL,
+    [Address2] 	VARCHAR(255) NULL,
+    [City] 	VARCHAR(255) NOT NULL,
+    [ZipCode] 	VARCHAR(25)  NOT NULL,
+    [CCNumber] 	VARCHAR(255)  NOT NULL,
+    [CCType] 	VARCHAR(12)  NOT NULL,
+    [CCExpMonth] CHAR(2)  NOT NULL,
+    [CCExpYear] CHAR(4)  NOT NULL,
+    [PaymentDate] DATETIME  NOT NULL,
+    [Subdomain] VARCHAR(128) NOT NULL,
+    [CustomDomain] VARCHAR(255) NULL,
+    [ClubFeatureMask] INT NOT NULL
+	DEFAULT 0,
+    [Status] TINYINT  NOT NULL
+	DEFAULT 0
+)
+GO
+
+
+CREATE TABLE [ClubFeature] (
+    [FeatureId] INT IDENTITY(1,1) NOT NULL
+	PRIMARY KEY NONCLUSTERED(FeatureId),
+    [FeatureName] VARCHAR(255) NOT NULL
+)
+GO
+
+
+CREATE TABLE [User] (
+    [UserId] INT IDENTITY(1,1) NOT NULL,
+    [EmailAddress] VARCHAR(255) NOT NULL,
+    [Password] VARCHAR(12) NOT NULL,
+    [AccountValidated] BIT NOT NULL,
+    [RegisterDate] DATETIME NOT NULL,
+    [LastLoginDate] DATETIME NULL,
+    [Address1] VARCHAR(255) NOT NULL,
+    [Address2] VARCHAR(255) NOT NULL,
+    [City] VARCHAR(255) NOT NULL,
+    [State] VARCHAR(255) NOT NULL,
+    [ZipCode] VARCHAR(25) NOT NULL,
+    [ActivationKey] UNIQUEIDENTIFIER NULL,
+    [FirstName] VARCHAR(125) NOT NULL,
+    [LastName] VARCHAR(255) NOT NULL,
+    [PhoneNumber] VARCHAR(14) NULL,
+    [MobilePhoneNumber] VARCHAR(14) NULL,
+    [UserStatusID] INT NOT NULL,
+    [UserAccessBitMask] INT NOT NULL,
+    [UserTypeBitMask] INT NOT NULL,
+    [UserRankBitMask] INT NOT NULL
+)
+GO
+
+
+CREATE TABLE [UserType] (
+    [UserTypeId] INT IDENTITY(1,1) NOT NULL,
+    [UserTYpeName] VARCHAR(255) NOT NULL
+)
+GO
+
+
+CREATE TABLE [UserAccess] (
+    [UserAccessId] INT NOT NULL,
+    [AccessName] VARCHAR(50) NOT NULL
+)
+GO
+
+CREATE TABLE [UserBilling] (
+    [UserBillingId] INT IDENTITY(1,1) NOT NULL,
+    [UserId] INT NOT NULL,
+    [CCNumber] VARCHAR(255) NOT NULL,
+    [CCType] VARCHAR(12) NOT NULL,
+    [CCExpMonth] CHAR(2) NOT NULL,
+    [CCExpYear] CHAR(4) NOT NULL
+);
+GO
+
+
+CREATE TABLE [UserStatus] (
+    [UserStatusId] INT IDENTITY(1,1) NOT NULL,
+    [StatusName] VARCHAR(50) NOT NULL
+)
+GO
+
+
+CREATE TABLE [UserRanks] (
+    [UserRankId] INT NOT NULL,
+    [UserRankName] VARCHAR(50) NOT NULL
+)
+GO
